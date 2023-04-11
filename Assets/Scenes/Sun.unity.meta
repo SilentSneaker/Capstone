@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Scenes/Sun.unity.meta
 guid: f4fcc2af772cc2f4fbb98041bd6fe7de
+========
+guid: 29ceb595f25d11e46af9031f740b61aa
+folderAsset: yes
+>>>>>>>> Stashed changes:Assets/Editor Default Resources.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
