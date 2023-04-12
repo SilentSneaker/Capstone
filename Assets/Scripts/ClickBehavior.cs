@@ -19,6 +19,8 @@ public class ClickBehavior : MonoBehaviour
     {
         mainCamera = Camera.main;
         ogCamPos = mainCamera.transform.position;
+
+        objectDropdown = new DropdownActivation();
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class ClickBehavior : MonoBehaviour
             {
                 //selectedTag = objectHit.collider.tag;
                 clickedObject = objectHit.collider.gameObject;
-
+                Debug.Log(clickedObject);
                 if (zoomedIn == false)
                 {
                     objectDropdown = clickedObject.GetComponent<DropdownActivation>();

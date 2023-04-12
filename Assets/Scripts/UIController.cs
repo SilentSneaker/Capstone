@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class UIController : MonoBehaviour
-{
+{   
     public Canvas UICanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
@@ -13,6 +13,13 @@ public class UIController : MonoBehaviour
     public TMP_InputField personalTextBox;
     public TMP_InputField picture;
     private TMP_InputField newTextbox;
+    public GameObject yellowSun;
+    public GameObject redGiant;
+    public GameObject whiteDwarf;
+
+    public GameObject activeSun;
+
+    public Vector3 sunCoordinates = new Vector3(0f, 0f, 0f);
 
     //public Button option;
     private int hiddenOptionIndex;
@@ -22,8 +29,13 @@ public class UIController : MonoBehaviour
     {
         UICanvas = gameObject.GetComponent<Canvas>();
         viewDropdown = UICanvas.transform.Find("ViewDropdown").GetComponent<TMP_Dropdown>();
-
         viewDropdown.onValueChanged.AddListener(OnViewDropdownValueChanged);
+
+        starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
+        starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
+
+        activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
+        activeSun.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,7 +61,7 @@ public class UIController : MonoBehaviour
         // Option 1 - Info view (Brings up text box and displays Facts and the History of the object)
         else if (index == 1)
         {
-            //Debug.Log("Selected Info View");
+            Debug.Log("Selected Info View");
             newTextbox = Instantiate(factTextBox, Vector3.zero, Quaternion.identity);
             newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
             newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
@@ -64,7 +76,7 @@ public class UIController : MonoBehaviour
             newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
 
-            Debug.Log(newTextbox);
+            //Debug.Log(newTextbox);
         }
         // Option 2 - Personal view (Adds a textbox to the canvas and displays the adjusted information that the user put in)
         else if (index == 2)
@@ -89,7 +101,7 @@ public class UIController : MonoBehaviour
         else if (index == 3)
         {
             Debug.Log("Selected Picture View");
-            //Debug.Log("Selected Info View");
+
             newTextbox = Instantiate(picture, Vector3.zero, Quaternion.identity);
             newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
             newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
@@ -106,8 +118,39 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void StarTypeDropdownOptionSelected(int optionIndex)
+    public void OnStarDropdownValueChanged(int optionIndex)
     {
         // Do something based on the selected option index
+        if(optionIndex == 0)
+        {
+            Debug.Log("Yellow Sun selected");
+            if(activeSun != yellowSun)
+            {
+                Destroy(activeSun);
+                activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
+                activeSun.SetActive(true);
+            }
+            
+        }
+        else if(optionIndex == 1)
+        {
+            Debug.Log("Red Giant selected");
+            if (activeSun != redGiant)
+            {
+                Destroy(activeSun);
+                activeSun = Instantiate(redGiant, sunCoordinates, yellowSun.transform.rotation);
+                activeSun.SetActive(true);
+            }
+        }
+        else if(optionIndex == 2)
+        {
+            Debug.Log("White Dwarf selected");
+            if (activeSun != whiteDwarf)
+            {
+                Destroy(activeSun);
+                activeSun = Instantiate(whiteDwarf, sunCoordinates, yellowSun.transform.rotation);
+                activeSun.SetActive(true);
+            }
+        }
     }
 }
