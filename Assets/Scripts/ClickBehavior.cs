@@ -54,6 +54,10 @@ public class ClickBehavior : MonoBehaviour
                     objectDropdown.RemoveDropdown();
                 }
             }
+            else if (!isPointerOverUIObject() && zoomedIn == false)
+            {
+
+            }
         }
         /*GameObject getClickedObject (out RaycastHit hit)
         {
