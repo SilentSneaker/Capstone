@@ -27,6 +27,7 @@ public class FirebaseController : MonoBehaviour
 
     void Start()
     {
+        OpenLoginScreen();
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
             if (dependencyStatus == Firebase.DependencyStatus.Available)
