@@ -334,7 +334,6 @@ GameObject:
   - component: {fileID: 2018997074}
   - component: {fileID: 2018997078}
   - component: {fileID: 2018997077}
-  - component: {fileID: 2018997079}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -438,29 +437,6 @@ MonoBehaviour:
   clickedObject: {fileID: 0}
   selectedTag: 
   ogCamPos: {x: 0, y: 0, z: 0}
---- !u!114 &2018997079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018997073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda42fd009b49ca45bf03ee3f1b1fb6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
-  viewDropdown: {fileID: 6156636894080302213, guid: c61839823cc621b4c9ed8d6a30597f53, type: 3}
-  starTypeDropdown: {fileID: 7470116341388826069, guid: 558940e09a638014d8a381eaaacdb5e8, type: 3}
-  factTextBox: {fileID: 8779004642865326156, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
-  personalTextBox: {fileID: 9190569210253515810, guid: 9b4532ced10871d489dee2e511cb26ec, type: 3}
-  picture: {fileID: 1024665275380524356, guid: 9c9dfde8e9618b14a978ce729c57a666, type: 3}
-  yellowSun: {fileID: 6370009663034327795, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
-  redGiant: {fileID: 3757427868865825586, guid: 822efa8445809b54293942a76697dcbe, type: 3}
-  whiteDwarf: {fileID: 4373030156243542140, guid: 538018d0037b95c4ab8d228f005298d9, type: 3}
-  activeSun: {fileID: 0}
-  sunCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1 &2046123549
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2018997075}
+    - target: {fileID: 1808238044191216921, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216922, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -630,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216923, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216926, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_Name

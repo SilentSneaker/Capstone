@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UICanvas = gameObject.GetComponent<Canvas>();
+        UICanvas = GameObject.Find("ObjectInfoUI").GetComponent<Canvas>();
         viewDropdown = UICanvas.transform.Find("ViewDropdown").GetComponent<TMP_Dropdown>();
         viewDropdown.onValueChanged.AddListener(OnViewDropdownValueChanged);
 

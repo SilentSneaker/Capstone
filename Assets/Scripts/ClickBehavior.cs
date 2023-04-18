@@ -30,33 +30,34 @@ public class ClickBehavior : MonoBehaviour
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit objectHit;
-            if (Physics.Raycast(ray, out objectHit) && !isPointerOverUIObject())
+            Physics.Raycast(ray, out objectHit);
+            if (objectHit.collider != null)
             {
-                //selectedTag = objectHit.collider.tag;
-                clickedObject = objectHit.collider.gameObject;
-                Debug.Log(clickedObject);
-                if (zoomedIn == false)
+                if (objectHit.collider.tag != "UI" && zoomedIn == false)
                 {
-                    objectDropdown = clickedObject.GetComponent<DropdownActivation>();
-                    objectDropdown.ShowDropdown();
+                    //selectedTag = objectHit.collider.tag;
+                    clickedObject = objectHit.collider.gameObject;
+                    Debug.Log(clickedObject);
+                    if (zoomedIn == false)
+                    {
+                        objectDropdown = clickedObject.GetComponent<DropdownActivation>();
+                        objectDropdown.ShowDropdown();
 
-                    Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
-                    zoomedIn = true;
+                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
+                        zoomedIn = true;
+                    }
                 }
+                
             }
-            else if (!isPointerOverUIObject() && zoomedIn == true)
+            else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
                 Camera.main.transform.position = ogCamPos;
                 zoomedIn = false;
-                if(objectDropdown != null)
+                if (objectDropdown != null)
                 {
 
                     objectDropdown.RemoveDropdown();
                 }
-            }
-            else if (!isPointerOverUIObject() && zoomedIn == false)
-            {
-
             }
         }
         /*GameObject getClickedObject (out RaycastHit hit)
@@ -70,12 +71,31 @@ public class ClickBehavior : MonoBehaviour
         }*/
     }
 
-    public static bool isPointerOverUIObject()
-    {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        System.Collections.Generic.List<RaycastResult> results = new System.Collections.Generic.List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
-    }
+    //public static bool isPointerOverUIObject()
+    //{
+    //    // Get the position of the mouse cursor
+    //    Vector2 mousePosition = Input.mousePosition;
+
+    //    // Create a new pointer event data with the current event system
+    //    PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+    //    eventDataCurrentPosition.position = mousePosition;
+
+    //    // Create a list to hold the results of the raycast
+    //    List<RaycastResult> results = new List<RaycastResult>();
+
+    //    // Perform a raycast to determine which UI element the mouse is currently over
+    //    EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+    //    // Check if any of the raycast results are child objects of the canvas that this script is attached to
+    //    foreach (RaycastResult result in results)
+    //    {
+    //        if (result.gameObject.transform.IsChildOf(transform))
+    //        {
+    //            return true;
+    //        }
+    //    }
+
+    //    // If none of the raycast results were child objects of this canvas, return false
+    //    return false;
+    //}
 }
