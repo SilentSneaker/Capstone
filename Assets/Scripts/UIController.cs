@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class UIController : MonoBehaviour
 {   
@@ -21,6 +22,10 @@ public class UIController : MonoBehaviour
 
     public Vector3 sunCoordinates = new Vector3(0f, 0f, 0f);
 
+    public Button profile;
+    public UnityEvent onClickEvent;
+
+
     //public Button option;
     private int hiddenOptionIndex;
 
@@ -36,12 +41,15 @@ public class UIController : MonoBehaviour
 
         activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
         activeSun.SetActive(true);
+
+        profile = UICanvas.GetComponentInChildren<Button>();
+        profile.onClick.AddListener(OnButtonClick);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnViewDropdownValueChanged(int index)
@@ -116,6 +124,7 @@ public class UIController : MonoBehaviour
             newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
         }
+        
     }
 
     public void OnStarDropdownValueChanged(int optionIndex)
@@ -152,5 +161,10 @@ public class UIController : MonoBehaviour
                 activeSun.SetActive(true);
             }
         }
+    }
+
+    public void OnButtonClick()
+    {
+        Debug.Log("Profile clicked");
     }
 }
