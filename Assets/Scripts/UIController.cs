@@ -23,11 +23,8 @@ public class UIController : MonoBehaviour
     public Vector3 sunCoordinates = new Vector3(0f, 0f, 0f);
 
     public Button profile;
-    public UnityEvent onClickEvent;
-
-
-    //public Button option;
-    private int hiddenOptionIndex;
+    public Button topDownView;
+    public Button angledView;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +39,14 @@ public class UIController : MonoBehaviour
         activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
         activeSun.SetActive(true);
 
-        profile = UICanvas.GetComponentInChildren<Button>();
-        profile.onClick.AddListener(OnButtonClick);
+        profile = UICanvas.transform.Find("Profile").GetComponent<Button>();
+        profile.onClick.AddListener(OnProfileClick);
+
+        topDownView = UICanvas.transform.Find("2D model").GetComponent<Button>();
+        topDownView.onClick.AddListener(TopDownView);
+
+        angledView = UICanvas.transform.Find("3D Model").GetComponent<Button>();
+        angledView.onClick.AddListener(AngledView);
     }
 
     // Update is called once per frame
@@ -163,8 +166,22 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void OnButtonClick()
+    public void OnProfileClick()
     {
         Debug.Log("Profile clicked");
+    }
+
+    public void TopDownView()
+    {
+        Debug.Log("Top Down View Clicked");
+        Camera.main.transform.position = new Vector3(0f, 10f, 0f);
+        Camera.main.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+    }
+
+    public void AngledView()
+    {
+        Debug.Log("Angled View Clicked");
+        Camera.main.transform.position = new Vector3(0f, 5f, -5f);
+        Camera.main.transform.rotation = Quaternion.Euler(45f, 0f, 0f);
     }
 }
