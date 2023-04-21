@@ -51,7 +51,7 @@ Canvas:
   m_GameObject: {fileID: 1808238044191216926}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   redGiant: {fileID: 3757427868865825586, guid: 822efa8445809b54293942a76697dcbe, type: 3}
   whiteDwarf: {fileID: 4373030156243542140, guid: 538018d0037b95c4ab8d228f005298d9, type: 3}
   activeSun: {fileID: 6370009663034327795, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
+  starInfo: {fileID: 0}
   sunCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1001 &4195414921440630520
 PrefabInstance:

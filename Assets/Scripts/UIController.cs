@@ -20,6 +20,10 @@ public class UIController : MonoBehaviour
 
     public GameObject activeSun;
 
+    public StarInfo starInfo;
+
+    public int starSelected = 0;
+
     public Vector3 sunCoordinates = new Vector3(0f, 0f, 0f);
 
     public Button profile;
@@ -32,6 +36,8 @@ public class UIController : MonoBehaviour
         UICanvas = GameObject.Find("ObjectInfoUI").GetComponent<Canvas>();
         viewDropdown = UICanvas.transform.Find("ViewDropdown").GetComponent<TMP_Dropdown>();
         viewDropdown.onValueChanged.AddListener(OnViewDropdownValueChanged);
+
+        starInfo = UICanvas.GetComponent<StarInfo>();
 
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
@@ -77,8 +83,9 @@ public class UIController : MonoBehaviour
             newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
             newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
 
+            Debug.Log(starInfo);
             // Set the text of the textbox to the selected option
-            //newTextbox.text = viewDropdown.options[index].text;
+            newTextbox.text = starInfo.GetInfo(starSelected);
 
             // Fit the textbox within the screen constraints
             RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
@@ -132,6 +139,7 @@ public class UIController : MonoBehaviour
 
     public void OnStarDropdownValueChanged(int optionIndex)
     {
+        starSelected = optionIndex;
         // Do something based on the selected option index
         if(optionIndex == 0)
         {
