@@ -7,24 +7,41 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Auth;
 using System;
+using Firebase.Database;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Firebase.Extensions;
+using static System.Net.Mime.MediaTypeNames;
+using System.Net;
+using Google;
+using System.Net.Http;
 
 public class FirebaseController : MonoBehaviour
 {
 
     public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen;
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
-    public Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
+    public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
 
-
+    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
+    public DatabaseReference DBReference;
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
+
+    public string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
+    private GoogleSignInConfiguration configuration;
 
     bool isLoggedIn = false;
     bool isLog = false;
 
+    void Awake()
+    {
+        configuration = new GoogleSignInConfiguration
+        {
+            WebClientId = GoogleWebAPI,
+            RequestIdToken = true
+        };
+    }
     void Start()
     {
         OpenLoginScreen();
@@ -45,6 +62,46 @@ public class FirebaseController : MonoBehaviour
                 // Firebase Unity SDK is not safe to use here.
             }
         });
+    }
+    public void GoogleSignInClick()
+    {
+        GoogleSignIn.Configuration = configuration;
+        GoogleSignIn.Configuration.UseGameSignIn = false;
+        GoogleSignIn.Configuration.RequestIdToken = true;
+        GoogleSignIn.Configuration.RequestEmail = true;
+        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnGoogleAuthenticatedFinished);
+    }
+
+    void OnGoogleAuthenticatedFinished(Task<GoogleSignInUser> task)
+    {
+        if (task.IsFaulted)
+            UnityEngine.Debug.LogError("Fault");
+        else if (task.IsCanceled)
+            UnityEngine.Debug.LogError("Login Cancelled");
+        else
+        {
+            Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
+            auth.SignInWithCredentialAsync(credential).ContinueWithOnMainThread(task =>
+            {
+                if (task.IsCanceled)
+                {
+                    UnityEngine.Debug.LogError("Sign In With Credential Async was canceled");
+                    return;
+                }
+                if (task.IsFaulted)
+                {
+                    UnityEngine.Debug.LogError("Sign in with credential async encountered an error" + task.Exception);
+                    return;
+                }
+                user = auth.CurrentUser;
+
+                AccountUserName.text = user.DisplayName;
+                LoginEmail.text = user.Email;
+
+                loginScreen.SetActive(false);
+                AccountScreen.SetActive(true);
+            });
+        }
     }
     public void OpenLoginScreen()
     {
@@ -124,6 +181,9 @@ public class FirebaseController : MonoBehaviour
         
         LoginEmail.text = "";
         AccountUserName.text = "";
+
+        UpdateWeight(accountWeight.text);
+        UpdateHeight(accountHeight.text);
         OpenLoginScreen();
     }
 
@@ -189,6 +249,7 @@ public class FirebaseController : MonoBehaviour
 
             LoginEmail.text = newUser.Email;
             AccountUserName.text = ""+newUser.DisplayName;
+
             OpenAccountScreen();
         });
     }
@@ -197,6 +258,7 @@ public class FirebaseController : MonoBehaviour
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
+        DBReference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
@@ -323,5 +385,43 @@ public class FirebaseController : MonoBehaviour
             }
             showNotification("Alert", "Password Recovery sent to email");
         });
+    }
+    private IEnumerator UpdateWeight(string weight)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("weight").SetValueAsync(weight);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if(DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator UpdateHeight(string height)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("height").SetValueAsync(height);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if (DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator LoadUserData()
+    {
+        var DBTask = DBReference.Child("user").Child(user.UserId).GetValueAsync();
+        yield return new WaitUntil(predicate:() =>DBTask.IsCompleted);
+        if(DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            accountHeight.text= "0";
+            accountWeight.text= "0";
+        }
+        else
+        {
+            DataSnapshot snapShot = DBTask.Result;
+            accountWeight.text= snapShot.Child("weight").Value.ToString();
+            accountHeight.text = snapShot.Child("height").Value.ToString();
+        }
     }
 }
