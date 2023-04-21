@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            targetPos = prePos;
+    
         }
     }
 
