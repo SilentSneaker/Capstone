@@ -30,6 +30,9 @@ public class UIController : MonoBehaviour
     public Button topDownView;
     public Button angledView;
 
+    public GameObject accountPrefab;
+    public GameObject objectInfoUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -177,6 +180,9 @@ public class UIController : MonoBehaviour
     public void OnProfileClick()
     {
         Debug.Log("Profile clicked");
+        GameObject newAccount = Instantiate(accountPrefab, objectInfoUI.transform);
+        CanvasScaler scaler = UICanvas.GetComponent<CanvasScaler>();
+        scaler.matchWidthOrHeight = 1f;
     }
 
     public void TopDownView()

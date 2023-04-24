@@ -251,7 +251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1142080958
 PrefabInstance:
@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954992241282491323, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8954992241282491323, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
       propertyPath: m_LocalScale.x
@@ -326,6 +326,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
+--- !u!1001 &1931482121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_Name
+      value: Moon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -567.9025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -679.44965
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198040655577477136, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198040655577477136, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198040655577477136, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 199940970818216614, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 198040655577477136, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+    - {fileID: 199940970818216614, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
 --- !u!1 &2018997073
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +583,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4189792852983098489
 PrefabInstance:
@@ -636,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216922, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216922, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -715,6 +790,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216923, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
+      propertyPath: starInfo
+      value: 
+      objectReference: {fileID: 5806907979250769799}
+    - target: {fileID: 1808238044191216923, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -789,3 +868,48 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5806907979250769799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670878225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7ca60caf607f6408454c9ebe34b892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starInfo:
+  - "Our Sun is a 4.5 billion-year-old main sequence star \u2013 a hot glowing ball
+    of hydrogen and helium at the center of our solar system. The Sun is about 93
+    million miles (150 million kilometers) from Earth, and without its energy, life
+    as we know it could not exist here on our home planet.\nThe Sun is the largest
+    object in our solar system. The Sun\u2019s volume would need 1.3 million Earths
+    to fill it. Its gravity holds the solar system together, keeping everything from
+    the biggest planets to the smallest bits of debris in orbit around it. The hottest
+    part of the Sun is its core, where temperatures top 27 million degrees Fahrenheit
+    (15 million degrees Celsius). The Sun\u2019s activity, from its powerful eruptions
+    to the steady stream of charged particles it sends out, influences the nature
+    of space throughout the solar system."
+  - "When a main sequence star less than eight times the Sun\u2019s mass runs out
+    of hydrogen in its core, it starts to collapse because the energy produced by
+    fusion is the only force fighting gravity\u2019s tendency to pull matter together.
+    But squeezing the core also increases its temperature and pressure, so much so
+    that its helium starts to fuse into carbon, which also releases energy. Hydrogen
+    fusion begins moving into the star\u2019s outer layers, causing them to expand.
+    The result is a red giant, which would appear more orange than red. Eventually,
+    the red giant becomes unstable and begins pulsating, periodically expanding and
+    ejecting some of its atmosphere. Eventually, all of its outer layers blow away,
+    creating an expanding cloud of dust and gas called a planetary nebula. The Sun
+    will become a red giant in about 5 billion years."
+  - "After a red giant has shed all its atmosphere, only the core remains. Scientists
+    call this kind of stellar remnant a white dwarf. A white dwarf is usually Earth-size
+    but hundreds of thousands of times more massive. A teaspoon of its material would
+    weigh more than a pickup truck. A white dwarf produces no new heat of its own,
+    so it gradually cools over billions of years. Despite the name, white dwarfs
+    can emit visible light that ranges from blue white to red. Scientists sometimes
+    find that white dwarfs are surrounded by dusty disks of material, debris, and
+    even planets \u2013 leftovers from the original star\u2019s red giant phase.
+    In about 10 billion years, after its time as a red giant, the Sun will become
+    a white dwarf."
