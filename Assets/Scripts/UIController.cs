@@ -183,6 +183,8 @@ public class UIController : MonoBehaviour
         GameObject newAccount = Instantiate(accountPrefab, objectInfoUI.transform);
         CanvasScaler scaler = UICanvas.GetComponent<CanvasScaler>();
         scaler.matchWidthOrHeight = 1f;
+        Camera.main.GetComponent<ClickBehavior>().enabled = false;
+        Camera.main.GetComponent<CameraMovement>().enabled = false;
     }
 
     public void TopDownView()
