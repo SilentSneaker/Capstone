@@ -9,7 +9,7 @@ public class EllipseRenderer : MonoBehaviour
     LineRenderer lr;
 
     [Range(3, 1461)]
-    public int segments;
+    public int segments = 1461;
 
     public Ellipse ellipse;
 
