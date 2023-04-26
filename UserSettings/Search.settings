@@ -1,4 +1,3 @@
-
 trackSelection = true
 fetchPreview = true
 defaultFlags = 0
@@ -14,6 +13,9 @@ scopes = {
 	"last_search.DE949528" = "tool"
 	"OpenInspectorPreview.DE949528" = "0"
 	"currentGroup.DE949528" = "all"
+	"last_search.2138236A" = ""
+	"OpenInspectorPreview.2138236A" = "0"
+	"currentGroup.2138236A" = "asset"
 }
 providers = {
 	adb = {
@@ -73,4 +75,3 @@ queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
-
