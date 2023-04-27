@@ -33,6 +33,7 @@ public class EllipseRenderer : MonoBehaviour
     }
     void onUpdate()
     {
+        if(Application.isPlaying)
         CalculateEllipse();
     }
 }

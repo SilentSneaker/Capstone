@@ -23,13 +23,14 @@ public class FirebaseController : MonoBehaviour
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
     public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
 
-    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
+
     public DatabaseReference DBReference;
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
     public string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
     public GoogleSignInConfiguration configuration;
+    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
     bool isLoggedIn = false;
     bool isLog = false;
@@ -69,6 +70,7 @@ public class FirebaseController : MonoBehaviour
         GoogleSignIn.Configuration.UseGameSignIn = false;
         GoogleSignIn.Configuration.RequestIdToken = true;
         GoogleSignIn.Configuration.RequestEmail = true;
+
         GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnGoogleAuthenticatedFinished);
     }
 
@@ -86,11 +88,13 @@ public class FirebaseController : MonoBehaviour
                 if (task.IsCanceled)
                 {
                     UnityEngine.Debug.LogError("Sign In With Credential Async was canceled");
+                    showNotification("Error","Sign In With Credential Async was canceled");
                     return;
                 }
                 if (task.IsFaulted)
                 {
                     UnityEngine.Debug.LogError("Sign in with credential async encountered an error" + task.Exception);
+                    showNotification("Error","Sign in with credential async encountered an error" + task.Exception);
                     return;
                 }
                 user = auth.CurrentUser;
@@ -140,6 +144,8 @@ public class FirebaseController : MonoBehaviour
         }
 
         signIn(loginEmail.text, loginPassword.text);
+        LoginEmail.text = "";
+        loginPassword.text = "";
     }
     public void userRegister()
     {
@@ -185,8 +191,7 @@ public class FirebaseController : MonoBehaviour
     public void Logout()
     {
         
-        LoginEmail.text = "";
-        AccountUserName.text = "";
+
 
         auth.SignOut();
         OpenLoginScreen();
