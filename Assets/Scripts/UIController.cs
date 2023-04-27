@@ -13,7 +13,9 @@ public class UIController : MonoBehaviour
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextBox;
     public TMP_InputField picture;
-    private TMP_InputField newTextbox;
+
+    private static TMP_InputField displayFactTextbox;
+
     public GameObject yellowSun;
     public GameObject redGiant;
     public GameObject whiteDwarf;
@@ -56,6 +58,8 @@ public class UIController : MonoBehaviour
 
         angledView = UICanvas.transform.Find("3D Model").GetComponent<Button>();
         angledView.onClick.AddListener(AngledView);
+
+        
     }
 
     // Update is called once per frame
@@ -67,14 +71,15 @@ public class UIController : MonoBehaviour
     private void OnViewDropdownValueChanged(int index)
     {
 
-        if (newTextbox != null)
-        {
-            Debug.Log("In destroy textbox function");
-            Destroy(newTextbox.gameObject);
-        }
+        //if (newTextbox != null)
+        //{
+        //    Debug.Log("In destroy textbox function");
+        //    Destroy(newTextbox.gameObject);
+        //}
         // Option 0 - Model view (No TextBoxes only the view dropdown in the top left)
         if (index == 0)
         {
+            displayFactTextbox.gameObject.SetActive(false);
             Debug.Log("Selected Model View");
 
         }
@@ -82,60 +87,54 @@ public class UIController : MonoBehaviour
         else if (index == 1)
         {
             Debug.Log("Selected Info View");
-            newTextbox = Instantiate(factTextBox, Vector3.zero, Quaternion.identity);
-            newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
-            newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
 
-            Debug.Log(starInfo);
-            // Set the text of the textbox to the selected option
-            newTextbox.text = starInfo.GetInfo(starSelected);
-
+            displayFactTextbox.gameObject.SetActive(true);
             // Fit the textbox within the screen constraints
-            RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
+            RectTransform newTextboxRectTransform = displayFactTextbox.GetComponent<RectTransform>();
             newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
-
             //Debug.Log(newTextbox);
         }
         // Option 2 - Personal view (Adds a textbox to the canvas and displays the adjusted information that the user put in)
         else if (index == 2)
         {
+            displayFactTextbox.gameObject.SetActive(false);
             Debug.Log("Selected Personal View");
-            //Debug.Log("Selected Info View");
-            newTextbox = Instantiate(personalTextBox, Vector3.zero, Quaternion.identity);
-            newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
-            newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
+            ////Debug.Log("Selected Info View");
+            //newTextbox = Instantiate(personalTextBox, Vector3.zero, Quaternion.identity);
+            //newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
+            //newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
 
-            // Set the text of the textbox to the selected option
-            //newTextbox.text = viewDropdown.options[index].text;
+            //// Set the text of the textbox to the selected option
+            ////newTextbox.text = viewDropdown.options[index].text;
 
-            // Fit the textbox within the screen constraints
-            RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
-            newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
+            //// Fit the textbox within the screen constraints
+            //RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
+            //newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
         }
         // Option 3 - Picture view (Shows different photos of the object, if there are more than five there should be an option to view more)
         else if (index == 3)
         {
-            Debug.Log("Selected Picture View");
+            //Debug.Log("Selected Picture View");
+            displayFactTextbox.gameObject.SetActive(false);
+            //newTextbox = Instantiate(picture, Vector3.zero, Quaternion.identity);
+            //newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
+            //newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
 
-            newTextbox = Instantiate(picture, Vector3.zero, Quaternion.identity);
-            newTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
-            newTextbox.textComponent.alignment = TextAlignmentOptions.Center;
+            //// Set the text of the textbox to the selected option
+            ////newTextbox.text = viewDropdown.options[index].text;
 
-            // Set the text of the textbox to the selected option
-            //newTextbox.text = viewDropdown.options[index].text;
-
-            // Fit the textbox within the screen constraints
-            RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
-            newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
+            //// Fit the textbox within the screen constraints
+            //RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
+            //newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            //newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
         }
         
     }
@@ -199,5 +198,49 @@ public class UIController : MonoBehaviour
         Debug.Log("Angled View Clicked");
         Camera.main.transform.position = new Vector3(0f, 5f, -5f);
         Camera.main.transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+    }
+
+    public void ChangeText(GameObject clickedObject)
+    {
+        Debug.Log(clickedObject);
+        if (clickedObject.tag == "Sun")
+        {
+            Debug.Log("Made it into the UIController 2");
+            #region If statements for checking the name of the suns
+            if (clickedObject.name.Trim() == "Yellow Sun" || clickedObject.name == "Yellow Sun(Clone)")
+            {
+                Debug.Log(displayFactTextbox);
+                // Set the text of the textbox to the selected option
+                //Instantiating TextBoxes
+                // Info
+                displayFactTextbox = Instantiate(factTextBox, Vector3.zero, Quaternion.identity);
+                displayFactTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
+                displayFactTextbox.textComponent.alignment = TextAlignmentOptions.Center;
+                displayFactTextbox.gameObject.SetActive(false);
+                // Personal
+                // Pictures
+                // Set Textbox Contents
+                displayFactTextbox.text = starInfo.GetInfo(0);
+            }
+            else if (clickedObject.name.Trim() == "Red Giant" || clickedObject.name == "Red Giant(Clone)")
+            {
+                Debug.Log("Made it into the UIController Final");
+                // Set the text of the textbox to the selected option
+                displayFactTextbox.text = starInfo.GetInfo(1);
+            }
+            else if (clickedObject.name.Trim() == "White Dwarf" || clickedObject.name == "White Dwarf(Clone)")
+            {
+                Debug.Log("Made it into the UIController Final");
+                // Set the text of the textbox to the selected option
+                displayFactTextbox.text = starInfo.GetInfo(2);
+            }
+            #endregion
+        }
+    }
+
+    public void MakeTextboxesInvisible()
+    {
+        displayFactTextbox.gameObject.SetActive(false);
+        Debug.Log("Destroyed TextBoxes");
     }
 }

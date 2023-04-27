@@ -11,6 +11,8 @@ public class ClickBehavior : MonoBehaviour
     public Vector3 ogCamPos;
     private bool zoomedIn = false;
 
+    public UIController uIController;
+
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
 
@@ -21,6 +23,8 @@ public class ClickBehavior : MonoBehaviour
         ogCamPos = mainCamera.transform.position;
 
         objectDropdown = new DropdownActivation();
+
+        uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
     }
 
     // Update is called once per frame
@@ -37,13 +41,15 @@ public class ClickBehavior : MonoBehaviour
                 {
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
-                    Debug.Log(clickedObject);
+                    uIController.ChangeText(clickedObject);
+                    //Debug.Log(clickedObject);
                     if (zoomedIn == false)
                     {
                         objectDropdown = clickedObject.GetComponent<DropdownActivation>();
                         objectDropdown.ShowDropdown();
 
                         Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
+                        
                         zoomedIn = true;
                     }
                 }
@@ -52,6 +58,8 @@ public class ClickBehavior : MonoBehaviour
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
                 Camera.main.transform.position = ogCamPos;
+                Debug.Log("Clicked on no object");
+                uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
                 if (objectDropdown != null)
                 {

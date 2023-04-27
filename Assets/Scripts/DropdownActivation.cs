@@ -31,7 +31,7 @@ public class DropdownActivation : MonoBehaviour
         }
         else
         {
-            Debug.Log("viewDropdown is not null");
+            //Debug.Log("viewDropdown is not null");
         }
 
         viewDropdown.interactable = true;
