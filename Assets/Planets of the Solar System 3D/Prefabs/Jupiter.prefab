@@ -4918,9 +4918,10 @@ GameObject:
   - component: {fileID: 4030326048459444}
   - component: {fileID: 205751706758944436}
   - component: {fileID: 6518462326645541621}
+  - component: {fileID: 5604193679624180381}
   m_Layer: 0
   m_Name: Jupiter
-  m_TagString: TrackingObject
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4981,6 +4982,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5604193679624180381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526814149960808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cc6220780ed544384b36172469b8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDropdown: {fileID: 0}
+  starTypeDropdown: {fileID: 0}
 --- !u!1 &1739387421617238
 GameObject:
   m_ObjectHideFlags: 0

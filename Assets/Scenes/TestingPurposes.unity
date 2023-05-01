@@ -251,7 +251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1142080958
 PrefabInstance:
@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954992241282491323, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8954992241282491323, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
       propertyPath: m_LocalScale.x
@@ -326,6 +326,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95ef4d2935b3d34b9a42382c3c9ef3a, type: 3}
+--- !u!1001 &1459468174
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1526814149960808, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_Name
+      value: Jupiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2236669
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1674441
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030326048459444, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e4bfb3c6ba1d4bc4ba31d585abdae0f, type: 3}
 --- !u!1001 &1931482121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4693579709242440, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
       propertyPath: m_LocalPosition.x
@@ -517,6 +574,7 @@ MonoBehaviour:
   clickedObject: {fileID: 0}
   selectedTag: 
   ogCamPos: {x: 0, y: 0, z: 0}
+  uIController: {fileID: 0}
 --- !u!1 &2046123549
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +641,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4189792852983098489
 PrefabInstance:
@@ -698,6 +756,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce3e3500315a45418ae71c26effeec4, type: 3}
+--- !u!1001 &5133317126680571561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 300.47974
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -476.86435
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440065005673140394, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785522094779271696, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
+      propertyPath: m_Name
+      value: Phobos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 528f2594c11bc434183550f4e2fe94ec, type: 3}
 --- !u!1001 &5806907979250769788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,7 +850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216922, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216922, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -816,7 +931,7 @@ PrefabInstance:
     - target: {fileID: 1808238044191216923, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: starInfo
       value: 
-      objectReference: {fileID: 5806907979250769799}
+      objectReference: {fileID: 0}
     - target: {fileID: 1808238044191216923, guid: d2a65bfc1ec2b904ea21140e35f82dbc, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -920,7 +1035,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5806907979250769799
+--- !u!114 &5806907979250769805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -929,39 +1044,168 @@ MonoBehaviour:
   m_GameObject: {fileID: 670878225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7ca60caf607f6408454c9ebe34b892, type: 3}
+  m_Script: {fileID: 11500000, guid: 85a95c18b169e0349b38e674618ba599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starInfo:
-  - "Our Sun is a 4.5 billion-year-old main sequence star \u2013 a hot glowing ball
-    of hydrogen and helium at the center of our solar system. The Sun is about 93
-    million miles (150 million kilometers) from Earth, and without its energy, life
-    as we know it could not exist here on our home planet.\nThe Sun is the largest
-    object in our solar system. The Sun\u2019s volume would need 1.3 million Earths
-    to fill it. Its gravity holds the solar system together, keeping everything from
-    the biggest planets to the smallest bits of debris in orbit around it. The hottest
-    part of the Sun is its core, where temperatures top 27 million degrees Fahrenheit
-    (15 million degrees Celsius). The Sun\u2019s activity, from its powerful eruptions
-    to the steady stream of charged particles it sends out, influences the nature
-    of space throughout the solar system."
-  - "When a main sequence star less than eight times the Sun\u2019s mass runs out
-    of hydrogen in its core, it starts to collapse because the energy produced by
-    fusion is the only force fighting gravity\u2019s tendency to pull matter together.
-    But squeezing the core also increases its temperature and pressure, so much so
-    that its helium starts to fuse into carbon, which also releases energy. Hydrogen
-    fusion begins moving into the star\u2019s outer layers, causing them to expand.
-    The result is a red giant, which would appear more orange than red. Eventually,
-    the red giant becomes unstable and begins pulsating, periodically expanding and
-    ejecting some of its atmosphere. Eventually, all of its outer layers blow away,
-    creating an expanding cloud of dust and gas called a planetary nebula. The Sun
-    will become a red giant in about 5 billion years."
-  - "After a red giant has shed all its atmosphere, only the core remains. Scientists
-    call this kind of stellar remnant a white dwarf. A white dwarf is usually Earth-size
-    but hundreds of thousands of times more massive. A teaspoon of its material would
-    weigh more than a pickup truck. A white dwarf produces no new heat of its own,
-    so it gradually cools over billions of years. Despite the name, white dwarfs
-    can emit visible light that ranges from blue white to red. Scientists sometimes
-    find that white dwarfs are surrounded by dusty disks of material, debris, and
-    even planets \u2013 leftovers from the original star\u2019s red giant phase.
-    In about 10 billion years, after its time as a red giant, the Sun will become
-    a white dwarf."
+  planetInfo:
+  - "The smallest planet in our solar system and nearest to the Sun, Mercury is only
+    slightly larger than Earth's Moon.\nFrom the surface of Mercury, the Sun would
+    appear more than three times as large as it does when viewed from Earth, and
+    the sunlight would be as much as seven times brighter. Despite its proximity
+    to the Sun, Mercury is not the hottest planet in our solar system \u2013 that
+    title belongs to nearby Venus, thanks to its dense atmosphere.\nBecause of Mercury's
+    elliptical \u2013 egg-shaped \u2013 orbit, and sluggish rotation, the Sun appears
+    to rise briefly, set, and rise again from some parts of the planet's surface.
+    The same thing happens in reverse at sunset."
+  - "Venus is the second planet from the Sun and is Earth\u2019s closest planetary
+    neighbor. It\u2019s one of the four inner, terrestrial (or rocky) planets, and
+    it\u2019s often called Earth\u2019s twin because it\u2019s similar in size and
+    density. These are not identical twins, however \u2013 there are radical differences
+    between the two worlds.\nVenus has a thick, toxic atmosphere filled with carbon
+    dioxide and it\u2019s perpetually shrouded in thick, yellowish clouds of sulfuric
+    acid that trap heat, causing a runaway greenhouse effect. It\u2019s the hottest
+    planet in our solar system, even though Mercury is closer to the Sun. Surface
+    temperatures on Venus are about 900 degrees Fahrenheit (475 degrees Celsius)
+    \u2013 hot enough to melt lead. The surface is a rusty color and it\u2019s peppered
+    with intensely crunched mountains and thousands of large volcanoes. Scientists
+    think it\u2019s possible some volcanoes are still active.\nVenus has crushing
+    air pressure at its surface \u2013 more than 90 times that of Earth \u2013 similar
+    to the pressure you'd encounter a mile below the ocean on Earth.\nAnother big
+    difference from Earth \u2013 Venus rotates on its axis backward, compared to
+    most of the other planets in the solar system. This means that, on Venus, the
+    Sun rises in the west and sets in the east, opposite to what we experience on
+    Earth."
+  - "Our home planet is the third planet from the Sun, and the only place we know
+    of so far that\u2019s inhabited by living things.\nWhile Earth is only the fifth
+    largest planet in the solar system, it is the only world in our solar system
+    with liquid water on the surface. Just slightly larger than nearby Venus, Earth
+    is the biggest of the four planets closest to the Sun, all of which are made
+    of rock and metal.\nThe name Earth is at least 1,000 years old. All of the planets,
+    except for Earth, were named after Greek and Roman gods and goddesses. However,
+    the name Earth is a Germanic word, which simply means \u201Cthe ground.\u201D"
+  - "\u200BMars is the fourth planet from the Sun \u2013 a dusty, cold, desert world
+    with a very thin atmosphere. Mars is also a dynamic planet with seasons, polar
+    ice caps, canyons, extinct volcanoes, and evidence that it was even more active
+    in the past.\nMars is one of the most explored bodies in our solar system, and
+    it's the only planet where we've sent rovers to roam the alien landscape.\nNASA
+    currently has two rovers (Curiosity and Perseverance), one lander (InSight),
+    and one helicopter (Ingenuity) exploring the surface of Mars."
+  - "Jupiter has a long history of surprising scientists \u2013 all the way back
+    to 1610 when Galileo Galilei found the first moons beyond Earth. That discovery
+    changed the way we see the universe.\nFifth in line from the Sun, Jupiter is,
+    by far, the largest planet in the solar system \u2013 more than twice as massive
+    as all the other planets combined.\nJupiter's familiar stripes and swirls are
+    actually cold, windy clouds of ammonia and water, floating in an atmosphere of
+    hydrogen and helium. Jupiter\u2019s iconic Great Red Spot is a giant storm bigger
+    than Earth that has raged for hundreds of years.\nOne spacecraft \u2013 NASA's
+    Juno orbiter \u2013 is currently exploring this giant world."
+  - "Saturn is the sixth planet from the Sun and the second-largest planet in our
+    solar system.\nAdorned with thousands of beautiful ringlets, Saturn is unique
+    among the planets. It is not the only planet to have rings \u2013 made of chunks
+    of ice and rock \u2013 but none are as spectacular or as complicated as Saturn's.\nLike
+    fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and
+    helium."
+  - 'Uranus is the seventh planet from the Sun, and has the third-largest diameter
+    in our solar system. It was the first planet found with the aid of a telescope,
+    Uranus was discovered in 1781 by astronomer William Herschel, although he originally
+    thought it was either a comet or a star.
+
+    It was two years later that the
+    object was universally accepted as a new planet, in part because of observations
+    by astronomer Johann Elert Bode. Herschel tried unsuccessfully to name his discovery
+    Georgium Sidus after King George III. Instead, the scientific community accepted
+    Bode''s suggestion to name it Uranus, after the Greek god of the sky.'
+  - 'Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth
+    and most distant planet in our solar system.
+
+    More than 30 times as far from
+    the Sun as Earth, Neptune is the only planet in our solar system not visible
+    to the naked eye and the first predicted by mathematics before its discovery.
+    In 2011 Neptune completed its first 165-year orbit since its discovery in 1846.
+
+    NASA''s
+    Voyager 2 is the only spacecraft to have visited Neptune up close. It flew past
+    in 1989 on its way out of the solar system.'
+--- !u!114 &5806907979250769806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670878225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83386f38d7926843a2af3539d9a58d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dwarfPlanetInfo:
+  - "Pluto is a dwarf planet in the Kuiper Belt, a donut-shaped region of icy bodies
+    beyond the orbit of Neptune. There may be millions of these icy objects, collectively
+    referred to as Kuiper Belt objects (KBOs) or trans-Neptunian objects (TNOs),
+    in this distant region of our solar system. Pluto \u2013 which is smaller than
+    Earth\u2019s Moon \u2013 has a heart-shaped glacier that\u2019s the size of Texas
+    and Oklahoma. This fascinating world has blue skies, spinning moons, mountains
+    as high as the Rockies, and it snows \u2013 but the snow is red. On July 14,
+    2015, NASA\u2019s New Horizons spacecraft made its historic flight through the
+    Pluto system \u2013 providing the first close-up images of Pluto and its moons
+    and collecting other data that has transformed our understanding of these mysterious
+    worlds on the solar system\u2019s outer frontier. In the years since that groundbreaking
+    flyby, nearly every conjecture about Pluto possibly being an inert ball of ice
+    has been thrown out the window or flipped on its head. \u201CIt\u2019s clear
+    to me that the solar system saved the best for last!\u201D said Alan Stern, New
+    Horizons principal investigator from the Southwest Research Institute, Boulder,
+    Colorado. \u201CWe could not have explored a more fascinating or scientifically
+    important planet at the edge of our solar system.The New Horizons team worked
+    for 15 years to plan and execute this flyby and Pluto paid us back in spades!\u201D"
+  - Dwarf planet Ceres is the largest object in the asteroid belt between Mars and
+    Jupiter, and it's the only dwarf planet located in the inner solar system. It
+    was the first member of the asteroid belt to be discovered when Giuseppe Piazzi
+    spotted it in 1801. And when NASA's Dawn arrived in 2015, Ceres became the first
+    dwarf planet to receive a visit from a spacecraft. Called an asteroid for many
+    years, Ceres is so much bigger and so different from its rocky neighbors that
+    scientists classified it as a dwarf planet in 2006.Even though Ceres comprises
+    25 % of the asteroid belt's total mass, Pluto is still 14 times more massive.
+  - "Along with fellow dwarf planets Pluto, Eris, and Haumea, Makemake is located
+    in the Kuiper Belt, a donut-shaped region of icy bodies beyond the orbit of Neptune.
+    Slightly smaller than Pluto, Makemake is the second-brightest object in the Kuiper
+    Belt as seen from Earth (while Pluto is the brightest). It takes about 305 Earth
+    years for this dwarf planet to make one trip around the Sun. Makemake holds an
+    important place in the history of solar system studies because it \u2013 along
+    with Eris \u2013 was one of the objects whose discovery prompted the International
+    Astronomical Union to reconsider the definition of a planet and to create the
+    new group of dwarf planets. Makemake was first observed in March 2005 by M.E.
+    Brown, C.A. Trujillo, and D.L. Rabinowitz at the Palomar Observatory. Its unofficial
+    codename was Easterbunny. Before this dwarf planet was confirmed, its provisional
+    name was 2005 FY9. In 2016, NASA\u2019s Hubble Space Telescope spotted a small,
+    dark moon orbiting Makemake."
+  - Haumea is roughly the same size as Pluto. It is one of the fastest rotating large
+    objects in our solar system. The fast spin distorts Haumea's shape, making this
+    dwarf planet look like a football. Two teams claim credit for discovering Haumea
+    citing evidence from observations made in 2003 and 2004.The International Astronomical
+    Union's Gazetteer of Planetary Nomenclature lists the discovery location as Sierra
+    Nevada Observatory in Spain on Mar. 7, 2003, but no official discoverer is listed.
+    Everything we know about Haumea is from observations with ground - based telescopes
+    from around the world.
+  - Eris is one of the largest known dwarf planets in our solar system. It's about
+    the same size as Pluto but is three times farther from the Sun. At first, Eris
+    appeared to be larger than Pluto. This triggered a debate in the scientific community
+    that led to the International Astronomical Union's decision in 2006 to clarify
+    the definition of a planet. Pluto, Eris, and other similar objects are now classified
+    as dwarf planets. Eris was discovered on Jan. 5, 2005, from data obtained on
+    Oct. 21, 2003 during a Palomar Observatory survey of the outer solar system by
+    Mike Brown, a professor of planetary astronomy at the California Institute of
+    Technology; Chad Trujillo of the Gemini Observatory; and David Rabinowitz of
+    Yale University.
+--- !u!114 &5806907979250769807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670878225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b95acf1501a9db408a1d9e54cbad88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moonInfo: []
