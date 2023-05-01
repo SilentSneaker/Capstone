@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 200
     height: 947
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 11295
+  controlID: 81
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: 2 by 3
+  m_LastLoadedLayoutName: 
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11330
+  controlID: 16
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 1076
     height: 631
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -315,7 +315,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 32fbffff
+      m_ExpandedIDs: e8d1ffff32fbffff6c590000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -423,22 +423,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Planets of the Solar System 3D/Prefabs/Moons/Moon Textures
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 49
   m_LastFolders:
-  - Assets
-  m_LastFoldersGridSize: -1
+  - Assets/Planets of the Solar System 3D/Prefabs/Moons/Moon Textures
+  m_LastFoldersGridSize: 49
   m_LastProjectPath: C:\Users\shaff\OneDrive\Documents\GitHub\Capstone
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 37.99942}
-    m_SelectedIDs: ec5d0000
-    m_LastClickedID: 24044
-    m_ExpandedIDs: ffffffff00000000ec5d0000ee5d0000f05d00000c5e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 61}
+    m_SelectedIDs: 3a710000
+    m_LastClickedID: 28986
+    m_ExpandedIDs: 00000000005e0000025e0000045e0000065e0000205e0000da70000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -466,7 +466,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000ec5d0000ee5d0000f05d00000c5e0000
+    m_ExpandedIDs: 00000000005e0000025e0000045e0000065e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -519,7 +519,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 49
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 253
 --- !u!114 &15
@@ -874,9 +874,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 532.6453, y: -149.87244, z: 520.14514}
+    m_Target: {x: 1236.8206, y: -681.5094, z: -11.770752}
     speed: 2
-    m_Value: {x: 532.6453, y: -149.87244, z: 520.14514}
+    m_Value: {x: 1236.8206, y: -681.5094, z: -11.770752}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -923,13 +923,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2842543, y: -0.02243477, z: 0.0066535803, w: -0.95846325}
+    m_Target: {x: -0.38204867, y: -0.5380032, z: 0.2979838, w: -0.6897803}
     speed: 2
-    m_Value: {x: -0.28425434, y: -0.022434771, z: 0.006653581, w: -0.9584633}
+    m_Value: {x: -0.3820487, y: -0.53800327, z: 0.29798383, w: -0.68978035}
   m_Size:
-    m_Target: 982.30133
+    m_Target: 1127.1545
     speed: 2
-    m_Value: 982.30133
+    m_Value: 1127.1545
   m_Ortho:
     m_Target: 0
     speed: 2

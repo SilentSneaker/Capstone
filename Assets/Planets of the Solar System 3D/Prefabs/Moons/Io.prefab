@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7845398942442927664}
   - component: {fileID: 7845398942442927671}
   - component: {fileID: 7845398942442927670}
+  - component: {fileID: -3754693013883945568}
   m_Layer: 0
   m_Name: Io
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3754693013883945568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845398942442927669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cc6220780ed544384b36172469b8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDropdown: {fileID: 0}
+  starTypeDropdown: {fileID: 0}

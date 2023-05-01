@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5628306793726733811}
   - component: {fileID: 714283607138715563}
   - component: {fileID: 1220808621410539873}
+  - component: {fileID: -2771028847069124497}
   m_Layer: 0
   m_Name: Calisto
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2771028847069124497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873620085679262718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cc6220780ed544384b36172469b8d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDropdown: {fileID: 0}
+  starTypeDropdown: {fileID: 0}
