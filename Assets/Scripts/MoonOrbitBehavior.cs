@@ -2,27 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthOrbitBehavior : MonoBehaviour
+public class MoonOrbitBehavior : MonoBehaviour
 {
 
-    public Transform Earth;
+    public Transform Moon;
     public Ellipse orbitPath;
 
     [Range(0f, 1f)]
     public float orbitProgress = 0f;
-    public float orbitPeriod = 31557600f;
+    public float orbitPeriod = 2358720f;
     public bool orbitActive = true;
     // Start is called before the first frame update
     void Start()
     {
 
-        setEarthPosition();
+        setMoonPosition();
         StartCoroutine(Animation());
     }
-    void setEarthPosition()
+    void setMoonPosition()
     {
         Vector2 orbitPos = orbitPath.Evaluate(orbitProgress);
-        Earth.localPosition = new Vector3(orbitPos.x,0f, orbitPos.y);
+        Moon.localPosition = new Vector3(orbitPos.x,0f, orbitPos.y);
     }
 
     IEnumerator Animation()
@@ -32,7 +32,7 @@ public class EarthOrbitBehavior : MonoBehaviour
         {
             orbitProgress += Time.deltaTime * orbitSpeed;
             orbitProgress %= 1f;
-            setEarthPosition();
+            setMoonPosition();
             yield return null;
         }
     }

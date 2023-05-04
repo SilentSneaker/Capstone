@@ -9,7 +9,7 @@ public class EllipseRenderer : MonoBehaviour
     LineRenderer lr;
 
     [Range(3, 1461)]
-    public int segments;
+    public int segments = 1461;
 
     public Ellipse ellipse;
 
@@ -33,6 +33,7 @@ public class EllipseRenderer : MonoBehaviour
     }
     void onUpdate()
     {
+        if(Application.isPlaying)
         CalculateEllipse();
     }
 }
