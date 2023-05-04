@@ -12,6 +12,10 @@ public class EarthOrbitBehavior : MonoBehaviour
     public float orbitProgress = 0f;
     public float orbitPeriod = 31557600f;
     public bool orbitActive = true;
+
+
+    public float rotationPeriod = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,9 @@ public class EarthOrbitBehavior : MonoBehaviour
     {
         Vector2 orbitPos = orbitPath.Evaluate(orbitProgress);
         Earth.localPosition = new Vector3(orbitPos.x,0f, orbitPos.y);
+
+        float rotationAngle = Time.deltaTime * (360f/rotationPeriod);
+        Earth.Rotate(0f, rotationAngle, 0f);
     }
 
     IEnumerator Animation()
