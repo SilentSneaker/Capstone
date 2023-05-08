@@ -14,18 +14,17 @@ public class ImageLoader : MonoBehaviour
 
     private IEnumerator LoadImageCoroutine(string imageUrl)
     {
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
-        yield return request.SendWebRequest();
+        UnityWebRequest www = UnityWebRequestTexture.GetTexture(imageUrl);
+        yield return www.SendWebRequest();
 
-        if (request.result == UnityWebRequest.Result.Success)
+        if (www.result == UnityWebRequest.Result.Success)
         {
-            Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+            Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
             rawImage.texture = texture;
-            rawImage.SetNativeSize();
         }
         else
         {
-            Debug.LogError($"Failed to load image: {request.error}");
+            Debug.LogError("Failed to load image. Error: " + www.error);
         }
     }
 }
