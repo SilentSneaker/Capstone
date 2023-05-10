@@ -23,13 +23,14 @@ public class FirebaseController : MonoBehaviour
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
     public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
 
-    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
+
     public DatabaseReference DBReference;
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
     public string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
-    private GoogleSignInConfiguration configuration;
+    public GoogleSignInConfiguration configuration;
+    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
     bool isLoggedIn = false;
     bool isLog = false;
@@ -69,6 +70,7 @@ public class FirebaseController : MonoBehaviour
         GoogleSignIn.Configuration.UseGameSignIn = false;
         GoogleSignIn.Configuration.RequestIdToken = true;
         GoogleSignIn.Configuration.RequestEmail = true;
+
         GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnGoogleAuthenticatedFinished);
     }
 
@@ -86,11 +88,13 @@ public class FirebaseController : MonoBehaviour
                 if (task.IsCanceled)
                 {
                     UnityEngine.Debug.LogError("Sign In With Credential Async was canceled");
+                    showNotification("Error","Sign In With Credential Async was canceled");
                     return;
                 }
                 if (task.IsFaulted)
                 {
                     UnityEngine.Debug.LogError("Sign in with credential async encountered an error" + task.Exception);
+                    showNotification("Error","Sign in with credential async encountered an error" + task.Exception);
                     return;
                 }
                 user = auth.CurrentUser;
@@ -140,6 +144,8 @@ public class FirebaseController : MonoBehaviour
         }
 
         signIn(loginEmail.text, loginPassword.text);
+        LoginEmail.text = "";
+        loginPassword.text = "";
     }
     public void userRegister()
     {
@@ -174,16 +180,20 @@ public class FirebaseController : MonoBehaviour
         notificationHeader.text = "";
         NotificationScreen.SetActive(false);
     }
-
+    public void Save()
+    {
+        StartCoroutine(UpdateUserName(AccountUserName.text));
+        StartCoroutine(UpdateWeight(accountWeight.text));
+        StartCoroutine(UpdateHeight(accountHeight.text));
+        UnityEngine.Debug.Log("Information Saved");
+    }
+    
     public void Logout()
     {
-        auth.SignOut();
         
-        LoginEmail.text = "";
-        AccountUserName.text = "";
 
-        UpdateWeight(accountWeight.text);
-        UpdateHeight(accountHeight.text);
+
+        auth.SignOut();
         OpenLoginScreen();
     }
 
@@ -256,9 +266,10 @@ public class FirebaseController : MonoBehaviour
     void InitializeFirebase()
     {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        DBReference = FirebaseDatabase.DefaultInstance.RootReference;
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
-        DBReference = FirebaseDatabase.DefaultInstance.RootReference;
+        
     }
 
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
@@ -389,7 +400,7 @@ public class FirebaseController : MonoBehaviour
     private IEnumerator UpdateWeight(string weight)
     {
         var DBTask = DBReference.Child("users").Child(user.UserId).Child("weight").SetValueAsync(weight);
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompletedSuccessfully);
         if(DBTask.Exception != null)
         {
             UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
@@ -398,7 +409,16 @@ public class FirebaseController : MonoBehaviour
     private IEnumerator UpdateHeight(string height)
     {
         var DBTask = DBReference.Child("users").Child(user.UserId).Child("height").SetValueAsync(height);
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompletedSuccessfully);
+        if (DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator UpdateUserName(string userName)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("username").SetValueAsync(userName);
+        yield return new WaitUntil(predicate:()=> DBTask.IsCompletedSuccessfully);
         if (DBTask.Exception != null)
         {
             UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
@@ -406,8 +426,8 @@ public class FirebaseController : MonoBehaviour
     }
     private IEnumerator LoadUserData()
     {
-        var DBTask = DBReference.Child("user").Child(user.UserId).GetValueAsync();
-        yield return new WaitUntil(predicate:() =>DBTask.IsCompleted);
+        var DBTask = DBReference.Child("users").Child(user.UserId).GetValueAsync();
+        yield return new WaitUntil(predicate:() =>DBTask.IsCompletedSuccessfully);
         if(DBTask.Exception != null)
         {
             UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
