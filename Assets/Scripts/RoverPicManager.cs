@@ -13,6 +13,7 @@ public class RoverPicManager : MonoBehaviour
     private const string RoverEndpoint = "/rovers/{roverName}/latest_photos";
     private const string APIKeyParam = "?api_key=";
     private const string APICamera = "&camera=navcam";
+    private const string APIEarthDate = "2016-8-6";
 
     public string RoverName = "curiosity"; // Replace with the rover name you want to access
 
@@ -22,10 +23,10 @@ public class RoverPicManager : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(FetchImages());
+        //StartCoroutine(FetchImages());
     }
 
-    private IEnumerator<object> FetchImages()
+    public IEnumerator<object> FetchImages()
     {
         string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey;
         //string url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3";
@@ -38,15 +39,10 @@ public class RoverPicManager : MonoBehaviour
         {
             // Access the response data
             string response = www.downloadHandler.text;
-            Debug.Log("API response: " + response);
-            // Parse the JSON response
-            string json = www.downloadHandler.text;
-            //Debug.Log(json);
-            //MarsRoverData roverData = JsonUtility.FromJson<MarsRoverData>(json);
-            //Debug.Log(roverData.photos);
-
+            //Debug.Log("API response: " + response);
+            
             // Parse JSON response into wrapper object
-            ImageDataWrapper wrapper = JsonUtility.FromJson<ImageDataWrapper>(json);
+            ImageDataWrapper wrapper = JsonUtility.FromJson<ImageDataWrapper>(response);
 
             // Extract image data from the wrapper
             images = wrapper.latest_photos;
@@ -70,25 +66,32 @@ public class RoverPicManager : MonoBehaviour
             Debug.LogError("Failed to fetch data from the Mars Rover API. Error: " + www.error);
         }
     }
-    private IEnumerator<object> LoadImage(string url)
-    {
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
-        yield return www.SendWebRequest();
 
-        if (www.result == UnityWebRequest.Result.Success)
-        {
-            Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
-            rawImage.texture = texture;
-        }
-        else
-        {
-            Debug.LogError("Failed to load image. Error: " + www.error);
-        }
-    }
+    //Used to test if pictures are received from API
+    //private IEnumerator<object> LoadImage(string url)
+    //{
+    //    UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+    //    yield return www.SendWebRequest();
+
+    //    if (www.result == UnityWebRequest.Result.Success)
+    //    {
+    //        Texture2D texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+    //        rawImage.texture = texture;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Failed to load image. Error: " + www.error);
+    //    }
+    //}
 
     public void SetRover(string rover)
     {
         RoverName = rover;
+    }
+
+    public ImageData[] GetImages()
+    {
+        return images;
     }
 }
 
