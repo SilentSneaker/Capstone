@@ -22,7 +22,7 @@ public class ClickBehavior : MonoBehaviour
         mainCamera = Camera.main;
         ogCamPos = mainCamera.transform.position;
 
-        objectDropdown = new DropdownActivation();
+        //objectDropdown = new DropdownActivation();
 
         uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
     }
@@ -79,31 +79,5 @@ public class ClickBehavior : MonoBehaviour
         }*/
     }
 
-    //public static bool isPointerOverUIObject()
-    //{
-    //    // Get the position of the mouse cursor
-    //    Vector2 mousePosition = Input.mousePosition;
-
-    //    // Create a new pointer event data with the current event system
-    //    PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-    //    eventDataCurrentPosition.position = mousePosition;
-
-    //    // Create a list to hold the results of the raycast
-    //    List<RaycastResult> results = new List<RaycastResult>();
-
-    //    // Perform a raycast to determine which UI element the mouse is currently over
-    //    EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-
-    //    // Check if any of the raycast results are child objects of the canvas that this script is attached to
-    //    foreach (RaycastResult result in results)
-    //    {
-    //        if (result.gameObject.transform.IsChildOf(transform))
-    //        {
-    //            return true;
-    //        }
-    //    }
-
-    //    // If none of the raycast results were child objects of this canvas, return false
-    //    return false;
-    //}
+   
 }

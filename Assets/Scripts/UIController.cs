@@ -4,15 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using System;
 
 public class UIController : MonoBehaviour
-{   
+{
+    #region Variables
     public Canvas UICanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextBox;
-    public TMP_InputField picture;
+
+    public GameObject imagePrefab;
+    public GameObject imageGallery;
 
     private static TMP_InputField displayFactTextbox;
 
@@ -32,11 +36,20 @@ public class UIController : MonoBehaviour
     public Vector3 sunCoordinates = new Vector3(0f, 0f, 0f);
 
     public Button profile;
+    public Button roverPhotos;
     public Button topDownView;
     public Button angledView;
 
     public GameObject accountPrefab;
     public GameObject objectInfoUI;
+
+    ImageLoader imageLoader;
+
+    bool viewingMars;
+    TMP_Dropdown roverDropdown;
+
+    RoverPicManager picManager;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -45,11 +58,22 @@ public class UIController : MonoBehaviour
         viewDropdown = UICanvas.transform.Find("ViewDropdown").GetComponent<TMP_Dropdown>();
         viewDropdown.onValueChanged.AddListener(OnViewDropdownValueChanged);
 
+        roverPhotos = UICanvas.transform.Find("Rover Photos").GetComponent<Button>();
+        roverPhotos.onClick.AddListener(ShowRoverPhotos);
+
+        imageGallery = UICanvas.transform.Find("ImageGallery").gameObject;
+        roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
+        roverDropdown.onValueChanged.AddListener(ChangeRover);
+
+        picManager = gameObject.GetComponent<RoverPicManager>();
+
         //Instatiate the info of objects
         starInfo = UICanvas.GetComponent<StarInfo>();
         moonInfo = UICanvas.GetComponent<MoonInfo>();
         planetInfo = UICanvas.GetComponent<PlanetInfo>();
         dwarfPlanetInfo = UICanvas.GetComponent<DwarfPlanetInfo>();
+
+        imageLoader = transform.Find("ImageGallery").GetComponent<ImageLoader>();
 
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
@@ -66,7 +90,22 @@ public class UIController : MonoBehaviour
         angledView = UICanvas.transform.Find("3D Model").GetComponent<Button>();
         angledView.onClick.AddListener(AngledView);
 
-        
+    }
+
+    private void ChangeRover(int option)
+    {
+        if (option == 0)
+        {
+            picManager.SetRover("curiosity");
+        }
+        else if (option == 1)
+        {
+            picManager.SetRover("spirit");
+        }
+        else if (option == 2)
+        {
+            picManager.SetRover("opportunity");
+        }
     }
 
     // Update is called once per frame
@@ -82,6 +121,10 @@ public class UIController : MonoBehaviour
         if (index == 0)
         {
             displayFactTextbox.gameObject.SetActive(false);
+
+            imageGallery.SetActive(false);
+
+            UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
             //Debug.Log("Selected Model View");
 
         }
@@ -89,6 +132,11 @@ public class UIController : MonoBehaviour
         else if (index == 1)
         {
             displayFactTextbox.gameObject.SetActive(true);
+
+            imageGallery.SetActive(false);
+
+            UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
+
             // Fit the textbox within the screen constraints
             RectTransform newTextboxRectTransform = displayFactTextbox.GetComponent<RectTransform>();
             newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
@@ -102,6 +150,10 @@ public class UIController : MonoBehaviour
         {
             displayFactTextbox.gameObject.SetActive(false);
 
+            imageGallery.SetActive(false);
+
+            UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
+
             //// Fit the textbox within the screen constraints
             //RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
             //newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
@@ -114,12 +166,20 @@ public class UIController : MonoBehaviour
         {
             displayFactTextbox.gameObject.SetActive(false);
 
-            //// Fit the textbox within the screen constraints
-            //RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
-            //newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
+            imageGallery.SetActive(true);
+
+            UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
+
+            // Fit the textbox within the screen constraints
+            RectTransform newTextboxRectTransform = imageGallery.GetComponent<RectTransform>();
+            newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
+            if(viewingMars == true)
+            {
+                roverPhotos.gameObject.SetActive(true);
+            }            
         }
         
     }
@@ -320,6 +380,7 @@ public class UIController : MonoBehaviour
             else if (clickedObject.name.Trim() == "Mars" || clickedObject.name == "Mars(Clone)")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(3);
+                viewingMars = true;
             }
             else if (clickedObject.name.Trim() == "Jupiter" || clickedObject.name == "Jupiter(Clone)")
             {
@@ -341,7 +402,7 @@ public class UIController : MonoBehaviour
         }
         else if(clickedObject.tag == "Dwarf Planet")
         {
-            Debug.Log("In Dwarf planet if statement");
+            //Debug.Log("In Dwarf planet if statement");
             #region If statements for checking the name of the planets
             if (clickedObject.name.Trim() == "Pluto" || clickedObject.name == "Pluto(Clone)")
             {
@@ -370,6 +431,19 @@ public class UIController : MonoBehaviour
     public void MakeTextboxesInvisible()
     {
         displayFactTextbox.gameObject.SetActive(false);
+        imageGallery.gameObject.SetActive(false);
+        if (roverPhotos.IsActive())
+        {
+            roverDropdown.gameObject.SetActive(false);
+            roverPhotos.gameObject.SetActive(false);            
+            viewingMars = false;
+        }
         Debug.Log("Destroyed TextBoxes");
+    }
+
+    public void ShowRoverPhotos()
+    {
+        imageLoader.LoadImage(imageGallery);
+        roverDropdown.gameObject.SetActive(true);
     }
 }
