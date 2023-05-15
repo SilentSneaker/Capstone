@@ -32,8 +32,6 @@ public class ImageLoader : MonoBehaviour
                 }
                 rawImage = imageGallery.transform.Find("Viewport/Content/Image " + (i + 1)).GetComponent<RawImage>();
 
-                Debug.Log(rawImage);
-
                 UnityWebRequest www = UnityWebRequestTexture.GetTexture(imageUrl[i].img_src);
                 yield return www.SendWebRequest();
 
