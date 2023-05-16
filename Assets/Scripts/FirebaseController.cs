@@ -22,13 +22,10 @@ public class FirebaseController : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
-<<<<<<< Updated upstream
-=======
     private string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
     public GoogleSignInConfiguration configuration;
     Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
->>>>>>> Stashed changes
     bool isLoggedIn = false;
     bool isLog = false;
 
@@ -53,8 +50,6 @@ public class FirebaseController : MonoBehaviour
             }
         });
     }
-<<<<<<< Updated upstream
-=======
     public void GoogleSignInClick()
     {
         GoogleSignIn.Configuration = configuration;
@@ -99,7 +94,6 @@ public class FirebaseController : MonoBehaviour
             });
         }
     }
->>>>>>> Stashed changes
     public void OpenLoginScreen()
     {
         loginScreen.SetActive(true);
