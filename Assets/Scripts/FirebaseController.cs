@@ -22,6 +22,13 @@ public class FirebaseController : MonoBehaviour
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
+<<<<<<< Updated upstream
+=======
+    private string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
+    public GoogleSignInConfiguration configuration;
+    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
+
+>>>>>>> Stashed changes
     bool isLoggedIn = false;
     bool isLog = false;
 
@@ -46,6 +53,53 @@ public class FirebaseController : MonoBehaviour
             }
         });
     }
+<<<<<<< Updated upstream
+=======
+    public void GoogleSignInClick()
+    {
+        GoogleSignIn.Configuration = configuration;
+        GoogleSignIn.Configuration.UseGameSignIn = false;
+        GoogleSignIn.Configuration.RequestIdToken = true;
+        GoogleSignIn.Configuration.RequestEmail = true;
+
+        GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnGoogleAuthenticatedFinished);
+    }
+
+    void OnGoogleAuthenticatedFinished(Task<GoogleSignInUser> task)
+    {
+        if (task.IsFaulted)
+            UnityEngine.Debug.LogError("Fault");
+        else if (task.IsCanceled)
+            UnityEngine.Debug.LogError("Login Cancelled");
+        else
+        {
+            Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
+            auth.SignInWithCredentialAsync(credential).ContinueWithOnMainThread(task =>
+            {
+                showNotification("In Signin","Sign in with credential async has started");
+                if (task.IsCanceled)
+                {
+                    UnityEngine.Debug.LogError("Sign In With Credential Async was canceled");
+                    showNotification("Error","Sign In With Credential Async was canceled");
+                    return;
+                }
+                if (task.IsFaulted)
+                {
+                    UnityEngine.Debug.LogError("Sign in with credential async encountered an error" + task.Exception);
+                    showNotification("Error","Sign in with credential async encountered an error" + task.Exception);
+                    return;
+                }
+                showNotification("In Signin","Sign in with credential async has finished");
+                user = auth.CurrentUser;
+
+                AccountUserName.text = user.DisplayName;
+                LoginEmail.text = user.Email;
+
+                OpenAccountScreen();
+            });
+        }
+    }
+>>>>>>> Stashed changes
     public void OpenLoginScreen()
     {
         loginScreen.SetActive(true);
