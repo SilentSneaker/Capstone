@@ -7,28 +7,42 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Auth;
 using System;
+using Firebase.Database;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Firebase.Extensions;
+using static System.Net.Mime.MediaTypeNames;
+using System.Net;
+using Google;
+using System.Net.Http;
 
 public class FirebaseController : MonoBehaviour
 {
 
     public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen;
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
-    public Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
+    public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
 
 
+    public DatabaseReference DBReference;
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
 
-    private string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
+    public string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
     public GoogleSignInConfiguration configuration;
     Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
     bool isLoggedIn = false;
     bool isLog = false;
 
+    void Awake()
+    {
+        configuration = new GoogleSignInConfiguration
+        {
+            WebClientId = GoogleWebAPI,
+            RequestIdToken = true
+        };
+    }
     void Start()
     {
         OpenLoginScreen();
@@ -71,7 +85,6 @@ public class FirebaseController : MonoBehaviour
             Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
             auth.SignInWithCredentialAsync(credential).ContinueWithOnMainThread(task =>
             {
-                showNotification("In Signin","Sign in with credential async has started");
                 if (task.IsCanceled)
                 {
                     UnityEngine.Debug.LogError("Sign In With Credential Async was canceled");
@@ -84,13 +97,13 @@ public class FirebaseController : MonoBehaviour
                     showNotification("Error","Sign in with credential async encountered an error" + task.Exception);
                     return;
                 }
-                showNotification("In Signin","Sign in with credential async has finished");
                 user = auth.CurrentUser;
 
                 AccountUserName.text = user.DisplayName;
                 LoginEmail.text = user.Email;
 
-                OpenAccountScreen();
+                loginScreen.SetActive(false);
+                AccountScreen.SetActive(true);
             });
         }
     }
@@ -131,6 +144,8 @@ public class FirebaseController : MonoBehaviour
         }
 
         signIn(loginEmail.text, loginPassword.text);
+        LoginEmail.text = "";
+        loginPassword.text = "";
     }
     public void userRegister()
     {
@@ -165,13 +180,20 @@ public class FirebaseController : MonoBehaviour
         notificationHeader.text = "";
         NotificationScreen.SetActive(false);
     }
-
+    public void Save()
+    {
+        StartCoroutine(UpdateUserName(AccountUserName.text));
+        StartCoroutine(UpdateWeight(accountWeight.text));
+        StartCoroutine(UpdateHeight(accountHeight.text));
+        UnityEngine.Debug.Log("Information Saved");
+    }
+    
     public void Logout()
     {
-        auth.SignOut();
         
-        LoginEmail.text = "";
-        AccountUserName.text = "";
+
+
+        auth.SignOut();
         OpenLoginScreen();
     }
 
@@ -237,14 +259,17 @@ public class FirebaseController : MonoBehaviour
 
             LoginEmail.text = newUser.Email;
             AccountUserName.text = ""+newUser.DisplayName;
+
             OpenAccountScreen();
         });
     }
     void InitializeFirebase()
     {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        DBReference = FirebaseDatabase.DefaultInstance.RootReference;
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
+        
     }
 
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
@@ -371,5 +396,52 @@ public class FirebaseController : MonoBehaviour
             }
             showNotification("Alert", "Password Recovery sent to email");
         });
+    }
+    private IEnumerator UpdateWeight(string weight)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("weight").SetValueAsync(weight);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompletedSuccessfully);
+        if(DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator UpdateHeight(string height)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("height").SetValueAsync(height);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompletedSuccessfully);
+        if (DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator UpdateUserName(string userName)
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).Child("username").SetValueAsync(userName);
+        yield return new WaitUntil(predicate:()=> DBTask.IsCompletedSuccessfully);
+        if (DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+    }
+    private IEnumerator LoadUserData()
+    {
+        var DBTask = DBReference.Child("users").Child(user.UserId).GetValueAsync();
+        yield return new WaitUntil(predicate:() =>DBTask.IsCompletedSuccessfully);
+        if(DBTask.Exception != null)
+        {
+            UnityEngine.Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            accountHeight.text= "0";
+            accountWeight.text= "0";
+        }
+        else
+        {
+            DataSnapshot snapShot = DBTask.Result;
+            accountWeight.text= snapShot.Child("weight").Value.ToString();
+            accountHeight.text = snapShot.Child("height").Value.ToString();
+        }
     }
 }
