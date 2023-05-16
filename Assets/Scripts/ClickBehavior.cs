@@ -13,6 +13,8 @@ public class ClickBehavior : MonoBehaviour
 
     public UIController uIController;
 
+    NASAImageAPI imageAPI;
+
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
 
@@ -25,6 +27,8 @@ public class ClickBehavior : MonoBehaviour
         //objectDropdown = new DropdownActivation();
 
         uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
+
+        imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
     }
 
     // Update is called once per frame
@@ -41,6 +45,7 @@ public class ClickBehavior : MonoBehaviour
                 {
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
+                    imageAPI.SetSearchQuery(clickedObject.name);
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
                     if (zoomedIn == false)
