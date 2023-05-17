@@ -30,7 +30,6 @@ public class FirebaseController : MonoBehaviour
 
     public string GoogleWebAPI = "408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com";
     public GoogleSignInConfiguration configuration;
-    Firebase.DependencyStatus dependencyStatus = Firebase.DependencyStatus.UnavailableOther;
 
     bool isLoggedIn = false;
     bool isLog = false;
