@@ -104,4 +104,6 @@ public class ImageLoader : MonoBehaviour
             Debug.Log("image array is empty");
         }
     }
+
+    
 }

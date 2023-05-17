@@ -12,21 +12,18 @@ public class NASAImageAPI : MonoBehaviour
     public string searchQuery = "mars";
     private Texture2D retrievedImage;
     public RawImage rawImage;
-    List<string> imageUrls;
+    List<string> imageUrls = new List<string>();
 
     // Start is called before the first frame update
     void Start()
     {
-        rawImage = gameObject.transform.Find("Test").GetComponent<RawImage>();
        // StartCoroutine(FetchImageData());
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Display the retrieved image in your Unity scene
-        // Example: Apply the image as a texture to a UI RawImage component
-        //rawImage.texture = retrievedImage;
+       
     }
 
     public void SetSearchQuery(string obj)
@@ -36,7 +33,9 @@ public class NASAImageAPI : MonoBehaviour
 
     public IEnumerator FetchImageData()
     {
-        string requestUrl = $"https://images-api.nasa.gov/search?q=mars%&media_type=image";
+
+        string requestUrl = $"https://images-api.nasa.gov/search?q={searchQuery}%&media_type=image";
+        //string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey;
 
         UnityWebRequest webRequest = UnityWebRequest.Get(requestUrl);
 
@@ -51,22 +50,32 @@ public class NASAImageAPI : MonoBehaviour
             // Access the response data
             string response = webRequest.downloadHandler.text;
 
-            Debug.Log(response);
+            Debug.Log(searchQuery);
 
             // Parse JSON response into wrapper object
             ImageDataWrapper wrapper = JsonUtility.FromJson<ImageDataWrapper>(response);
 
             // Save images from response into an array that will be returned
 
-            for (int i = 0; i < wrapper.collection.items.Count; i++)
+            if (wrapper.collection.items.Count > 0)
             {
-                imageUrls[i] = wrapper.collection.items[i].links[0].href;
+                Debug.Log("Number of images retreived: " + wrapper.collection.items.Count);
+                for (int i = 0; i < wrapper.collection.items.Count; i++)
+                {
+                    imageUrls.Add(wrapper.collection.items[i].links[0].href);
+                }
+            }
+            else
+            {
+                Debug.Log("Did not get any images");
             }
             //Debug.Log("Number of links: " + wrapper.collection.items.Count);
             //StartCoroutine(LoadImage(imageUrl));
+            
         }
         else
         {
+            Debug.Log(searchQuery);
             Debug.LogError($"Failed to fetch image data. Error: {webRequest.error}");
         }
 
@@ -94,6 +103,10 @@ public class NASAImageAPI : MonoBehaviour
         return imageUrls;
     }
 
+    public void DeleteImages()
+    {
+        imageUrls.Clear();
+    }
     private void ParseImageData(string responseData)
     {
         // Parse the JSON response and extract relevant image information
