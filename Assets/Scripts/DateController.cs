@@ -5,6 +5,12 @@ using System;
 
 public class DateController : MonoBehaviour
 {
+
+
+
+    public FirebaseController fController;
+    
+    
     public static DateTime startDateTime = new DateTime(1982, 3, 10, 0, 0, 0);
     public static DateTime Now = DateTime.Now;
     public static TimeSpan DeltaDate = DateTime.UtcNow - startDateTime;
@@ -28,11 +34,21 @@ public class DateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        endDateTime = new DateTime(endYear,endMonth,endDay,endHour,endMinute,endSecond);
-            if(dateChanged)
-                DeltaDate = endDateTime - startDateTime;
-            else
-                DeltaDate = DateTime.UtcNow - startDateTime;
+        if(string.IsNullOrEmpty(fController.Hours.text))
+            fController.Hours.text = "00";
+        if(string.IsNullOrEmpty(fController.Minutes.text))
+            fController.Minutes.text = "00";
+        if(string.IsNullOrEmpty(fController.Seconds.text))
+            fController.Seconds.text = "00";
+        if(DateTime.TryParse(fController.SelectedDate + " " + fController.Hours + ":" + fController.Minutes + ":" + fController.Seconds, out endDateTime))
+            {
+                
+            }
+        if(!string.IsNullOrEmpty(fController.SelectedDate.text))
+            DeltaDate = endDateTime - startDateTime;
+        else
+            DeltaDate = DateTime.UtcNow - startDateTime;
+
+        UnityEngine.Debug.Log(endDateTime.ToString());
     }
 }

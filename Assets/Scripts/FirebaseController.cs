@@ -15,14 +15,15 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Net;
 using Google;
 using System.Net.Http;
+using TMPro;
 
 public class FirebaseController : MonoBehaviour
 {
 
     public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen;
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
-    public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName;
-
+    public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName, Hours, Minutes, Seconds;
+    public TextMeshProUGUI SelectedDate;
 
     public DatabaseReference DBReference;
     Firebase.Auth.FirebaseAuth auth;
@@ -41,6 +42,7 @@ public class FirebaseController : MonoBehaviour
             WebClientId = GoogleWebAPI,
             RequestIdToken = true
         };
+        UnityEngine.Debug.Log(SelectedDate.text);
     }
     void Start()
     {
