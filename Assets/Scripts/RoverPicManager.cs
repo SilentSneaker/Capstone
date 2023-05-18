@@ -13,7 +13,7 @@ public class RoverPicManager : MonoBehaviour
     private const string RoverEndpoint = "/rovers/{roverName}/latest_photos";
     private const string APIKeyParam = "?api_key=";
     private const string APICamera = "&camera={camera}";
-    public string APICamQuery = "navcam";
+    public string APICamQuery;
     private const string APIEarthDate = "2016-8-6";
 
     public string RoverName = "curiosity"; // Replace with the rover name you want to access
@@ -24,6 +24,7 @@ public class RoverPicManager : MonoBehaviour
 
     public void Start()
     {
+        APICamQuery = "navcam";
         //StartCoroutine(FetchImages());
     }
 
