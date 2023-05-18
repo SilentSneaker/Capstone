@@ -12,7 +12,8 @@ public class RoverPicManager : MonoBehaviour
     private const string BaseURL = "https://api.nasa.gov/mars-photos/api/v1";
     private const string RoverEndpoint = "/rovers/{roverName}/latest_photos";
     private const string APIKeyParam = "?api_key=";
-    private const string APICamera = "&camera=navcam";
+    private const string APICamera = "&camera={camera}";
+    public string APICamQuery = "navcam";
     private const string APIEarthDate = "2016-8-6";
 
     public string RoverName = "curiosity"; // Replace with the rover name you want to access
@@ -28,7 +29,7 @@ public class RoverPicManager : MonoBehaviour
 
     public IEnumerator<object> FetchImages()
     {
-        string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey;
+        string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey + APICamera.Replace("{camera}", APICamQuery);
         //string url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3";
         Debug.Log(url); 
         UnityWebRequest www = UnityWebRequest.Get(url);
@@ -87,6 +88,11 @@ public class RoverPicManager : MonoBehaviour
     public void SetRover(string rover)
     {
         RoverName = rover;
+    }
+
+    public void SetCamera(string camera)
+    {
+        APICamQuery = camera;
     }
 
     public ImageData[] GetImages()

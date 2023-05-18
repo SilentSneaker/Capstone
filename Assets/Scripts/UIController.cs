@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     public Canvas UICanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
+
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextBox;
 
@@ -47,8 +48,9 @@ public class UIController : MonoBehaviour
 
     bool viewingMars;
     TMP_Dropdown roverDropdown;
+    TMP_Dropdown cameraSelector;
 
-    RoverPicManager picManager;
+    RoverPicManager picManager;    
     #endregion
 
     // Start is called before the first frame update
@@ -64,6 +66,9 @@ public class UIController : MonoBehaviour
         imageGallery = UICanvas.transform.Find("ImageGallery").gameObject;
         roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
         roverDropdown.onValueChanged.AddListener(ChangeRover);
+
+        cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
+        cameraSelector.onValueChanged.AddListener(ChangeCamera);
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
@@ -90,6 +95,22 @@ public class UIController : MonoBehaviour
         angledView = UICanvas.transform.Find("3D Model").GetComponent<Button>();
         angledView.onClick.AddListener(AngledView);
 
+    }
+
+    private void ChangeCamera(int arg0)
+    {
+        if(arg0 == 0)
+        {
+            picManager.SetCamera("navcam");
+        }
+        else if (arg0 == 1)
+        {
+            picManager.SetCamera("fhaz");
+        }
+        else if (arg0 == 2)
+        {
+            picManager.SetCamera("rhaz");
+        }
     }
 
     private void ChangeRover(int option)
