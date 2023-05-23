@@ -19,20 +19,20 @@ public class ImageLoader : MonoBehaviour
 
         yield return APIManager.FetchImages();
 
-        ImageData[] imageUrl = APIManager.GetImages();
+        MarsApiResponse roverAPIResponse = APIManager.GetImages();
 
-        if(imageUrl.Length > 0) {
+        if(roverAPIResponse.photos.Length > 0) {
 
             Debug.Log("image array has something");
 
-            for (int i = 0; i < imageUrl.Length; i++) {
+            for (int i = 0; i < roverAPIResponse.photos.Length; i++) {
                 if(i > 4)
                 {
                     break;
                 }
                 rawImage = imageGallery.transform.Find("Viewport/Content/Image " + (i + 1)).GetComponent<RawImage>();
 
-                UnityWebRequest www = UnityWebRequestTexture.GetTexture(imageUrl[i].img_src);
+                UnityWebRequest www = UnityWebRequestTexture.GetTexture(roverAPIResponse.photos[i].img_src);
                 yield return www.SendWebRequest();
 
                 if (www.result == UnityWebRequest.Result.Success)
@@ -45,6 +45,7 @@ public class ImageLoader : MonoBehaviour
                     Debug.LogError("Failed to load image. Error: " + www.error);
                 }
             }
+            //roverAPIResponse.photos.
         }
         else
         {

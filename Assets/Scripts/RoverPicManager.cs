@@ -5,20 +5,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 
+
 public class RoverPicManager : MonoBehaviour
 {
     private const string APIKey = "V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3";
 
     private const string BaseURL = "https://api.nasa.gov/mars-photos/api/v1";
-    private const string RoverEndpoint = "/rovers/{roverName}/latest_photos";
+    private const string RoverEndpoint = "/rovers/{roverName}/photos";
     private const string APIKeyParam = "?api_key=";
     private const string APICamera = "&camera={camera}";
     public string APICamQuery;
-    private const string APIEarthDate = "2016-8-6";
+
+    string APISolQuery = "&sol=";
+    int APISolDate = 1878;
+    int minSolDate = 0;
+    int maxSolDate = 3970;
 
     public string RoverName = "curiosity"; // Replace with the rover name you want to access
 
     public RawImage rawImage;
+
+    MarsApiResponse roverPhotos;
 
     public ImageData[] images;
 
@@ -30,8 +37,11 @@ public class RoverPicManager : MonoBehaviour
 
     public IEnumerator<object> FetchImages()
     {
-        string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey + APICamera.Replace("{camera}", APICamQuery);
-        //string url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3";
+        //Set random sol date within parameters
+        APISolDate = Random.Range(minSolDate, maxSolDate);
+
+        string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey + APISolQuery + APISolDate.ToString();// + APICamera.Replace("{camera}", APICamQuery);
+        //string url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3&sol=1878";
         Debug.Log(url); 
         UnityWebRequest www = UnityWebRequest.Get(url);
 
@@ -41,27 +51,25 @@ public class RoverPicManager : MonoBehaviour
         {
             // Access the response data
             string response = www.downloadHandler.text;
-            //Debug.Log("API response: " + response);
-            
-            // Parse JSON response into wrapper object
-            ImageDataWrapper wrapper = JsonUtility.FromJson<ImageDataWrapper>(response);
+            Debug.Log("API response: " + response);
 
-            // Extract image data from the wrapper
-            images = wrapper.latest_photos;
+            // Deserialize the JSON response
+            roverPhotos = JsonUtility.FromJson<MarsApiResponse>(response);
+
+            // Access the image data
+            ImageData[] images = roverPhotos.photos;
 
             // Display the first image in the RawImage component
             if (images != null && images.Length > 0)
             {
-                //string imageUrl = images[0].img_src;
-                //StartCoroutine(LoadImage(imageUrl));
+                Debug.Log("Image array contains: " + images.Length);
             }
             else
             {
                 Debug.LogWarning("No images found in the Mars Rover API response.");
+                StartCoroutine(FetchImages());
             }
-            // Pass the MarsRoverData object to the display script
-            //DisplayScript displayScript = GetComponent<DisplayScript>();
-            //displayScript.DisplayImages(roverData);
+            
         }
         else
         {
@@ -96,10 +104,16 @@ public class RoverPicManager : MonoBehaviour
         APICamQuery = camera;
     }
 
-    public ImageData[] GetImages()
+    public MarsApiResponse GetImages()
     {
-        return images;
+        return roverPhotos;
     }
+
+    public void SetMaxSolDate(int date)
+    {
+        maxSolDate = date;
+    }
+
 }
 
 [System.Serializable]
@@ -133,7 +147,7 @@ public class RoverData
 }
 
 [System.Serializable]
-public class ImageDataWrapper
+public class MarsApiResponse
 {
-    public ImageData[] latest_photos;
+    public ImageData[] photos;
 }

@@ -118,14 +118,17 @@ public class UIController : MonoBehaviour
         if (option == 0)
         {
             picManager.SetRover("curiosity");
+            picManager.SetMaxSolDate(3970);
         }
         else if (option == 1)
         {
             picManager.SetRover("spirit");
+            picManager.SetMaxSolDate(2209);
         }
         else if (option == 2)
         {
             picManager.SetRover("opportunity");
+            picManager.SetMaxSolDate(5353);
         }
     }
 
