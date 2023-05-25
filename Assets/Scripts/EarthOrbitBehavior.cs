@@ -17,8 +17,6 @@ public class EarthOrbitBehavior : MonoBehaviour
     public bool orbitActive = true;
     float timeDelta = 0;
 
-    public bool daySelected;
-
 
     public float rotationPeriod = 1f;
 
@@ -38,20 +36,12 @@ public class EarthOrbitBehavior : MonoBehaviour
         rotationAngle = Time.deltaTime * (360f/rotationPeriod);
         Earth.Rotate(0f, rotationAngle, 0f);
     }
-    public void dateChanged()
-    {
-        daySelected = true;
-    }
+    
     IEnumerator Animation()
     {
         decimal orbitSpeed = 1m / (decimal)orbitPeriod;
         while(orbitActive)
         { 
-            if(daySelected)
-            {
-                timeDelta = Time.deltaTime;
-                daySelected = false;
-            }
             timeDelta += Time.deltaTime;
             UnityEngine.Debug.Log(Earth.name + " " + DateController.DeltaDate.TotalSeconds.ToString()+ " orbitSpeed: " + orbitSpeed + " = " + (((decimal)DateController.DeltaDate.TotalSeconds) * orbitSpeed).ToString("F9"));
             orbitProgress = (((decimal)DateController.DeltaDate.TotalSeconds + (decimal)timeDelta) * orbitSpeed);

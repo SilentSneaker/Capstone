@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Globalization;
 
 public class DateController : MonoBehaviour
 {
@@ -40,15 +41,29 @@ public class DateController : MonoBehaviour
             fController.Minutes.text = "00";
         if(string.IsNullOrEmpty(fController.Seconds.text))
             fController.Seconds.text = "00";
-        if(DateTime.TryParse(fController.SelectedDate + " " + fController.Hours + ":" + fController.Minutes + ":" + fController.Seconds, out endDateTime))
+        if(!string.IsNullOrEmpty(fController.SelectedDate.text))  
+        {
+            string dateString = fController.SelectedDate.text + " " + fController.Hours.text + ":" + fController.Minutes.text + ":" + fController.Seconds.text;
+            dateString = dateString.Replace("\u200B", "");
+            if(DateTime.TryParse(dateString.Trim(), out endDateTime))
             {
-                
-            }
-        if(!string.IsNullOrEmpty(fController.SelectedDate.text))
-            DeltaDate = endDateTime - startDateTime;
+                DeltaDate = endDateTime - startDateTime;
+                endYear = endDateTime.Year;
+                endMonth = endDateTime.Month;
+                endDay = endDateTime.Day;
+                endHour = endDateTime.Hour;
+                endMinute = endDateTime.Minute;
+                endSecond = endDateTime.Second;
+                UnityEngine.Debug.Log("Sun: "+endDateTime.ToString());
+            }   
+            else
+                UnityEngine.Debug.Log("Sun Time TryParse Failed."+ dateString+"|");
+        }
+
+
         else
             DeltaDate = DateTime.UtcNow - startDateTime;
 
-        UnityEngine.Debug.Log(endDateTime.ToString());
+        
     }
 }
