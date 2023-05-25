@@ -67,7 +67,7 @@ public class RoverPicManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("No images found in the Mars Rover API response.");
-                StartCoroutine(FetchImages());
+                yield return StartCoroutine(FetchImages());
             }
             
         }
