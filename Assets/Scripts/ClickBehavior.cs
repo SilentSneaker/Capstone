@@ -13,6 +13,8 @@ public class ClickBehavior : MonoBehaviour
 
     public UIController uIController;
 
+    //NASAImageAPI imageAPI;
+
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
 
@@ -25,6 +27,8 @@ public class ClickBehavior : MonoBehaviour
         //objectDropdown = new DropdownActivation();
 
         uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
+
+        //imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
     }
 
     // Update is called once per frame
@@ -41,6 +45,32 @@ public class ClickBehavior : MonoBehaviour
                 {
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
+
+                    string substringToRemove = "(Clone)";
+                    string spaceToRemove = " ";
+                    string stringToModify = clickedObject.name;
+                    if (stringToModify.Contains(substringToRemove))
+                    {
+                        // Remove the substring from the original string
+                       stringToModify.Replace(substringToRemove, "");                       
+
+                        //imageAPI.SetSearchQuery(stringToModify);
+
+                        // Output the modified string
+                        //Debug.Log(stringToModify);
+                    }
+                    if (stringToModify.Contains(spaceToRemove))
+                    {
+                        stringToModify.Replace(spaceToRemove, "_");
+                    }
+                    else
+                    {
+                        //imageAPI.SetSearchQuery(clickedObject.name);
+                    }
+
+                    //Starts Images API to get photos
+                    //StartCoroutine(imageAPI.FetchImageData());
+
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
                     if (zoomedIn == false)
@@ -58,6 +88,7 @@ public class ClickBehavior : MonoBehaviour
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
                 Camera.main.transform.position = ogCamPos;
+                //imageAPI.DeleteImages();
                 Debug.Log("Clicked on no object");
                 uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
