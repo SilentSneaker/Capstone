@@ -9,7 +9,7 @@ public class NASAImageAPI : MonoBehaviour
 
     public string apiEndpoint = "https://images-api.nasa.gov/search";
     //public string apiKey = "V8DUyMT4oOSlQ7f2GxAXPMQZNmhcRwT3rlJHvpB3";
-    public string searchQuery = "mars";
+    public string searchQuery = "main_sequence_star";
     private Texture2D retrievedImage;
     public RawImage rawImage;
     List<string> imageUrls = new List<string>();
@@ -17,7 +17,7 @@ public class NASAImageAPI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // StartCoroutine(FetchImageData());
+       //StartCoroutine(FetchImageData());
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class NASAImageAPI : MonoBehaviour
     public IEnumerator FetchImageData()
     {
 
-        string requestUrl = $"https://images-api.nasa.gov/search?q={searchQuery}%&media_type=image";
+        string requestUrl = $"https://images-api.nasa.gov/search?q={searchQuery}%&media_type=image&description=planet";
         //string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey;
 
         UnityWebRequest webRequest = UnityWebRequest.Get(requestUrl);
@@ -59,6 +59,7 @@ public class NASAImageAPI : MonoBehaviour
 
             if (wrapper.collection.items.Count > 0)
             {
+                //StartCoroutine(LoadImage(wrapper.collection.items[0].links[0].href));
                 Debug.Log("Number of images retreived: " + wrapper.collection.items.Count);
                 for (int i = 0; i < wrapper.collection.items.Count; i++)
                 {
