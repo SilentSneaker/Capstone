@@ -17,7 +17,7 @@ public class NASAImageAPI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       //StartCoroutine(FetchImageData());
+       StartCoroutine(FetchImageData());
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class NASAImageAPI : MonoBehaviour
     public IEnumerator FetchImageData()
     {
 
-        string requestUrl = $"https://images-api.nasa.gov/search?q={searchQuery}%&media_type=image&description=planet";
+        string requestUrl = $"https://images-api.nasa.gov/search?q={searchQuery}%&media_type=image&description=images";
         //string url = BaseURL + RoverEndpoint.Replace("{roverName}", RoverName) + APIKeyParam + APIKey;
 
         UnityWebRequest webRequest = UnityWebRequest.Get(requestUrl);
