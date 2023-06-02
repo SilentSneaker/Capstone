@@ -43,9 +43,9 @@ public class EarthOrbitBehavior : MonoBehaviour
         while(orbitActive)
         { 
             timeDelta += Time.deltaTime;
-            UnityEngine.Debug.Log(Earth.name + " " + DateController.DeltaDate.TotalSeconds.ToString()+ " orbitSpeed: " + orbitSpeed + " = " + (((decimal)DateController.DeltaDate.TotalSeconds) * orbitSpeed).ToString("F9"));
+            //UnityEngine.Debug.Log(Earth.name + " " + DateController.DeltaDate.TotalSeconds.ToString()+ " orbitSpeed: " + orbitSpeed + " = " + (((decimal)DateController.DeltaDate.TotalSeconds) * orbitSpeed).ToString("F9"));
             orbitProgress = (((decimal)DateController.DeltaDate.TotalSeconds + (decimal)timeDelta) * orbitSpeed);
-            UnityEngine.Debug.Log(Earth.name +" Orbit Progress: " + orbitProgress.ToString("F9"));
+            //UnityEngine.Debug.Log(Earth.name +" Orbit Progress: " + orbitProgress.ToString("F9"));
             orbitProgress %= 1m;
             orbitPosition = (float)orbitProgress;
             

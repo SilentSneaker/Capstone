@@ -54,7 +54,7 @@ public class DateController : MonoBehaviour
                 endHour = endDateTime.Hour;
                 endMinute = endDateTime.Minute;
                 endSecond = endDateTime.Second;
-                UnityEngine.Debug.Log("Sun: "+endDateTime.ToString());
+                //UnityEngine.Debug.Log("Sun: "+endDateTime.ToString());
             }   
             else
                 UnityEngine.Debug.Log("Sun Time TryParse Failed."+ dateString+"|");
