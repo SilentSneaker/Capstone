@@ -6,13 +6,17 @@ using UnityEngine;
 public class BeltSpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    public GameObject asteroidPrefab;
+    public GameObject asteroidPrefab0;
+    public GameObject asteroidPrefab1;
+    public GameObject asteroidPrefab2;
+    public GameObject asteroidPrefab3;
     public int asteroidDensity;
     public int seed;
     public float innerbelt;
     public float outerbelt;
     public float height;
     public bool rotatingClockwise;
+    private List<GameObject> asteroidArray;
 
 
 
@@ -35,6 +39,15 @@ public class BeltSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        asteroidArray = new List<GameObject>(){
+            asteroidPrefab0,
+            asteroidPrefab1,
+            asteroidPrefab2,
+            asteroidPrefab3,
+        };
+        asteroidArray.Add(asteroidPrefab2);
+        asteroidArray.Add(asteroidPrefab3);
         Random.InitState(seed);
         for (int i = 0; i < asteroidDensity; i++)
         {
@@ -50,8 +63,9 @@ public class BeltSpawner : MonoBehaviour
             localPosition = new Vector3(x,y,z);
             worldOffset = transform.rotation * localPosition;
             worldPosition = transform.position + worldOffset;
-
-            GameObject asteriod = Instantiate(asteroidPrefab, worldPosition, Quaternion.Euler(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360)));
+            int prefab = Random.Range(0,4);
+            GameObject asteriod = Instantiate(asteroidArray[prefab], worldPosition, Quaternion.Euler(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360)));
+            UnityEngine.Debug.Log(prefab);
             asteriod.AddComponent<BeltAsteroid>().SetupAsteriod(Random.Range(minSpeed, maxSpeed),Random.Range(minRotation,maxRotation), gameObject, rotatingClockwise);
             asteriod.transform.SetParent(transform);
         }
