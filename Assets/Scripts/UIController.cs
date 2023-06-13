@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     public Canvas UICanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
+
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextBox;
 
@@ -47,9 +48,12 @@ public class UIController : MonoBehaviour
 
     bool viewingMars;
     TMP_Dropdown roverDropdown;
+    TMP_Dropdown cameraSelector;
+
 
     RoverPicManager picManager;
     NASAImageAPI imageAPI;
+
     #endregion
 
     // Start is called before the first frame update
@@ -65,6 +69,9 @@ public class UIController : MonoBehaviour
         imageGallery = UICanvas.transform.Find("ImageGallery").gameObject;
         roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
         roverDropdown.onValueChanged.AddListener(ChangeRover);
+
+        cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
+        cameraSelector.onValueChanged.AddListener(ChangeCamera);
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
@@ -95,19 +102,38 @@ public class UIController : MonoBehaviour
 
     }
 
+    private void ChangeCamera(int arg0)
+    {
+        if(arg0 == 0)
+        {
+            picManager.SetCamera("navcam");
+        }
+        else if (arg0 == 1)
+        {
+            picManager.SetCamera("fhaz");
+        }
+        else if (arg0 == 2)
+        {
+            picManager.SetCamera("rhaz");
+        }
+    }
+
     private void ChangeRover(int option)
     {
         if (option == 0)
         {
             picManager.SetRover("curiosity");
+            picManager.SetMaxSolDate(3970);
         }
         else if (option == 1)
         {
             picManager.SetRover("spirit");
+            picManager.SetMaxSolDate(2209);
         }
         else if (option == 2)
         {
             picManager.SetRover("opportunity");
+            picManager.SetMaxSolDate(5353);
         }
     }
 

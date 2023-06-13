@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8779004642865326146, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_Name
-      value: PersonalTextbox
+      value: PersonalTextbox Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326156, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_Text
@@ -96,11 +96,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 616.44104
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 481.20697
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

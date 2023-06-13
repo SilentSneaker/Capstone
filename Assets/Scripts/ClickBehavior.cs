@@ -13,7 +13,9 @@ public class ClickBehavior : MonoBehaviour
 
     public UIController uIController;
 
+
     NASAImageAPI imageAPI;
+
 
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
@@ -29,6 +31,7 @@ public class ClickBehavior : MonoBehaviour
         uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
 
         imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
+
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class ClickBehavior : MonoBehaviour
                     //Starts Images API to get photos
                     StartCoroutine(imageAPI.FetchImageData());
 
+
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
                     if (zoomedIn == false)
@@ -88,7 +92,9 @@ public class ClickBehavior : MonoBehaviour
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
                 Camera.main.transform.position = ogCamPos;
+
                 imageAPI.DeleteImages();
+
                 Debug.Log("Clicked on no object");
                 uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
