@@ -50,7 +50,10 @@ public class UIController : MonoBehaviour
     TMP_Dropdown roverDropdown;
     TMP_Dropdown cameraSelector;
 
-    RoverPicManager picManager;    
+
+    RoverPicManager picManager;
+    NASAImageAPI imageAPI;
+
     #endregion
 
     // Start is called before the first frame update
@@ -71,6 +74,8 @@ public class UIController : MonoBehaviour
         cameraSelector.onValueChanged.AddListener(ChangeCamera);
 
         picManager = gameObject.GetComponent<RoverPicManager>();
+
+        imageAPI = gameObject.GetComponent<NASAImageAPI>();
 
         //Instatiate the info of objects
         starInfo = UICanvas.GetComponent<StarInfo>();
@@ -172,6 +177,8 @@ public class UIController : MonoBehaviour
         // Option 2 - Personal view (Adds a textbox to the canvas and displays the adjusted information that the user put in)
         else if (index == 2)
         {
+            UnloadImages();
+
             displayFactTextbox.gameObject.SetActive(false);
 
             imageGallery.SetActive(false);
@@ -203,7 +210,10 @@ public class UIController : MonoBehaviour
             if(viewingMars == true)
             {
                 roverPhotos.gameObject.SetActive(true);
-            }            
+            }
+
+            //Start Image API Loading
+            imageLoader.LoadLibraryImages(imageGallery);
         }
         
     }
@@ -469,5 +479,14 @@ public class UIController : MonoBehaviour
     {
         imageLoader.LoadImage(imageGallery);
         roverDropdown.gameObject.SetActive(true);
+    }
+
+    public void UnloadImages()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            RawImage rawImage = imageGallery.transform.Find("Viewport/Content/Image " + (i + 1)).GetComponent<RawImage>();
+            rawImage.texture = null;
+        }
     }
 }
