@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
     public GameObject imagePrefab;
     public GameObject imageGallery;
 
-    private static TMP_InputField displayFactTextbox;
+    public static TMP_InputField displayFactTextbox;
 
     public GameObject yellowSun;
     public GameObject redGiant;
@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour
     public GameObject accountPrefab;
     public GameObject objectInfoUI;
 
-    ImageLoader imageLoader;
+    public ImageLoader imageLoader;
 
     bool viewingMars;
     TMP_Dropdown roverDropdown;
@@ -83,7 +83,7 @@ public class UIController : MonoBehaviour
         planetInfo = UICanvas.GetComponent<PlanetInfo>();
         dwarfPlanetInfo = UICanvas.GetComponent<DwarfPlanetInfo>();
 
-        imageLoader = transform.Find("ImageGallery").GetComponent<ImageLoader>();
+        imageLoader = GameObject.Find("ObjectInfoUI").GetComponent<ImageLoader>();
 
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
@@ -483,10 +483,6 @@ public class UIController : MonoBehaviour
 
     public void UnloadImages()
     {
-        for (int i = 0; i < 5; i++)
-        {
-            RawImage rawImage = imageGallery.transform.Find("Viewport/Content/Image " + (i + 1)).GetComponent<RawImage>();
-            rawImage.texture = null;
-        }
+        imageLoader.ClearImages(imageGallery);
     }
 }

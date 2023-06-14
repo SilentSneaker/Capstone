@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class ImageLoader : MonoBehaviour
 {
@@ -97,6 +98,7 @@ public class ImageLoader : MonoBehaviour
                 else
                 {
                     Debug.LogError("Failed to load image. Error: " + www.error);
+                    Debug.Log(imageUrls[i]);
                 }
             }
         }
@@ -106,5 +108,18 @@ public class ImageLoader : MonoBehaviour
         }
     }
 
-    
+    public void ClearImages(GameObject imageGallery)
+    {
+        ClearImageGallery(imageGallery);
+    }
+
+
+    private void ClearImageGallery(GameObject imageGallery)
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            rawImage = imageGallery.transform.Find("Viewport/Content/Image " + (i + 1)).GetComponent<RawImage>();
+            rawImage.texture = null;
+        }
+    }
 }

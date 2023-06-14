@@ -49,6 +49,8 @@ public class ClickBehavior : MonoBehaviour
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
 
+                    Debug.Log(clickedObject);
+
                     string substringToRemove = "(Clone)";
                     string spaceToRemove = " ";
                     string stringToModify = clickedObject.name;
@@ -57,7 +59,7 @@ public class ClickBehavior : MonoBehaviour
                         // Remove the substring from the original string
                        stringToModify.Replace(substringToRemove, "");                       
 
-                        //imageAPI.SetSearchQuery(stringToModify);
+                        imageAPI.SetSearchQuery(stringToModify);
 
                         // Output the modified string
                         //Debug.Log(stringToModify);
@@ -65,6 +67,7 @@ public class ClickBehavior : MonoBehaviour
                     if (stringToModify.Contains(spaceToRemove))
                     {
                         stringToModify.Replace(spaceToRemove, "_");
+
                     }
                     else
                     {
@@ -91,6 +94,8 @@ public class ClickBehavior : MonoBehaviour
             }
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
+                uIController.UnloadImages();
+
                 Camera.main.transform.position = ogCamPos;
 
                 imageAPI.DeleteImages();
