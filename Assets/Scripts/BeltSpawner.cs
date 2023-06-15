@@ -65,7 +65,6 @@ public class BeltSpawner : MonoBehaviour
             worldPosition = transform.position + worldOffset;
             int prefab = Random.Range(0,4);
             GameObject asteriod = Instantiate(asteroidArray[prefab], worldPosition, Quaternion.Euler(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360)));
-            UnityEngine.Debug.Log(prefab);
             asteriod.AddComponent<BeltAsteroid>().SetupAsteriod(Random.Range(minSpeed, maxSpeed),Random.Range(minRotation,maxRotation), gameObject, rotatingClockwise);
             asteriod.transform.SetParent(transform);
         }
