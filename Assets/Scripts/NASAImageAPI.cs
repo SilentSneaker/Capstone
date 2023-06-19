@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+
 using UnityEngine.UI;
 
 public class NASAImageAPI : MonoBehaviour
@@ -18,11 +19,13 @@ public class NASAImageAPI : MonoBehaviour
     void Start()
     {
        //StartCoroutine(FetchImageData());
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
        
     }
 

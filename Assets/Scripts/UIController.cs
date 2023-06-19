@@ -52,7 +52,9 @@ public class UIController : MonoBehaviour
 
 
     RoverPicManager picManager;
+
     NASAImageAPI imageAPI;
+
 
     #endregion
 
@@ -75,7 +77,11 @@ public class UIController : MonoBehaviour
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
+
+        adjustUserInfo = UICanvas.GetComponent<AdjustUserInfo>();
+
         imageAPI = gameObject.GetComponent<NASAImageAPI>();
+
 
         //Instatiate the info of objects
         starInfo = UICanvas.GetComponent<StarInfo>();
@@ -150,7 +156,7 @@ public class UIController : MonoBehaviour
         if (index == 0)
         {
             displayFactTextbox.gameObject.SetActive(false);
-
+            personalTextBox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -161,7 +167,7 @@ public class UIController : MonoBehaviour
         else if (index == 1)
         {
             displayFactTextbox.gameObject.SetActive(true);
-
+            personalTextBox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -180,23 +186,25 @@ public class UIController : MonoBehaviour
             UnloadImages();
 
             displayFactTextbox.gameObject.SetActive(false);
-
+            personalTextBox.gameObject.SetActive(true);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
 
-            //// Fit the textbox within the screen constraints
-            //RectTransform newTextboxRectTransform = newTextbox.GetComponent<RectTransform>();
-            //newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            //newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
+            personalTextBox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
+
+            // Fit the textbox within the screen constraints
+            RectTransform newTextboxRectTransform = personalTextBox.GetComponent<RectTransform>();
+            newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            newTextboxRectTransform.sizeDelta = new Vector2(Screen.width * 0.8f, Screen.height * 0.8f);
         }
         // Option 3 - Picture view (Shows different photos of the object, if there are more than five there should be an option to view more)
         else if (index == 3)
         {
             displayFactTextbox.gameObject.SetActive(false);
-
+            personalTextBox.gameObject.SetActive(false);
             imageGallery.SetActive(true);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -460,6 +468,7 @@ public class UIController : MonoBehaviour
             }
             #endregion
         }
+        selectedObject = clickedObject.GetComponent<SOLoader>();
     }
 
     public void MakeTextboxesInvisible()
