@@ -12,13 +12,14 @@ public class UIController : MonoBehaviour
     public Canvas UICanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
+
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextBox;
 
     public GameObject imagePrefab;
     public GameObject imageGallery;
 
-    private static TMP_InputField displayFactTextbox;
+    public static TMP_InputField displayFactTextbox;
 
     public GameObject yellowSun;
     public GameObject redGiant;
@@ -43,16 +44,18 @@ public class UIController : MonoBehaviour
     public GameObject accountPrefab;
     public GameObject objectInfoUI;
 
-    ImageLoader imageLoader;
+    public ImageLoader imageLoader;
 
     bool viewingMars;
     TMP_Dropdown roverDropdown;
+    TMP_Dropdown cameraSelector;
+
 
     RoverPicManager picManager;
 
-    public AdjustUserInfo adjustUserInfo;
+    NASAImageAPI imageAPI;
 
-    SOLoader selectedObject;
+
     #endregion
 
     // Start is called before the first frame update
@@ -69,9 +72,16 @@ public class UIController : MonoBehaviour
         roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
         roverDropdown.onValueChanged.AddListener(ChangeRover);
 
+        cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
+        cameraSelector.onValueChanged.AddListener(ChangeCamera);
+
         picManager = gameObject.GetComponent<RoverPicManager>();
 
+
         adjustUserInfo = UICanvas.GetComponent<AdjustUserInfo>();
+
+        imageAPI = gameObject.GetComponent<NASAImageAPI>();
+
 
         //Instatiate the info of objects
         starInfo = UICanvas.GetComponent<StarInfo>();
@@ -79,7 +89,7 @@ public class UIController : MonoBehaviour
         planetInfo = UICanvas.GetComponent<PlanetInfo>();
         dwarfPlanetInfo = UICanvas.GetComponent<DwarfPlanetInfo>();
 
-        imageLoader = transform.Find("ImageGallery").GetComponent<ImageLoader>();
+        imageLoader = GameObject.Find("ObjectInfoUI").GetComponent<ImageLoader>();
 
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
@@ -98,19 +108,38 @@ public class UIController : MonoBehaviour
 
     }
 
+    private void ChangeCamera(int arg0)
+    {
+        if(arg0 == 0)
+        {
+            picManager.SetCamera("navcam");
+        }
+        else if (arg0 == 1)
+        {
+            picManager.SetCamera("fhaz");
+        }
+        else if (arg0 == 2)
+        {
+            picManager.SetCamera("rhaz");
+        }
+    }
+
     private void ChangeRover(int option)
     {
         if (option == 0)
         {
             picManager.SetRover("curiosity");
+            picManager.SetMaxSolDate(3970);
         }
         else if (option == 1)
         {
             picManager.SetRover("spirit");
+            picManager.SetMaxSolDate(2209);
         }
         else if (option == 2)
         {
             picManager.SetRover("opportunity");
+            picManager.SetMaxSolDate(5353);
         }
     }
 
@@ -154,6 +183,8 @@ public class UIController : MonoBehaviour
         // Option 2 - Personal view (Adds a textbox to the canvas and displays the adjusted information that the user put in)
         else if (index == 2)
         {
+            UnloadImages();
+
             displayFactTextbox.gameObject.SetActive(false);
             personalTextBox.gameObject.SetActive(true);
             imageGallery.SetActive(false);
@@ -187,7 +218,10 @@ public class UIController : MonoBehaviour
             if(viewingMars == true)
             {
                 roverPhotos.gameObject.SetActive(true);
-            }            
+            }
+
+            //Start Image API Loading
+            imageLoader.LoadLibraryImages(imageGallery);
         }
         
     }
@@ -454,5 +488,10 @@ public class UIController : MonoBehaviour
     {
         imageLoader.LoadImage(imageGallery);
         roverDropdown.gameObject.SetActive(true);
+    }
+
+    public void UnloadImages()
+    {
+        imageLoader.ClearImages(imageGallery);
     }
 }
