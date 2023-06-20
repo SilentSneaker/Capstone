@@ -13,6 +13,10 @@ public class ClickBehavior : MonoBehaviour
 
     public UIController uIController;
 
+
+    NASAImageAPI imageAPI;
+
+
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
 
@@ -22,9 +26,12 @@ public class ClickBehavior : MonoBehaviour
         mainCamera = Camera.main;
         ogCamPos = mainCamera.transform.position;
 
-        objectDropdown = new DropdownActivation();
+        //objectDropdown = new DropdownActivation();
 
         uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
+
+        imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
+
     }
 
     // Update is called once per frame
@@ -41,6 +48,36 @@ public class ClickBehavior : MonoBehaviour
                 {
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
+
+                    Debug.Log(clickedObject);
+
+                    string substringToRemove = "(Clone)";
+                    string spaceToRemove = " ";
+                    string stringToModify = clickedObject.name;
+                    if (stringToModify.Contains(substringToRemove))
+                    {
+                        // Remove the substring from the original string
+                       stringToModify.Replace(substringToRemove, "");                       
+
+                        imageAPI.SetSearchQuery(stringToModify);
+
+                        // Output the modified string
+                        //Debug.Log(stringToModify);
+                    }
+                    if (stringToModify.Contains(spaceToRemove))
+                    {
+                        stringToModify.Replace(spaceToRemove, "_");
+
+                    }
+                    else
+                    {
+                        imageAPI.SetSearchQuery(clickedObject.name);
+                    }
+
+                    //Starts Images API to get photos
+                    StartCoroutine(imageAPI.FetchImageData());
+
+
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
                     if (zoomedIn == false)
@@ -57,7 +94,12 @@ public class ClickBehavior : MonoBehaviour
             }
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
+                uIController.UnloadImages();
+
                 Camera.main.transform.position = ogCamPos;
+
+                imageAPI.DeleteImages();
+
                 Debug.Log("Clicked on no object");
                 uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
@@ -79,31 +121,5 @@ public class ClickBehavior : MonoBehaviour
         }*/
     }
 
-    //public static bool isPointerOverUIObject()
-    //{
-    //    // Get the position of the mouse cursor
-    //    Vector2 mousePosition = Input.mousePosition;
-
-    //    // Create a new pointer event data with the current event system
-    //    PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-    //    eventDataCurrentPosition.position = mousePosition;
-
-    //    // Create a list to hold the results of the raycast
-    //    List<RaycastResult> results = new List<RaycastResult>();
-
-    //    // Perform a raycast to determine which UI element the mouse is currently over
-    //    EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-
-    //    // Check if any of the raycast results are child objects of the canvas that this script is attached to
-    //    foreach (RaycastResult result in results)
-    //    {
-    //        if (result.gameObject.transform.IsChildOf(transform))
-    //        {
-    //            return true;
-    //        }
-    //    }
-
-    //    // If none of the raycast results were child objects of this canvas, return false
-    //    return false;
-    //}
+   
 }

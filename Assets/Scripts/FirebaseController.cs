@@ -35,6 +35,8 @@ public class FirebaseController : MonoBehaviour
     bool isLoggedIn = false;
     bool isLog = false;
 
+    float userWeight = 130;
+
     void Awake()
     {
         configuration = new GoogleSignInConfiguration
@@ -441,7 +443,14 @@ public class FirebaseController : MonoBehaviour
         {
             DataSnapshot snapShot = DBTask.Result;
             accountWeight.text= snapShot.Child("weight").Value.ToString();
+            string weightHolder = snapShot.Child("weight").Value.ToString();
+            userWeight = float.Parse(weightHolder);
             accountHeight.text = snapShot.Child("height").Value.ToString();
         }
+    }
+
+    public float GetWeight()
+    {
+        return userWeight;
     }
 }
