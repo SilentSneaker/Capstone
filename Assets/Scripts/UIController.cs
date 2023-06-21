@@ -50,11 +50,13 @@ public class UIController : MonoBehaviour
     TMP_Dropdown roverDropdown;
     TMP_Dropdown cameraSelector;
 
+    AdjustUserInfo adjustUserInfo;
 
     RoverPicManager picManager;
 
     NASAImageAPI imageAPI;
 
+    SOLoader selectedObject;
 
     #endregion
 
