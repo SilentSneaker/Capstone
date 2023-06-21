@@ -13,8 +13,14 @@ public class DropdownActivation : MonoBehaviour
     private void Start()
     {
         uiCanvas = GameObject.Find("ObjectInfoUI");
-        viewDropdown = uiCanvas.GetComponentInChildren<TMP_Dropdown>();
+
+        viewDropdown = uiCanvas.transform.Find("ViewDropdown").GetComponent<TMP_Dropdown>();
+        viewDropdown.interactable = false;
+        viewDropdown.GetComponent<CanvasGroup>().alpha = 0;
+
         starTypeDropdown = uiCanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
+        starTypeDropdown.interactable = true;
+        starTypeDropdown.GetComponent<CanvasGroup>().alpha = 1;
     }
     
     public void ShowDropdown()
@@ -25,7 +31,7 @@ public class DropdownActivation : MonoBehaviour
         }
         else
         {
-            Debug.Log("viewDropdown is not null");
+            //Debug.Log("viewDropdown is not null");
         }
 
         viewDropdown.interactable = true;

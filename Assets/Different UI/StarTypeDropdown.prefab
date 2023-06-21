@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 1658112358922970908}
   - component: {fileID: 410919646993819233}
   - component: {fileID: 7470116341388826069}
+  - component: {fileID: 2260929065388440584}
   m_Layer: 5
   m_Name: StarTypeDropdown
   m_TagString: Untagged
@@ -416,6 +417,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!225 &2260929065388440584
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2149278614276729529}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2609586688974693745
 GameObject:
   m_ObjectHideFlags: 0

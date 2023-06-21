@@ -3,7 +3,29 @@ guid: eda42fd009b49ca45bf03ee3f1b1fb6d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - UICanvas: {instanceID: 0}
+  - viewDropdown: {instanceID: 0}
+  - starTypeDropdown: {instanceID: 0}
+  - factTextBox: {instanceID: 0}
+  - personalTextBox: {fileID: 9190569210253515810, guid: 9b4532ced10871d489dee2e511cb26ec, type: 3}
+  - imagePrefab: {instanceID: 0}
+  - imageGallery: {instanceID: 0}
+  - yellowSun: {instanceID: 0}
+  - redGiant: {instanceID: 0}
+  - whiteDwarf: {instanceID: 0}
+  - activeSun: {instanceID: 0}
+  - starInfo: {instanceID: 0}
+  - moonInfo: {instanceID: 0}
+  - planetInfo: {instanceID: 0}
+  - dwarfPlanetInfo: {instanceID: 0}
+  - profile: {instanceID: 0}
+  - roverPhotos: {instanceID: 0}
+  - topDownView: {instanceID: 0}
+  - angledView: {instanceID: 0}
+  - accountPrefab: {instanceID: 0}
+  - objectInfoUI: {instanceID: 0}
+  - firebase: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

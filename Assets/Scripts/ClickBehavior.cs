@@ -11,6 +11,12 @@ public class ClickBehavior : MonoBehaviour
     public Vector3 ogCamPos;
     private bool zoomedIn = false;
 
+    public UIController uIController;
+
+
+    NASAImageAPI imageAPI;
+
+
     // Stores the activation script in the object
     private DropdownActivation objectDropdown;
 
@@ -20,7 +26,12 @@ public class ClickBehavior : MonoBehaviour
         mainCamera = Camera.main;
         ogCamPos = mainCamera.transform.position;
 
-        objectDropdown = new DropdownActivation();
+        //objectDropdown = new DropdownActivation();
+
+        uIController = GameObject.Find("ObjectInfoUI").GetComponent<UIController>();
+
+        imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
+
     }
 
     // Update is called once per frame
@@ -30,33 +41,73 @@ public class ClickBehavior : MonoBehaviour
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit objectHit;
-            if (Physics.Raycast(ray, out objectHit) && !isPointerOverUIObject())
+            Physics.Raycast(ray, out objectHit);
+            if (objectHit.collider != null)
             {
-                //selectedTag = objectHit.collider.tag;
-                clickedObject = objectHit.collider.gameObject;
-                Debug.Log(clickedObject);
-                if (zoomedIn == false)
+                if (objectHit.collider.tag != "UI" && zoomedIn == false)
                 {
-                    objectDropdown = clickedObject.GetComponent<DropdownActivation>();
-                    objectDropdown.ShowDropdown();
+                    //selectedTag = objectHit.collider.tag;
+                    clickedObject = objectHit.collider.gameObject;
 
-                    Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
-                    zoomedIn = true;
+                    Debug.Log(clickedObject);
+
+                    string substringToRemove = "(Clone)";
+                    string spaceToRemove = " ";
+                    string stringToModify = clickedObject.name;
+                    if (stringToModify.Contains(substringToRemove))
+                    {
+                        // Remove the substring from the original string
+                       stringToModify.Replace(substringToRemove, "");                       
+
+                        imageAPI.SetSearchQuery(stringToModify);
+
+                        // Output the modified string
+                        //Debug.Log(stringToModify);
+                    }
+                    if (stringToModify.Contains(spaceToRemove))
+                    {
+                        stringToModify.Replace(spaceToRemove, "_");
+
+                    }
+                    else
+                    {
+                        imageAPI.SetSearchQuery(clickedObject.name);
+                    }
+
+                    //Starts Images API to get photos
+                    StartCoroutine(imageAPI.FetchImageData());
+
+
+                    uIController.ChangeText(clickedObject);
+                    //Debug.Log(clickedObject);
+                    if (zoomedIn == false)
+                    {
+                        objectDropdown = clickedObject.GetComponent<DropdownActivation>();
+                        objectDropdown.ShowDropdown();
+
+                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
+                        
+                        zoomedIn = true;
+                    }
                 }
+                
             }
-            else if (!isPointerOverUIObject() && zoomedIn == true)
+            else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
+                uIController.UnloadImages();
+
                 Camera.main.transform.position = ogCamPos;
+
+                imageAPI.DeleteImages();
+
+                Debug.Log("Clicked on no object");
+                uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
-                if(objectDropdown != null)
+                if (objectDropdown != null)
                 {
 
                     objectDropdown.RemoveDropdown();
                 }
-            }
-            else if (!isPointerOverUIObject() && zoomedIn == false)
-            {
-
             }
         }
         /*GameObject getClickedObject (out RaycastHit hit)
@@ -70,12 +121,5 @@ public class ClickBehavior : MonoBehaviour
         }*/
     }
 
-    public static bool isPointerOverUIObject()
-    {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        System.Collections.Generic.List<RaycastResult> results = new System.Collections.Generic.List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
-    }
+   
 }
