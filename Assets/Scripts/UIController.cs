@@ -50,6 +50,9 @@ public class UIController : MonoBehaviour
     TMP_Dropdown roverDropdown;
     TMP_Dropdown cameraSelector;
 
+    AdjustUserInfo adjustUserInfo;
+
+    SOLoader selectedObject;
 
     RoverPicManager picManager;
 

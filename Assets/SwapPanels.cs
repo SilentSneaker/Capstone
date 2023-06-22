@@ -26,6 +26,7 @@ public class SwapPanels : MonoBehaviour
         presentPanel.SetActive(false);
         pastPanel.SetActive(true);
         teensAsteroids = pastPanel.transform.Find("2010-2023 Asteroids").GetComponent<Button>();
+        teensAsteroids.onClick.AddListener(ReturnToCurrentPanel);
     }
 
     private void ChangeToFuturePanel()
@@ -39,7 +40,7 @@ public class SwapPanels : MonoBehaviour
     private void ReturnToCurrentPanel()
     {
         teensAsteroids.onClick.RemoveListener(ReturnToCurrentPanel);
-        //pastPanel.SetActive(false);
+        pastPanel.SetActive(false);
         futurePanel.SetActive(false);
         presentPanel.SetActive(true);
     }
