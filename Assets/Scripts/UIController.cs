@@ -52,17 +52,13 @@ public class UIController : MonoBehaviour
     TMP_Dropdown cameraSelector;
 
     AdjustUserInfo adjustUserInfo;
-<<<<<<< HEAD
-=======
-
     SOLoader selectedObject;
->>>>>>> Object-Tags
 
     RoverPicManager picManager;
 
     NASAImageAPI imageAPI;
 
-    SOLoader selectedObject;
+    //SOLoader selectedObject;
 
     #endregion
 
@@ -198,13 +194,9 @@ public class UIController : MonoBehaviour
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
-<<<<<<< Updated upstream
 
-           personalTextBox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
+            displayPersonalTextbox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
 
-=======
-                        
->>>>>>> Stashed changes
             // Fit the textbox within the screen constraints
             RectTransform newTextboxRectTransform = displayPersonalTextbox.GetComponent<RectTransform>();
             newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);

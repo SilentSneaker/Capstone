@@ -869,7 +869,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 59354800
   orbitActive: 1
-  rotationPeriod: -88775
+  rotationPeriod: 1
 --- !u!4 &17612540
 Transform:
   m_ObjectHideFlags: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 26304
   orbitActive: 1
-  rotationPeriod: 26304
+  rotationPeriod: 1
 --- !u!1 &23768802
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 86400
   orbitActive: 1
-  rotationPeriod: -5068800
+  rotationPeriod: 1
 --- !u!1 &28748163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 25096
   orbitActive: 1
-  rotationPeriod: 25096
+  rotationPeriod: 1
 --- !u!1 &69861470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2497,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 248221570
   orbitActive: 1
-  rotationPeriod: 248221600
+  rotationPeriod: 1
 --- !u!1 &109677962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3715,7 +3715,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 374335600
   orbitActive: 1
-  rotationPeriod: -35729.855
+  rotationPeriod: 1
 --- !u!1 &171303017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4034,7 +4034,7 @@ MonoBehaviour:
       ShowHeader: 1
       BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
       TextColor: {r: 1, g: 1, b: 1, a: 1}
-      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
       Font: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
       FontSize: 22
       FontAutoSize: 1
@@ -4107,7 +4107,7 @@ MonoBehaviour:
       WeekNumberColumnWidth: 0
       OverrideTemplate: 1
       TextColor: {r: 1, g: 1, b: 1, a: 1}
-      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
       Font: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
       FontSize: 15
       FontAutoSize: 1
@@ -4117,7 +4117,7 @@ MonoBehaviour:
       BackgroundColor: {r: 0.07, g: 0.313, b: 0.486, a: 1}
     Days:
       BackgroundColor: {r: 0.03137255, g: 0.03137255, b: 0.03137255, a: 1}
-      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      oldFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
       Font: {fileID: 11400000, guid: 239eaf08dcf333e49851e01446b32483, type: 2}
       FontSize: 15
       FontAutoSize: 1
@@ -4126,7 +4126,7 @@ MonoBehaviour:
       CurrentMonth:
         OverrideTemplate: 1
         TextColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
-        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
         BackgroundColors:
           m_NormalColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
           m_HighlightedColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
@@ -4138,7 +4138,7 @@ MonoBehaviour:
       OtherMonths:
         OverrideTemplate: 1
         TextColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 0.47058824}
-        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
         BackgroundColors:
           m_NormalColor: {r: 0.0627451, g: 0.0627451, b: 0.0627451, a: 1}
           m_HighlightedColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
@@ -4150,7 +4150,7 @@ MonoBehaviour:
       Today:
         OverrideTemplate: 1
         TextColor: {r: 0, g: 0.8602941, b: 0.2530277, a: 1}
-        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
         BackgroundColors:
           m_NormalColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
           m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4162,7 +4162,7 @@ MonoBehaviour:
       SelectedDay:
         OverrideTemplate: 1
         TextColor: {r: 0, g: 0.7655708, b: 0.88235295, a: 1}
-        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+        BackgroundImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
         BackgroundColors:
           m_NormalColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
           m_HighlightedColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
@@ -5738,97 +5738,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263355029}
   m_CullTransparentMesh: 1
---- !u!1 &264029605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1426158832134691829, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &264029606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22528db3ab3b3994bafaef8f5358302c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  apiEndpoint: https://images-api.nasa.gov/search
-  searchQuery: main_sequence_star
-  rawImage: {fileID: 0}
---- !u!114 &264029607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78cc6220780ed544384b36172469b8d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewDropdown: {fileID: 1827997126}
-  starTypeDropdown: {fileID: 512887551}
---- !u!114 &264029608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e35b6141952a624f99ecbc21dcd201d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firebase: {fileID: 0}
---- !u!114 &264029610 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 779858366325444120, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b95acf1501a9db408a1d9e54cbad88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &264029611 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 779858366325444121, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83386f38d7926843a2af3539d9a58d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &264029612 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 779858366325444122, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a95c18b169e0349b38e674618ba599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &264029614 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4155676410678270255, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264029605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7ca60caf607f6408454c9ebe34b892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &268773745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,7 +6282,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 6851760
   orbitActive: 1
-  rotationPeriod: 6851760
+  rotationPeriod: 1
 --- !u!1 &308384352
 GameObject:
   m_ObjectHideFlags: 0
@@ -6523,7 +6432,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 31557600
   orbitActive: 1
-  rotationPeriod: -86400
+  rotationPeriod: 1
 --- !u!1 &313668914
 GameObject:
   m_ObjectHideFlags: 0
@@ -8136,7 +8045,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 236160
   orbitActive: 1
-  rotationPeriod: 236160
+  rotationPeriod: 1
 --- !u!1 &392005212
 GameObject:
   m_ObjectHideFlags: 0
@@ -8568,7 +8477,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 1366860
   orbitActive: 1
-  rotationPeriod: 1366860
+  rotationPeriod: 1
 --- !u!1 &414705018
 GameObject:
   m_ObjectHideFlags: 0
@@ -9900,7 +9809,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 1161542.4
   orbitActive: 1
-  rotationPeriod: 1161542.4
+  rotationPeriod: 1
 --- !u!1 &476121894
 GameObject:
   m_ObjectHideFlags: 0
@@ -10033,7 +9942,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 29823
   orbitActive: 1
-  rotationPeriod: 29823
+  rotationPeriod: 1
 --- !u!1 &486678695
 GameObject:
   m_ObjectHideFlags: 0
@@ -10181,17 +10090,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486678695}
   m_CullTransparentMesh: 1
---- !u!114 &512887551 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4463060893705600660, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519362846
 GameObject:
   m_ObjectHideFlags: 0
@@ -11585,18 +11483,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 100
   orbitActive: 1
-  rotationPeriod: -10
---- !u!114 &603646729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6504557988390614024, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90f65c38ac9caf48b8e888a1bd5216d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  rotationPeriod: 1
 --- !u!1 &603833694
 GameObject:
   m_ObjectHideFlags: 0
@@ -13481,7 +13368,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 217728
   orbitActive: 1
-  rotationPeriod: 217728
+  rotationPeriod: 1
 --- !u!1 &693278632
 GameObject:
   m_ObjectHideFlags: 0
@@ -13792,7 +13679,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 109077
   orbitActive: 1
-  rotationPeriod: 109077
+  rotationPeriod: 1
 --- !u!1 &712176133
 GameObject:
   m_ObjectHideFlags: 0
@@ -13845,7 +13732,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 2360448
   orbitActive: 1
-  rotationPeriod: 2360448
+  rotationPeriod: 1
 --- !u!1 &712951455
 GameObject:
   m_ObjectHideFlags: 0
@@ -14965,7 +14852,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 390720
   orbitActive: 1
-  rotationPeriod: 390720
+  rotationPeriod: 1
 --- !u!1 &740697518
 GameObject:
   m_ObjectHideFlags: 0
@@ -15418,7 +15305,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 37388
   orbitActive: 1
-  rotationPeriod: 37388
+  rotationPeriod: 1
 --- !u!1 &756693139
 GameObject:
   m_ObjectHideFlags: 0
@@ -15471,7 +15358,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 121987.2
   orbitActive: 1
-  rotationPeriod: 121987.2
+  rotationPeriod: 1
 --- !u!1 &760788113
 GameObject:
   m_ObjectHideFlags: 0
@@ -16967,7 +16854,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 27552
   orbitActive: 1
-  rotationPeriod: 27552
+  rotationPeriod: 1
 --- !u!1 &827965455
 GameObject:
   m_ObjectHideFlags: 0
@@ -17934,17 +17821,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865626201}
   m_CullTransparentMesh: 0
---- !u!114 &868520125 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 504525484272340396, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &872777056
 GameObject:
   m_ObjectHideFlags: 0
@@ -18708,7 +18584,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 842927940
   orbitActive: 1
-  rotationPeriod: 842927900
+  rotationPeriod: 1
 --- !u!1 &915116592
 GameObject:
   m_ObjectHideFlags: 0
@@ -19442,7 +19318,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 929596400
   orbitActive: 1
-  rotationPeriod: -38018
+  rotationPeriod: 1
 --- !u!1 &990098093
 GameObject:
   m_ObjectHideFlags: 0
@@ -21946,7 +21822,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 3551181
   orbitActive: 1
-  rotationPeriod: 3551181
+  rotationPeriod: 1
 --- !u!1 &1126403528
 GameObject:
   m_ObjectHideFlags: 0
@@ -22995,7 +22871,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 788113900
   orbitActive: 1
-  rotationPeriod: 788113900
+  rotationPeriod: 1
 --- !u!1 &1173774115
 GameObject:
   m_ObjectHideFlags: 0
@@ -23443,7 +23319,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 118080
   orbitActive: 1
-  rotationPeriod: 118080
+  rotationPeriod: 1
 --- !u!1 &1198730265
 GameObject:
   m_ObjectHideFlags: 0
@@ -23541,17 +23417,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198730265}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1208941695 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2670526328802961198, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1209441610
 GameObject:
   m_ObjectHideFlags: 0
@@ -24976,7 +24841,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 507720
   orbitActive: 1
-  rotationPeriod: 507720
+  rotationPeriod: 1
 --- !u!1 &1261332268
 GameObject:
   m_ObjectHideFlags: 0
@@ -27345,7 +27210,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 95371
   orbitActive: 1
-  rotationPeriod: 95371
+  rotationPeriod: 1
 --- !u!1001 &1354290702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28731,7 +28596,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 6070781
   orbitActive: 1
-  rotationPeriod: 6070781
+  rotationPeriod: 1
 --- !u!1 &1431613229
 GameObject:
   m_ObjectHideFlags: 0
@@ -30735,7 +30600,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 47710
   orbitActive: 1
-  rotationPeriod: 47710
+  rotationPeriod: 1
 --- !u!1 &1565130919
 GameObject:
   m_ObjectHideFlags: 0
@@ -30926,7 +30791,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 1769138
   orbitActive: 1
-  rotationPeriod: 1769138
+  rotationPeriod: 1
 --- !u!1 &1571183712
 GameObject:
   m_ObjectHideFlags: 0
@@ -31719,7 +31584,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 217728
   orbitActive: 1
-  rotationPeriod: 217728
+  rotationPeriod: 1
 --- !u!1 &1608487911
 GameObject:
   m_ObjectHideFlags: 0
@@ -32716,7 +32581,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 163296
   orbitActive: 1
-  rotationPeriod: 163296
+  rotationPeriod: 1
 --- !u!1 &1643872982
 GameObject:
   m_ObjectHideFlags: 0
@@ -32971,7 +32836,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 507720
   orbitActive: 1
-  rotationPeriod: 507720
+  rotationPeriod: 1
 --- !u!1 &1670386304
 GameObject:
   m_ObjectHideFlags: 0
@@ -34294,7 +34159,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 2.6520143e+9
   orbitActive: 1
-  rotationPeriod: -61704
+  rotationPeriod: 1
 --- !u!1 &1732186290
 GameObject:
   m_ObjectHideFlags: 0
@@ -34804,7 +34669,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 273772400
   orbitActive: 1
-  rotationPeriod: 273772400
+  rotationPeriod: 1
 --- !u!1 &1747945230
 GameObject:
   m_ObjectHideFlags: 0
@@ -36229,17 +36094,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825074512}
   m_CullTransparentMesh: 0
---- !u!114 &1827997126 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7321518234847290518, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
-  m_PrefabInstance: {fileID: 1886674427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1833018606
 GameObject:
   m_ObjectHideFlags: 0
@@ -36652,7 +36506,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 31105920
   orbitActive: 1
-  rotationPeriod: 41760
+  rotationPeriod: 1
 --- !u!1 &1870907266
 GameObject:
   m_ObjectHideFlags: 0
@@ -37229,31 +37083,31 @@ PrefabInstance:
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: profile
       value: 
-      objectReference: {fileID: 868520125}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: moonInfo
       value: 
-      objectReference: {fileID: 264029610}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: starInfo
       value: 
-      objectReference: {fileID: 264029614}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: planetInfo
       value: 
-      objectReference: {fileID: 264029612}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: imageLoader
       value: 
-      objectReference: {fileID: 603646729}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: roverPhotos
       value: 
-      objectReference: {fileID: 1208941695}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691824, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: dwarfPlanetInfo
       value: 
-      objectReference: {fileID: 264029611}
+      objectReference: {fileID: 0}
     - target: {fileID: 1426158832134691825, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -38170,7 +38024,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 16689018
   orbitActive: 1
-  rotationPeriod: 16689020
+  rotationPeriod: 1
 --- !u!1 &1925203649
 GameObject:
   m_ObjectHideFlags: 0
@@ -38471,7 +38325,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 80987
   orbitActive: 1
-  rotationPeriod: 80987
+  rotationPeriod: 1
 --- !u!1 &1935081089
 GameObject:
   m_ObjectHideFlags: 0
@@ -39014,7 +38868,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 357216
   orbitActive: 1
-  rotationPeriod: 357216
+  rotationPeriod: 1
 --- !u!1 &1953782016
 GameObject:
   m_ObjectHideFlags: 0
@@ -39932,7 +39786,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 122641600
   orbitActive: 1
-  rotationPeriod: 32640
+  rotationPeriod: 1
 --- !u!1 &1992138586
 GameObject:
   m_ObjectHideFlags: 0
@@ -41245,7 +41099,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30.341, y: 86.866, z: -2.276}
 --- !u!114 &2030201688
 MonoBehaviour:
@@ -41860,7 +41714,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 31557600
   orbitActive: 1
-  rotationPeriod: -57996
+  rotationPeriod: 1
 --- !u!1 &2055844700
 GameObject:
   m_ObjectHideFlags: 0
@@ -43701,7 +43555,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 19414080
   orbitActive: 1
-  rotationPeriod: 20997360
+  rotationPeriod: 1
 --- !u!1 &2114123151
 GameObject:
   m_ObjectHideFlags: 0
@@ -44055,10 +43909,10 @@ MonoBehaviour:
   notificationMessage: {fileID: 2036218527}
   LoginEmail: {fileID: 620468211}
   AccountUserName: {fileID: 1996227781}
-  Hours: {fileID: 1608487913}
-  Minutes: {fileID: 476121896}
-  Seconds: {fileID: 815816230}
-  SelectedDate: {fileID: 816160160}
+  Hours: {fileID: 0}
+  Minutes: {fileID: 0}
+  Seconds: {fileID: 0}
+  SelectedDate: {fileID: 0}
   GoogleWebAPI: 408757591197-v8a2nlqln8kgkvbtg2qtqg9rg4ombi7k.apps.googleusercontent.com
 --- !u!4 &2121598376
 Transform:
