@@ -5002,6 +5002,7 @@ GameObject:
   - component: {fileID: 205193830370473872}
   - component: {fileID: 6180789847588500435}
   - component: {fileID: -3767192953855635502}
+  - component: {fileID: -7382586275040310528}
   m_Layer: 0
   m_Name: Neptune
   m_TagString: Planet
@@ -5079,3 +5080,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &-7382586275040310528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610884164528438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 15fb43fb4c2f7e8459281779bc3073d5, type: 2}
+  gravity: 0

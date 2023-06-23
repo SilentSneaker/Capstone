@@ -4836,6 +4836,7 @@ GameObject:
   - component: {fileID: 205528198418929460}
   - component: {fileID: 6789804957547789107}
   - component: {fileID: 8477662883928760321}
+  - component: {fileID: 6174881587712649187}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Planet
@@ -4913,6 +4914,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &6174881587712649187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288793558353234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: aafac87bf515b6549b3c344792abe06d, type: 2}
+  gravity: 0
 --- !u!1 &1299526964348990
 GameObject:
   m_ObjectHideFlags: 0

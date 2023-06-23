@@ -11,12 +11,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PersonalTextbox Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8779004642865326146, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326156, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_Text
-      value: 'This is going to house information about the user on the object (Adjusted
-        weight, height, age, etc..)
-
-'
+      value: You would weigh 0 pounds on Venus
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_Pivot.x
@@ -48,11 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 744
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 483.2
       objectReference: {fileID: 0}
     - target: {fileID: 8779004642865326157, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_LocalScale.x
@@ -116,8 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8779004643509427752, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
       propertyPath: m_text
-      value: "This is going to house information about the user on the object (Adjusted
-        weight, height, age, etc..)\n\u200B"
+      value: "You would weigh 0 pounds on Venus\u200B"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd2e8efed4d25346841c90e7ad98fd4, type: 3}
