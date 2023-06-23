@@ -14,12 +14,13 @@ public class UIController : MonoBehaviour
     public TMP_Dropdown starTypeDropdown;
 
     public TMP_InputField factTextBox;
-    public TMP_InputField personalTextBox;
+    public TMP_InputField personalTextbox;
 
     public GameObject imagePrefab;
     public GameObject imageGallery;
 
     public static TMP_InputField displayFactTextbox;
+    public static TMP_InputField displayPersonalTextbox;
 
     public GameObject yellowSun;
     public GameObject redGiant;
@@ -79,8 +80,8 @@ public class UIController : MonoBehaviour
         roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
         roverDropdown.onValueChanged.AddListener(ChangeRover);
 
-        cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
-        cameraSelector.onValueChanged.AddListener(ChangeCamera);
+        //cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
+        //cameraSelector.onValueChanged.AddListener(ChangeCamera);
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
@@ -163,7 +164,7 @@ public class UIController : MonoBehaviour
         if (index == 0)
         {
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -174,7 +175,7 @@ public class UIController : MonoBehaviour
         else if (index == 1)
         {
             displayFactTextbox.gameObject.SetActive(true);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -193,15 +194,19 @@ public class UIController : MonoBehaviour
             UnloadImages();
 
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(true);
+            displayPersonalTextbox.gameObject.SetActive(true);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
+<<<<<<< Updated upstream
 
            personalTextBox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
 
+=======
+                        
+>>>>>>> Stashed changes
             // Fit the textbox within the screen constraints
-            RectTransform newTextboxRectTransform = personalTextBox.GetComponent<RectTransform>();
+            RectTransform newTextboxRectTransform = displayPersonalTextbox.GetComponent<RectTransform>();
             newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
@@ -211,7 +216,7 @@ public class UIController : MonoBehaviour
         else if (index == 3)
         {
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(true);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -297,6 +302,13 @@ public class UIController : MonoBehaviour
     public void ChangeText(GameObject clickedObject)
     {
         Debug.Log(clickedObject);
+        if(displayPersonalTextbox == null)
+        {
+            displayPersonalTextbox = Instantiate(personalTextbox, Vector3.zero, Quaternion.identity);
+            displayPersonalTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
+            displayPersonalTextbox.textComponent.alignment = TextAlignmentOptions.Center;
+            displayPersonalTextbox.gameObject.SetActive(false);
+        }
         if(displayFactTextbox == null)
         {
             displayFactTextbox = Instantiate(factTextBox, Vector3.zero, Quaternion.identity);
