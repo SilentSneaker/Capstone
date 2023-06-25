@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5b01f2c-b481-46bd-8a0d-a597f062b72a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Planets of the Solar System 3D/Prefabs/Dwarf Planets/Materials/Materials/Ceres Texture.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectCanvasScript.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectCanvasScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Different UI/CompleteUI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Different UI/CompleteUI.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planets of the Solar System 3D/Prefabs/Dwarf Planets/Materials/Materials/Ceres Texture.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Different UI/ObjectInfoUI 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Different UI/ObjectInfoUI 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EarthSpin.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EarthSpin.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIController.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2RZInLdu2weNjdms17AtKvMq36T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5b01f2c-b481-46bd-8a0d-a597f062b72a" name="Changes" comment="" />
+      <created>1687451345350</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687451345350</updated>
+    </task>
+    <servers />
+  </component>
+</project>
