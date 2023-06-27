@@ -896,6 +896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21212030}
   - component: {fileID: 21212031}
+  - component: {fileID: 21212032}
   m_Layer: 0
   m_Name: Thalassa
   m_TagString: Untagged
@@ -939,6 +940,20 @@ MonoBehaviour:
   orbitPeriod: 26304
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &21212032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21212029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &23768802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67141160}
   - component: {fileID: 67141161}
+  - component: {fileID: 67141162}
   m_Layer: 0
   m_Name: Naiad
   m_TagString: Untagged
@@ -1367,6 +1383,20 @@ MonoBehaviour:
   orbitPeriod: 25096
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &67141162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67141159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &69861470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1538,7 @@ GameObject:
   - component: {fileID: 76415047}
   - component: {fileID: 76415046}
   - component: {fileID: 76415045}
+  - component: {fileID: 76415048}
   m_Layer: 0
   m_Name: Tethys model
   m_TagString: Untagged
@@ -1593,6 +1624,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76415043}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &76415048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76415043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 1a5639aa028e3754b84c3d0a015cfc85, type: 2}
+  gravity: 0
 --- !u!1 &82219932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,6 +2111,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 93239031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &93239033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 93239031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &93239034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93239033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 10dbf1cf06ea3f146bc715106f6d4d4d, type: 2}
+  gravity: 0
 --- !u!1 &94704531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105098231}
   - component: {fileID: 105098232}
+  - component: {fileID: 105098233}
   m_Layer: 0
   m_Name: Sao
   m_TagString: Untagged
@@ -2498,6 +2563,17 @@ MonoBehaviour:
   orbitPeriod: 248221570
   orbitActive: 1
   rotationPeriod: 1
+--- !u!210 &105098233
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105098230}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &109677962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &128017701
 Transform:
   m_ObjectHideFlags: 0
@@ -3410,6 +3486,7 @@ GameObject:
   - component: {fileID: 149972718}
   - component: {fileID: 149972717}
   - component: {fileID: 149972716}
+  - component: {fileID: 149972719}
   m_Layer: 0
   m_Name: Io model
   m_TagString: Untagged
@@ -3495,6 +3572,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149972714}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &149972719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149972714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 977ea3eadaf50d842ae08c7fba500bb0, type: 2}
+  gravity: 0
 --- !u!1 &158130474
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,10 +3780,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1816916484}
-  - {fileID: 1568438108}
-  - {fileID: 1426438246}
-  - {fileID: 1108539751}
-  - {fileID: 1909584688}
   m_Father: {fileID: 128017701}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5750,6 +5837,7 @@ GameObject:
   - component: {fileID: 268773749}
   - component: {fileID: 268773748}
   - component: {fileID: 268773747}
+  - component: {fileID: 268773750}
   m_Layer: 0
   m_Name: Psamathe model
   m_TagString: Untagged
@@ -5835,6 +5923,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268773745}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &268773750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268773745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: ecaa9c85e8a33ab4b891388939b78060, type: 2}
+  gravity: 0
 --- !u!1 &272214864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6240,6 +6342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292854305}
   - component: {fileID: 292854306}
+  - component: {fileID: 292854307}
   m_Layer: 0
   m_Name: Iapetus
   m_TagString: Untagged
@@ -6283,6 +6386,20 @@ MonoBehaviour:
   orbitPeriod: 6851760
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &292854307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292854304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &308384352
 GameObject:
   m_ObjectHideFlags: 0
@@ -6295,6 +6412,7 @@ GameObject:
   - component: {fileID: 308384356}
   - component: {fileID: 308384355}
   - component: {fileID: 308384354}
+  - component: {fileID: 308384357}
   m_Layer: 0
   m_Name: Titan model
   m_TagString: Untagged
@@ -6380,6 +6498,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308384352}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &308384357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308384352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: bb6e232024d4e964ab5f472ab2824664, type: 2}
+  gravity: 0
 --- !u!1 &312327901
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,6 +8135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391043860}
   - component: {fileID: 391043861}
+  - component: {fileID: 391043862}
   m_Layer: 0
   m_Name: Dione
   m_TagString: Untagged
@@ -8046,6 +8179,20 @@ MonoBehaviour:
   orbitPeriod: 236160
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &391043862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391043859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &392005212
 GameObject:
   m_ObjectHideFlags: 0
@@ -8274,6 +8421,25 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8a5995a14cffc46c9946c25b14f7c26c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+--- !u!1 &398230029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 398230028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &398230030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398230029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: aafac87bf515b6549b3c344792abe06d, type: 2}
+  gravity: 0
 --- !u!1 &399117778
 GameObject:
   m_ObjectHideFlags: 0
@@ -8435,6 +8601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411478747}
   - component: {fileID: 411478748}
+  - component: {fileID: 411478749}
   m_Layer: 0
   m_Name: Titan
   m_TagString: Untagged
@@ -8478,6 +8645,20 @@ MonoBehaviour:
   orbitPeriod: 1366860
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &411478749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411478746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &414705018
 GameObject:
   m_ObjectHideFlags: 0
@@ -9767,6 +9948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466921378}
   - component: {fileID: 466921379}
+  - component: {fileID: 466921380}
   m_Layer: 0
   m_Name: Oberon
   m_TagString: Untagged
@@ -9810,6 +9992,20 @@ MonoBehaviour:
   orbitPeriod: 1161542.4
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &466921380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466921377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &476121894
 GameObject:
   m_ObjectHideFlags: 0
@@ -9900,6 +10096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486520486}
   - component: {fileID: 486520487}
+  - component: {fileID: 486520488}
   m_Layer: 0
   m_Name: Despina
   m_TagString: Untagged
@@ -9943,6 +10140,20 @@ MonoBehaviour:
   orbitPeriod: 29823
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &486520488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486520485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &486678695
 GameObject:
   m_ObjectHideFlags: 0
@@ -10948,6 +11159,7 @@ GameObject:
   - component: {fileID: 571463831}
   - component: {fileID: 571463830}
   - component: {fileID: 571463829}
+  - component: {fileID: 571463832}
   m_Layer: 0
   m_Name: Dione model
   m_TagString: Untagged
@@ -11033,6 +11245,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571463827}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &571463832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571463827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 96818409d661dbf4da04a35c8afc439a, type: 2}
+  gravity: 0
 --- !u!1 &580667239
 GameObject:
   m_ObjectHideFlags: 0
@@ -11431,6 +11657,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 597838260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &597838262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 597838260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &597838263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597838262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 94f936165b2ec5246a9fffde312a90ae, type: 2}
+  gravity: 0
 --- !u!1 &601772028
 GameObject:
   m_ObjectHideFlags: 0
@@ -12368,6 +12613,7 @@ GameObject:
   - component: {fileID: 644285373}
   - component: {fileID: 644285372}
   - component: {fileID: 644285371}
+  - component: {fileID: 644285374}
   m_Layer: 0
   m_Name: Hippocamp model
   m_TagString: Untagged
@@ -12453,6 +12699,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644285369}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &644285374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644285369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: b9f0fd8d6dddd7948bf0414e31c81684, type: 2}
+  gravity: 0
 --- !u!1 &649144403
 GameObject:
   m_ObjectHideFlags: 0
@@ -13326,6 +13586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691208588}
   - component: {fileID: 691208589}
+  - component: {fileID: 691208590}
   m_Layer: 0
   m_Name: Ariel
   m_TagString: Untagged
@@ -13369,6 +13630,20 @@ MonoBehaviour:
   orbitPeriod: 217728
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &691208590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691208587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &693278632
 GameObject:
   m_ObjectHideFlags: 0
@@ -13844,6 +14119,7 @@ GameObject:
   - component: {fileID: 714011847}
   - component: {fileID: 714011846}
   - component: {fileID: 714011845}
+  - component: {fileID: 714011848}
   m_Layer: 0
   m_Name: Europa model
   m_TagString: Untagged
@@ -13929,6 +14205,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714011843}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &714011848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714011843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 366d3f6b54ed0e2418484326121039a2, type: 2}
+  gravity: 0
 --- !u!1 &718513185
 GameObject:
   m_ObjectHideFlags: 0
@@ -14243,6 +14533,7 @@ GameObject:
   - component: {fileID: 724790955}
   - component: {fileID: 724790954}
   - component: {fileID: 724790953}
+  - component: {fileID: 724790956}
   m_Layer: 0
   m_Name: Ganymede model
   m_TagString: Untagged
@@ -14328,6 +14619,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724790951}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &724790956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724790951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: d3bd9c7396dfb7942ab7d0dcb234c5fd, type: 2}
+  gravity: 0
 --- !u!1 &730119332
 GameObject:
   m_ObjectHideFlags: 0
@@ -14340,6 +14645,7 @@ GameObject:
   - component: {fileID: 730119336}
   - component: {fileID: 730119335}
   - component: {fileID: 730119334}
+  - component: {fileID: 730119337}
   m_Layer: 0
   m_Name: Titania model
   m_TagString: Untagged
@@ -14425,6 +14731,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730119332}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &730119337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730119332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 9ee49ae36e0af0f418b409767c9e9740, type: 2}
+  gravity: 0
 --- !u!1001 &730860963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14810,6 +15130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739565346}
   - component: {fileID: 739565347}
+  - component: {fileID: 739565348}
   m_Layer: 0
   m_Name: Rhea
   m_TagString: Untagged
@@ -14853,6 +15174,20 @@ MonoBehaviour:
   orbitPeriod: 390720
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &739565348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739565345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &740697518
 GameObject:
   m_ObjectHideFlags: 0
@@ -14865,6 +15200,7 @@ GameObject:
   - component: {fileID: 740697522}
   - component: {fileID: 740697521}
   - component: {fileID: 740697520}
+  - component: {fileID: 740697523}
   m_Layer: 0
   m_Name: Triton model
   m_TagString: Untagged
@@ -14950,6 +15286,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740697518}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &740697523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740697518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 45f6fdc7c067eb84e983d32a79fafd8b, type: 2}
+  gravity: 0
 --- !u!1 &742021785
 GameObject:
   m_ObjectHideFlags: 0
@@ -15263,6 +15613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752432681}
   - component: {fileID: 752432682}
+  - component: {fileID: 752432683}
   m_Layer: 0
   m_Name: Galatea
   m_TagString: Untagged
@@ -15306,6 +15657,20 @@ MonoBehaviour:
   orbitPeriod: 37388
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &752432683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752432680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &756693139
 GameObject:
   m_ObjectHideFlags: 0
@@ -15316,6 +15681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756693140}
   - component: {fileID: 756693141}
+  - component: {fileID: 756693142}
   m_Layer: 0
   m_Name: Miranda
   m_TagString: Untagged
@@ -15359,6 +15725,20 @@ MonoBehaviour:
   orbitPeriod: 121987.2
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &756693142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756693139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &760788113
 GameObject:
   m_ObjectHideFlags: 0
@@ -17833,6 +18213,7 @@ GameObject:
   - component: {fileID: 872777060}
   - component: {fileID: 872777059}
   - component: {fileID: 872777058}
+  - component: {fileID: 872777061}
   m_Layer: 0
   m_Name: Neso model
   m_TagString: Untagged
@@ -17918,6 +18299,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872777056}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &872777061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872777056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 9510a9f9325e0134eb40dfa3adc98319, type: 2}
+  gravity: 0
 --- !u!1 &873191425
 GameObject:
   m_ObjectHideFlags: 0
@@ -18542,6 +18937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906070024}
   - component: {fileID: 906070025}
+  - component: {fileID: 906070026}
   m_Layer: 0
   m_Name: Neso
   m_TagString: Untagged
@@ -18585,6 +18981,17 @@ MonoBehaviour:
   orbitPeriod: 842927940
   orbitActive: 1
   rotationPeriod: 1
+--- !u!210 &906070026
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906070023}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &915116592
 GameObject:
   m_ObjectHideFlags: 0
@@ -18677,6 +19084,7 @@ GameObject:
   - component: {fileID: 923227228}
   - component: {fileID: 923227227}
   - component: {fileID: 923227226}
+  - component: {fileID: 923227229}
   m_Layer: 0
   m_Name: Miranda model
   m_TagString: Untagged
@@ -18762,6 +19170,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923227224}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &923227229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923227224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 52f8503cc696c9442b982e15bd40faa5, type: 2}
+  gravity: 0
 --- !u!1 &932078406
 GameObject:
   m_ObjectHideFlags: 0
@@ -20374,6 +20796,7 @@ GameObject:
   - component: {fileID: 1031643168}
   - component: {fileID: 1031643170}
   - component: {fileID: 1031643169}
+  - component: {fileID: 1031643171}
   m_Layer: 0
   m_Name: Deimos model
   m_TagString: Untagged
@@ -20446,6 +20869,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031643167}
   m_Mesh: {fileID: -6809089351064969059, guid: debb841a2aacb6e4c9baf385a4e01c52, type: 3}
+--- !u!114 &1031643171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031643167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 9b62229aa6c14ca42a01d36ca0b7285f, type: 2}
+  gravity: 0
 --- !u!1 &1037196957
 GameObject:
   m_ObjectHideFlags: 0
@@ -20867,6 +21304,7 @@ GameObject:
   - component: {fileID: 1053073490}
   - component: {fileID: 1053073492}
   - component: {fileID: 1053073491}
+  - component: {fileID: 1053073493}
   m_Layer: 0
   m_Name: Phobos model
   m_TagString: Untagged
@@ -20939,6 +21377,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053073489}
   m_Mesh: {fileID: -7198359883712843805, guid: d5db77b9a5665ca469b97c475e808a6d, type: 3}
+--- !u!114 &1053073493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053073489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: aa5453dbf4a046a45acd84ae4d85eeb0, type: 2}
+  gravity: 0
 --- !u!1 &1057560193
 GameObject:
   m_ObjectHideFlags: 0
@@ -21794,13 +22246,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108539750}
-  m_LocalRotation: {x: 0.027310992, y: -0, z: -0, w: 0.99962705}
-  m_LocalPosition: {x: 155700, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0071520526, y: 0.0071520526, z: 0.0071520526}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 714011844}
-  m_Father: {fileID: 159793166}
+  m_Father: {fileID: 1816916484}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1108539752
@@ -21969,6 +22421,7 @@ GameObject:
   - component: {fileID: 1126657481}
   - component: {fileID: 1126657480}
   - component: {fileID: 1126657479}
+  - component: {fileID: 1126657482}
   m_Layer: 0
   m_Name: Galatea model
   m_TagString: Untagged
@@ -22054,6 +22507,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126657477}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1126657482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126657477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: a45d3b0d66540ad4d9ac29ee5d7a66c9, type: 2}
+  gravity: 0
 --- !u!1 &1128396051
 GameObject:
   m_ObjectHideFlags: 0
@@ -22829,6 +23296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1170449470}
   - component: {fileID: 1170449471}
+  - component: {fileID: 1170449472}
   m_Layer: 0
   m_Name: Psamathe
   m_TagString: Untagged
@@ -22872,6 +23340,17 @@ MonoBehaviour:
   orbitPeriod: 788113900
   orbitActive: 1
   rotationPeriod: 1
+--- !u!210 &1170449472
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170449469}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1173774115
 GameObject:
   m_ObjectHideFlags: 0
@@ -23277,6 +23756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1195969728}
   - component: {fileID: 1195969729}
+  - component: {fileID: 1195969730}
   m_Layer: 0
   m_Name: Enceladus
   m_TagString: Untagged
@@ -23320,6 +23800,20 @@ MonoBehaviour:
   orbitPeriod: 118080
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1195969730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195969727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1198730265
 GameObject:
   m_ObjectHideFlags: 0
@@ -23332,6 +23826,7 @@ GameObject:
   - component: {fileID: 1198730269}
   - component: {fileID: 1198730268}
   - component: {fileID: 1198730267}
+  - component: {fileID: 1198730270}
   m_Layer: 0
   m_Name: Iapetus model
   m_TagString: Untagged
@@ -23417,6 +23912,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198730265}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1198730270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198730265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1209441610
 GameObject:
   m_ObjectHideFlags: 0
@@ -24247,6 +24756,7 @@ GameObject:
   - component: {fileID: 1227383402}
   - component: {fileID: 1227383404}
   - component: {fileID: 1227383403}
+  - component: {fileID: 1227383405}
   m_Layer: 0
   m_Name: Saturn Model
   m_TagString: Untagged
@@ -24327,6 +24837,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227383401}
   m_Mesh: {fileID: 4300000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+--- !u!114 &1227383405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227383401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: dbe3ab6235045b84891a24886e230db1, type: 2}
+  gravity: 0
 --- !u!1 &1239272539
 GameObject:
   m_ObjectHideFlags: 0
@@ -24624,6 +25148,7 @@ GameObject:
   - component: {fileID: 1253736979}
   - component: {fileID: 1253736978}
   - component: {fileID: 1253736977}
+  - component: {fileID: 1253736980}
   m_Layer: 0
   m_Name: Umbriel model
   m_TagString: Untagged
@@ -24709,6 +25234,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253736975}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1253736980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253736975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: b9b98089138e1244fa29ffeaa95a41fb, type: 2}
+  gravity: 0
 --- !u!1 &1258905850
 GameObject:
   m_ObjectHideFlags: 0
@@ -24799,6 +25338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1259226017}
   - component: {fileID: 1259226018}
+  - component: {fileID: 1259226019}
   m_Layer: 0
   m_Name: Triton
   m_TagString: Untagged
@@ -24842,6 +25382,20 @@ MonoBehaviour:
   orbitPeriod: 507720
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1259226019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259226016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1261332268
 GameObject:
   m_ObjectHideFlags: 0
@@ -25987,6 +26541,7 @@ GameObject:
   - component: {fileID: 1298334689}
   - component: {fileID: 1298334688}
   - component: {fileID: 1298334687}
+  - component: {fileID: 1298334690}
   m_Layer: 0
   m_Name: Rhea model
   m_TagString: Untagged
@@ -26072,6 +26627,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298334685}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1298334690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298334685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: f72cf11e63f89a84f9e8e73f19b55d99, type: 2}
+  gravity: 0
 --- !u!1001 &1301808579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26145,6 +26714,25 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ab6161919f1cb4e40a36aa58f68a2c92, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+--- !u!1 &1301808580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 1301808579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1301808581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301808580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 574190626a6e1464daf93d36d0cb5dd6, type: 2}
+  gravity: 0
 --- !u!1 &1302659918
 GameObject:
   m_ObjectHideFlags: 0
@@ -27168,6 +27756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353562157}
   - component: {fileID: 1353562158}
+  - component: {fileID: 1353562159}
   m_Layer: 0
   m_Name: Proteus
   m_TagString: Untagged
@@ -27211,6 +27800,20 @@ MonoBehaviour:
   orbitPeriod: 95371
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1353562159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353562156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1001 &1354290702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27289,6 +27892,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 1354290702}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1354290704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 1354290702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354290705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354290704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 15fb43fb4c2f7e8459281779bc3073d5, type: 2}
+  gravity: 0
 --- !u!1 &1358578720
 GameObject:
   m_ObjectHideFlags: 0
@@ -28568,13 +29190,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426438245}
-  m_LocalRotation: {x: 0.027310992, y: -0, z: -0, w: 0.99962705}
-  m_LocalPosition: {x: 155700, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0071520526, y: 0.0071520526, z: 0.0071520526}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724790952}
-  m_Father: {fileID: 159793166}
+  m_Father: {fileID: 1816916484}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1426438247
@@ -30138,6 +30760,7 @@ GameObject:
   - component: {fileID: 1512414608}
   - component: {fileID: 1512414607}
   - component: {fileID: 1512414606}
+  - component: {fileID: 1512414609}
   m_Layer: 0
   m_Name: Moon model
   m_TagString: Untagged
@@ -30223,6 +30846,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512414604}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1512414609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512414604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 2bf81b8a0b602eb4c92f614446d54005, type: 2}
+  gravity: 0
 --- !u!1 &1514742131
 GameObject:
   m_ObjectHideFlags: 0
@@ -30235,6 +30872,7 @@ GameObject:
   - component: {fileID: 1514742135}
   - component: {fileID: 1514742134}
   - component: {fileID: 1514742133}
+  - component: {fileID: 1514742136}
   m_Layer: 0
   m_Name: Proteus model
   m_TagString: Untagged
@@ -30320,6 +30958,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514742131}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1514742136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514742131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 52606e7ca03ac434fbb04b0013ef650b, type: 2}
+  gravity: 0
 --- !u!1 &1531996187
 GameObject:
   m_ObjectHideFlags: 0
@@ -30558,6 +31210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564727072}
   - component: {fileID: 1564727073}
+  - component: {fileID: 1564727074}
   m_Layer: 0
   m_Name: Larissa
   m_TagString: Untagged
@@ -30601,6 +31254,20 @@ MonoBehaviour:
   orbitPeriod: 47710
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1564727074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564727071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1565130919
 GameObject:
   m_ObjectHideFlags: 0
@@ -30654,6 +31321,7 @@ GameObject:
   - component: {fileID: 1567950692}
   - component: {fileID: 1567950691}
   - component: {fileID: 1567950690}
+  - component: {fileID: 1567950693}
   m_Layer: 0
   m_Name: Laomedeia model
   m_TagString: Untagged
@@ -30739,6 +31407,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567950688}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1567950693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567950688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: af2b3dabbd215cb439833d9f51d53ca5, type: 2}
+  gravity: 0
 --- !u!1 &1568438107
 GameObject:
   m_ObjectHideFlags: 0
@@ -30763,13 +31445,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568438107}
-  m_LocalRotation: {x: 0.027310992, y: -0, z: -0, w: 0.99962705}
-  m_LocalPosition: {x: 155700, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0071520526, y: 0.0071520526, z: 0.0071520526}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 149972715}
-  m_Father: {fileID: 159793166}
+  m_Father: {fileID: 1816916484}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1568438109
@@ -31186,6 +31868,7 @@ GameObject:
   - component: {fileID: 1593380444}
   - component: {fileID: 1593380443}
   - component: {fileID: 1593380442}
+  - component: {fileID: 1593380445}
   m_Layer: 0
   m_Name: Sao model
   m_TagString: Untagged
@@ -31271,6 +31954,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593380440}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1593380445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593380440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 13a7b96176617d349b92ce20195264aa, type: 2}
+  gravity: 0
 --- !u!1 &1598519677
 GameObject:
   m_ObjectHideFlags: 0
@@ -31283,6 +31980,7 @@ GameObject:
   - component: {fileID: 1598519681}
   - component: {fileID: 1598519680}
   - component: {fileID: 1598519679}
+  - component: {fileID: 1598519682}
   m_Layer: 0
   m_Name: Despina model
   m_TagString: Untagged
@@ -31368,6 +32066,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598519677}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1598519682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598519677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 48aeaa53ff8d35047b968c99088c829b, type: 2}
+  gravity: 0
 --- !u!1 &1600569913
 GameObject:
   m_ObjectHideFlags: 0
@@ -31542,6 +32254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601274491}
   - component: {fileID: 1601274492}
+  - component: {fileID: 1601274493}
   m_Layer: 0
   m_Name: Titania
   m_TagString: Untagged
@@ -31585,6 +32298,20 @@ MonoBehaviour:
   orbitPeriod: 217728
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1601274493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601274490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1608487911
 GameObject:
   m_ObjectHideFlags: 0
@@ -31677,6 +32404,7 @@ GameObject:
   - component: {fileID: 1611821037}
   - component: {fileID: 1611821036}
   - component: {fileID: 1611821035}
+  - component: {fileID: 1611821038}
   m_Layer: 0
   m_Name: Larrissa model
   m_TagString: Untagged
@@ -31762,6 +32490,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611821033}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1611821038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611821033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 1f20256a90ba16d4a8ed524e515909d1, type: 2}
+  gravity: 0
 --- !u!1 &1616823350
 GameObject:
   m_ObjectHideFlags: 0
@@ -32539,6 +33281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640506297}
   - component: {fileID: 1640506298}
+  - component: {fileID: 1640506299}
   m_Layer: 0
   m_Name: Tethys
   m_TagString: Untagged
@@ -32582,6 +33325,20 @@ MonoBehaviour:
   orbitPeriod: 163296
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1640506299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640506296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1643872982
 GameObject:
   m_ObjectHideFlags: 0
@@ -32794,6 +33551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670196331}
   - component: {fileID: 1670196332}
+  - component: {fileID: 1670196333}
   m_Layer: 0
   m_Name: Halimede
   m_TagString: Untagged
@@ -32837,6 +33595,17 @@ MonoBehaviour:
   orbitPeriod: 507720
   orbitActive: 1
   rotationPeriod: 1
+--- !u!210 &1670196333
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670196330}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1670386304
 GameObject:
   m_ObjectHideFlags: 0
@@ -33343,6 +34112,7 @@ GameObject:
   - component: {fileID: 1691265470}
   - component: {fileID: 1691265469}
   - component: {fileID: 1691265468}
+  - component: {fileID: 1691265471}
   m_Layer: 0
   m_Name: Thalassa model
   m_TagString: Untagged
@@ -33428,6 +34198,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691265466}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1691265471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691265466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: f2157d45e5c8d2543bfc9fc0387eb686, type: 2}
+  gravity: 0
 --- !u!1 &1697363641
 GameObject:
   m_ObjectHideFlags: 0
@@ -33440,6 +34224,7 @@ GameObject:
   - component: {fileID: 1697363645}
   - component: {fileID: 1697363644}
   - component: {fileID: 1697363643}
+  - component: {fileID: 1697363646}
   m_Layer: 0
   m_Name: Naiad model
   m_TagString: Untagged
@@ -33525,6 +34310,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697363641}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1697363646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697363641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: fb40eb53b62dbfd40b394414de3259b0, type: 2}
+  gravity: 0
 --- !u!1 &1698189983
 GameObject:
   m_ObjectHideFlags: 0
@@ -34627,6 +35426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737420154}
   - component: {fileID: 1737420155}
+  - component: {fileID: 1737420156}
   m_Layer: 0
   m_Name: Laomedeia
   m_TagString: Untagged
@@ -34670,6 +35470,17 @@ MonoBehaviour:
   orbitPeriod: 273772400
   orbitActive: 1
   rotationPeriod: 1
+--- !u!210 &1737420156
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737420153}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1747945230
 GameObject:
   m_ObjectHideFlags: 0
@@ -35850,6 +36661,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 1816916483}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1816916485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 1816916483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1816916486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816916485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: c9c617eec659e314f90c459ee3e52362, type: 2}
+  gravity: 0
 --- !u!1 &1823921414
 GameObject:
   m_ObjectHideFlags: 0
@@ -36464,6 +37294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855421651}
   - component: {fileID: 1855421652}
+  - component: {fileID: 1855421653}
   m_Layer: 0
   m_Name: Nereid
   m_TagString: Untagged
@@ -36507,6 +37338,20 @@ MonoBehaviour:
   orbitPeriod: 31105920
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1855421653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855421650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1870907266
 GameObject:
   m_ObjectHideFlags: 0
@@ -37996,13 +38841,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909584687}
-  m_LocalRotation: {x: 0.027310992, y: -0, z: -0, w: 0.99962705}
-  m_LocalPosition: {x: 155700, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0071520526, y: 0.0071520526, z: 0.0071520526}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2121459525}
-  m_Father: {fileID: 159793166}
+  m_Father: {fileID: 1816916484}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1909584689
@@ -38188,6 +39033,7 @@ GameObject:
   - component: {fileID: 1926839650}
   - component: {fileID: 1926839649}
   - component: {fileID: 1926839648}
+  - component: {fileID: 1926839651}
   m_Layer: 0
   m_Name: Enceladus model
   m_TagString: Untagged
@@ -38273,6 +39119,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926839646}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1926839651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926839646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 57601af20b7a94143ac46bbf134ba0d8, type: 2}
+  gravity: 0
 --- !u!1 &1933810251
 GameObject:
   m_ObjectHideFlags: 0
@@ -38283,6 +39143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933810252}
   - component: {fileID: 1933810253}
+  - component: {fileID: 1933810254}
   m_Layer: 0
   m_Name: Hippocamp
   m_TagString: Untagged
@@ -38326,6 +39187,20 @@ MonoBehaviour:
   orbitPeriod: 80987
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1933810254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933810251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1935081089
 GameObject:
   m_ObjectHideFlags: 0
@@ -38527,6 +39402,7 @@ GameObject:
   - component: {fileID: 1937302109}
   - component: {fileID: 1937302108}
   - component: {fileID: 1937302107}
+  - component: {fileID: 1937302110}
   m_Layer: 0
   m_Name: Halimede model
   m_TagString: Untagged
@@ -38612,6 +39488,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937302105}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1937302110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937302105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 805ff5d1f63c2f844ba98ccedbd2cec4, type: 2}
+  gravity: 0
 --- !u!1 &1937549622
 GameObject:
   m_ObjectHideFlags: 0
@@ -38826,6 +39716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953353047}
   - component: {fileID: 1953353048}
+  - component: {fileID: 1953353049}
   m_Layer: 0
   m_Name: Umbriel
   m_TagString: Untagged
@@ -38869,6 +39760,20 @@ MonoBehaviour:
   orbitPeriod: 357216
   orbitActive: 1
   rotationPeriod: 1
+--- !u!114 &1953353049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953353046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 0}
+  gravity: 0
 --- !u!1 &1953782016
 GameObject:
   m_ObjectHideFlags: 0
@@ -39287,6 +40192,7 @@ GameObject:
   - component: {fileID: 1972397457}
   - component: {fileID: 1972397456}
   - component: {fileID: 1972397455}
+  - component: {fileID: 1972397458}
   m_Layer: 0
   m_Name: Nereid model
   m_TagString: Untagged
@@ -39372,6 +40278,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972397453}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1972397458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972397453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 495715ce76f395d488ee7d6a73e42a8c, type: 2}
+  gravity: 0
 --- !u!1 &1974247176
 GameObject:
   m_ObjectHideFlags: 0
@@ -41016,6 +41936,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
   m_PrefabInstance: {fileID: 2020389451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2020389453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1d1efd74961b744cca932e0880b5eb4d, type: 3}
+  m_PrefabInstance: {fileID: 2020389451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2020389454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020389453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 7c5ca9dfb294e95439f43a00aba7a1c8, type: 2}
+  gravity: 0
 --- !u!1 &2030201684
 GameObject:
   m_ObjectHideFlags: 0
@@ -41577,6 +42516,7 @@ GameObject:
   - component: {fileID: 2046967527}
   - component: {fileID: 2046967526}
   - component: {fileID: 2046967525}
+  - component: {fileID: 2046967528}
   m_Layer: 0
   m_Name: Ariel model
   m_TagString: Untagged
@@ -41662,6 +42602,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046967523}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2046967528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046967523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 73bb65b4e9f62a7419e2d10830106a53, type: 2}
+  gravity: 0
 --- !u!1 &2052411682
 GameObject:
   m_ObjectHideFlags: 0
@@ -43777,6 +44731,7 @@ GameObject:
   - component: {fileID: 2121459528}
   - component: {fileID: 2121459527}
   - component: {fileID: 2121459526}
+  - component: {fileID: 2121459529}
   m_Layer: 0
   m_Name: Callisto model
   m_TagString: Untagged
@@ -43862,6 +44817,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121459524}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2121459529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121459524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: d40d33d7bbea5684ea3a5b4ef7c9c0bb, type: 2}
+  gravity: 0
 --- !u!1 &2121598374
 GameObject:
   m_ObjectHideFlags: 0
