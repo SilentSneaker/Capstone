@@ -51,32 +51,10 @@ public class ClickBehavior : MonoBehaviour
 
                     Debug.Log(clickedObject);
 
-                    string substringToRemove = "(Clone)";
-                    string spaceToRemove = " ";
-                    string stringToModify = clickedObject.name;
-                    if (stringToModify.Contains(substringToRemove))
-                    {
-                        // Remove the substring from the original string
-                       stringToModify.Replace(substringToRemove, "");                       
-
-                        imageAPI.SetSearchQuery(stringToModify);
-
-                        // Output the modified string
-                        //Debug.Log(stringToModify);
-                    }
-                    if (stringToModify.Contains(spaceToRemove))
-                    {
-                        stringToModify.Replace(spaceToRemove, "_");
-
-                    }
-                    else
-                    {
-                        imageAPI.SetSearchQuery(clickedObject.name);
-                    }
+                    imageAPI.SetSearchQuery(clickedObject.name);                    
 
                     //Starts Images API to get photos
                     StartCoroutine(imageAPI.FetchImageData());
-
 
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
@@ -85,7 +63,8 @@ public class ClickBehavior : MonoBehaviour
                         objectDropdown = clickedObject.GetComponent<DropdownActivation>();
                         objectDropdown.ShowDropdown();
 
-                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
+                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 1000);
+                        Camera.main.transform.rotation = Quaternion.Euler(Vector3.zero);
                         
                         zoomedIn = true;
                     }

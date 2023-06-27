@@ -59,16 +59,18 @@ public class ImageLoader : MonoBehaviour
     }
 
     //Image Library Load Images
-    public void LoadLibraryImages(GameObject imageGallery)
+    public void LoadLibraryImages(GameObject imageGallery, string objName)
     {
-        StartCoroutine(LoadLibraryImagesCoroutine(imageGallery));
+        StartCoroutine(LoadLibraryImagesCoroutine(imageGallery, objName));
     }
 
 
-    private IEnumerator LoadLibraryImagesCoroutine(GameObject imageGallery)
+    private IEnumerator LoadLibraryImagesCoroutine(GameObject imageGallery, string objName)
     {
 
         NASAImageAPI APIManager = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
+
+        APIManager.SetSearchQuery(objName);
 
         yield return APIManager.FetchImageData();
 
