@@ -44,7 +44,7 @@ public class BeltAsteroid : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            UnityEngine.Debug.Log(Camera.main.transform.position);
+            //UnityEngine.Debug.Log(Camera.main.transform.position);
             updated += 1;
         }
         if(rotationClockwise)
