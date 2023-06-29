@@ -2771,7 +2771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &128017701
 Transform:
   m_ObjectHideFlags: 0
@@ -7339,7 +7339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &335652379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13486,7 +13486,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2f50ed56f995f7c4dbaa2976247d304e, type: 2}
     - target: {fileID: 6187385355114314635, guid: d3d39ba55302f244ea63daac30de6263, type: 3}
       propertyPath: m_Name
-      value: Ceres Model
+      value: Pluto Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d39ba55302f244ea63daac30de6263, type: 3}
@@ -39665,7 +39665,7 @@ GameObject:
   - component: {fileID: 1941949105}
   - component: {fileID: 1941949106}
   m_Layer: 0
-  m_Name: Ceres System (1)
+  m_Name: Pluto System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41897,9 +41897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ad2e6a265c3a341afe01b0ba858ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 1
+  panSpeed: 1000
   rotateSpeed: 1000
-  zoomSpeed: 1
+  zoomSpeed: 1000
 --- !u!1 &2030756443
 GameObject:
   m_ObjectHideFlags: 0
