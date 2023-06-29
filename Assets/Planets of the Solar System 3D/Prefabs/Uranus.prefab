@@ -11,10 +11,14 @@ GameObject:
   - component: {fileID: 4799057029891002}
   - component: {fileID: 205004119987537650}
   - component: {fileID: 1075034882336646565}
+<<<<<<< Updated upstream
+=======
   - component: {fileID: -6489622658397735782}
+  - component: {fileID: 8278000131845068972}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Uranus
-  m_TagString: Planet
+  m_TagString: TrackingObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +35,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4273197762250818}
   - {fileID: 4107349934366502}
   - {fileID: 4219666328080098}
   m_Father: {fileID: 0}
@@ -55,13 +58,13 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23902560763223264}
-    - renderer: {fileID: 199222409386027376}
+    - renderer: {fileID: 0}
     - renderer: {fileID: 0}
   - screenRelativeHeight: 0.018126301
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23179924293987222}
-    - renderer: {fileID: 199222409386027376}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!135 &1075034882336646565
 SphereCollider:
@@ -76,6 +79,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
 --- !u!114 &-6489622658397735782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +95,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &8278000131845068972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014736895960144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 7c5ca9dfb294e95439f43a00aba7a1c8, type: 2}
+  gravity: 0
 --- !u!1 &1096564875544702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,6 +4933,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+>>>>>>> Stashed changes
 --- !u!1 &1362093620175414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,7 +4965,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4799057029891002}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33610712520644632
 MeshFilter:
@@ -5028,7 +5048,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4799057029891002}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33191563937313708
 MeshFilter:

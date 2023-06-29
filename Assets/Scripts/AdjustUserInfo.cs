@@ -9,7 +9,7 @@ public class AdjustUserInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        userWeight = firebase.GetWeight();
+        userWeight = 130;
     }
 
     // Update is called once per frame

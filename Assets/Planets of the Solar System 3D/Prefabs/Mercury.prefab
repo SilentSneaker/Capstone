@@ -5002,6 +5002,7 @@ GameObject:
   - component: {fileID: 205527854345052348}
   - component: {fileID: 2366119673273863367}
   - component: {fileID: 7287804253291076041}
+  - component: {fileID: 329031052493556279}
   m_Layer: 0
   m_Name: Mercury
   m_TagString: Planet
@@ -5079,3 +5080,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &329031052493556279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856687845478954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 574190626a6e1464daf93d36d0cb5dd6, type: 2}
+  gravity: 0

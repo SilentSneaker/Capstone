@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 205720317299591224}
   - component: {fileID: 4182879556056083133}
   - component: {fileID: 3427793605816406440}
+  - component: {fileID: -8381380093216620381}
   m_Layer: 0
   m_Name: Venus
   m_TagString: Planet
@@ -172,6 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &-8381380093216620381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647581975099426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 10dbf1cf06ea3f146bc715106f6d4d4d, type: 2}
+  gravity: 0
 --- !u!1 &1741346461429698
 GameObject:
   m_ObjectHideFlags: 0
