@@ -1882,6 +1882,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &85839482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2488,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &93239038
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3728,6 +3730,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &149972721
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6189,6 +6192,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &269642652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6914,6 +6918,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &288224429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7674,6 +7679,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &308384359
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9330,6 +9336,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &411478746
 GameObject:
   m_ObjectHideFlags: 0
@@ -11790,6 +11797,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &571463834
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12390,6 +12398,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &601772028
 GameObject:
   m_ObjectHideFlags: 0
@@ -13128,6 +13137,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &665941234
 GameObject:
   m_ObjectHideFlags: 0
@@ -14275,6 +14285,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &714011850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14683,6 +14694,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &724790958
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14811,6 +14823,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &730119339
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15229,6 +15242,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &740697525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18065,6 +18079,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &873191425
 GameObject:
   m_ObjectHideFlags: 0
@@ -18345,6 +18360,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876079760}
   m_CullTransparentMesh: 0
+--- !u!1 &887983455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2783069131242748870, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+  m_PrefabInstance: {fileID: 1334741523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &887983457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887983455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9bb7747d4af5747bb704512c0f921e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893742121
 GameObject:
   m_ObjectHideFlags: 0
@@ -19534,6 +19566,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &923227231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22142,6 +22175,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1031867262
 GameObject:
   m_ObjectHideFlags: 0
@@ -23089,6 +23123,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1057560193
 GameObject:
   m_ObjectHideFlags: 0
@@ -24355,6 +24390,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1126657484
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25649,6 +25685,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1198730272
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26266,6 +26303,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1227383407
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27230,6 +27268,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1253736982
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28900,6 +28939,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1298334692
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29037,6 +29077,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1302659918
 GameObject:
   m_ObjectHideFlags: 0
@@ -29533,6 +29574,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1328778323
 GameObject:
   m_ObjectHideFlags: 0
@@ -29697,6 +29739,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328778323}
   m_CullTransparentMesh: 0
+--- !u!1001 &1334741523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1436882076}
+    m_Modifications:
+    - target: {fileID: 2783069131242748870, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_Name
+      value: Planet Nav
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -460
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153876800537572574, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3141e2ee4a23c447b0c82e19fc287be, type: 3}
 --- !u!1 &1335430037
 GameObject:
   m_ObjectHideFlags: 0
@@ -30408,6 +30547,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1354290709
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33373,6 +33513,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1514742131
 GameObject:
   m_ObjectHideFlags: 0
@@ -33501,6 +33642,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1520088291
 GameObject:
   m_ObjectHideFlags: 0
@@ -34517,6 +34659,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1568438107
 GameObject:
   m_ObjectHideFlags: 0
@@ -35177,6 +35320,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1598519677
 GameObject:
   m_ObjectHideFlags: 0
@@ -35292,6 +35436,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1598519684
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35566,6 +35711,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1615818295
 GameObject:
   m_ObjectHideFlags: 0
@@ -37388,6 +37534,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1691265473
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -37770,6 +37917,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1697363648
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -39588,6 +39736,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1816916490
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -41457,6 +41606,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &1926839653
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -42120,6 +42270,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1937549622
 GameObject:
   m_ObjectHideFlags: 0
@@ -42925,6 +43076,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!1 &1973183454
 GameObject:
   m_ObjectHideFlags: 0
@@ -44103,6 +44255,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &2020389458
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -44659,6 +44812,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &2046967530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -46159,6 +46313,7 @@ MonoBehaviour:
   viewDropdown: {fileID: 30757836}
   starTypeDropdown: {fileID: 1854443064}
   moonDropdown: {fileID: 0}
+  planetNav: {fileID: 0}
 --- !u!135 &2121459531
 SphereCollider:
   m_ObjectHideFlags: 0
