@@ -13926,8 +13926,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 57703945809694502, guid: d3d39ba55302f244ea63daac30de6263, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.376
+      objectReference: {fileID: 0}
+    - target: {fileID: 57703945809694502, guid: d3d39ba55302f244ea63daac30de6263, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41367.2
+      value: 1080000
       objectReference: {fileID: 0}
     - target: {fileID: 57703945809694502, guid: d3d39ba55302f244ea63daac30de6263, type: 3}
       propertyPath: m_LocalPosition.y
@@ -40280,12 +40284,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Earth: {fileID: 612590701}
   orbitPath:
-    xAxis: 41367.2
-    yAxis: 41367.2
+    xAxis: 1081200
+    yAxis: 886600
   orbitPosition: 0
-  orbitPeriod: 122641600
+  orbitPeriod: 90613304
   orbitActive: 1
-  rotationPeriod: 32640
+  rotationPeriod: 140771
 --- !u!1 &1953353046
 GameObject:
   m_ObjectHideFlags: 0
