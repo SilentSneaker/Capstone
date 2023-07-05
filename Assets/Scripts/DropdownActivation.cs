@@ -10,6 +10,8 @@ public class DropdownActivation : MonoBehaviour
     public static GameObject uiCanvas;
     public TMP_Dropdown viewDropdown;
     public TMP_Dropdown starTypeDropdown;
+    public TMP_Dropdown moonDropdown;
+    public TMP_Dropdown planetNav;
     private void Start()
     {
         uiCanvas = GameObject.Find("ObjectInfoUI");
@@ -18,9 +20,17 @@ public class DropdownActivation : MonoBehaviour
         viewDropdown.interactable = false;
         viewDropdown.GetComponent<CanvasGroup>().alpha = 0;
 
+        moonDropdown = uiCanvas.transform.Find("Moon Selector").GetComponent<TMP_Dropdown>();
+        moonDropdown.interactable = false;
+        moonDropdown.GetComponent<CanvasGroup>().alpha = 0;
+
         starTypeDropdown = uiCanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.interactable = true;
         starTypeDropdown.GetComponent<CanvasGroup>().alpha = 1;
+
+        planetNav = uiCanvas.transform.Find("Planet Nav").GetComponent<TMP_Dropdown>();
+        planetNav.interactable = true;
+        planetNav.GetComponent<CanvasGroup>().alpha = 1;
     }
     
     public void ShowDropdown()
@@ -39,6 +49,12 @@ public class DropdownActivation : MonoBehaviour
 
         starTypeDropdown.interactable = false;
         starTypeDropdown.GetComponent<CanvasGroup>().alpha = 0;
+
+        moonDropdown.interactable = true;
+        moonDropdown.GetComponent<CanvasGroup>().alpha = 1;
+
+        planetNav.interactable = false;
+        planetNav.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     public void RemoveDropdown()
@@ -46,7 +62,13 @@ public class DropdownActivation : MonoBehaviour
         viewDropdown.interactable = false;
         viewDropdown.GetComponent<CanvasGroup>().alpha = 0;
 
+        moonDropdown.interactable = false;
+        moonDropdown.GetComponent<CanvasGroup>().alpha = 0;
+
         starTypeDropdown.interactable = true;
         starTypeDropdown.GetComponent<CanvasGroup>().alpha = 1;
+
+        planetNav.interactable = true;
+        planetNav.GetComponent<CanvasGroup>().alpha = 1;
     }
 }
