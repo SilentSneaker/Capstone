@@ -13,6 +13,7 @@ public class ClickBehavior : MonoBehaviour
 
     public UIController uIController;
 
+    MoonDropdown moonDropdown;
 
     NASAImageAPI imageAPI;
 
@@ -32,6 +33,7 @@ public class ClickBehavior : MonoBehaviour
 
         imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
 
+        moonDropdown = GameObject.Find("Moon Selector").GetComponent<MoonDropdown>();
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class ClickBehavior : MonoBehaviour
                     //selectedTag = objectHit.collider.tag;
                     clickedObject = objectHit.collider.gameObject;
 
-                    Debug.Log(clickedObject);
+                    Debug.Log("In Camera movement");
 
                     imageAPI.SetSearchQuery(clickedObject.name);                    
 
@@ -62,6 +64,7 @@ public class ClickBehavior : MonoBehaviour
                     {
                         objectDropdown = clickedObject.GetComponent<DropdownActivation>();
                         objectDropdown.ShowDropdown();
+                        //moonDropdown.removeMoonDropdown();
 
                         Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 1000);
                         Camera.main.transform.rotation = Quaternion.Euler(Vector3.zero);
@@ -74,6 +77,8 @@ public class ClickBehavior : MonoBehaviour
             else if (!EventSystem.current.IsPointerOverGameObject() && zoomedIn == true)
             {
                 uIController.UnloadImages();
+
+                uIController.ResetCamera();
 
                 Camera.main.transform.position = ogCamPos;
 

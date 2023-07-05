@@ -19,8 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -49,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 42
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -69,11 +68,9 @@ MonoBehaviour:
     y: 0
     width: 611
     height: 947
-
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
-
   m_Panes:
   - {fileID: 14}
   - {fileID: 18}
@@ -99,11 +96,9 @@ MonoBehaviour:
     y: 0
     width: 305
     height: 646
-
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
-
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
@@ -229,8 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-
-  controlID: 94
+  controlID: 43
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,14 +244,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-
     width: 1309
     height: 646
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-
-  controlID: 95
+  controlID: 44
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -273,13 +265,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-
     x: 305
     y: 0
     width: 1004
     height: 646
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -357,27 +348,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-
-    - Assets
+    - Assets/Planets of the Solar System 3D/Prefabs/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-
-  - Assets
-
+  - Assets/Planets of the Solar System 3D/Prefabs/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\shaff\OneDrive\Documents\GitHub\Capstone
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6a700000
-    m_LastClickedID: 28778
-    m_ExpandedIDs: 000000006a70000000ca9a3bffffff7f
-
+    scrollPos: {x: 0, y: 76}
+    m_SelectedIDs: f0740000
+    m_LastClickedID: 29936
+    m_ExpandedIDs: 00000000ec730000f8730000bc74000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -405,9 +391,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-
-    m_ExpandedIDs: 000000006a700000
-
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,22 +521,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 32fbffff
-
+      m_SelectedIDs: 16620000
+      m_LastClickedID: 25110
+      m_ExpandedIDs: 62e3fdff14faffff3efaffff3a6100009661000016620000146400001c640000ba650000a0660000d0670000c0690000286a00001c6b0000586c0000d86f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 2014 AK51
-        m_OriginalName: 2014 AK51
+        m_Name: Larrissa
+        m_OriginalName: Larrissa
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -21072
+        m_UserData: 27844
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -824,11 +806,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 632.1306, y: 381.41687, z: 74.68805}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
-
+    m_Value: {x: 632.1306, y: 381.41687, z: 74.68805}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -875,15 +855,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-
-    m_Target: {x: -0.13688669, y: 0.23302752, z: -0.033144772, w: -0.96223384}
+    m_Target: {x: -0.20866904, y: 0.029920708, z: -0.0063836905, w: -0.9775257}
     speed: 2
-    m_Value: {x: -0.13688669, y: 0.23302752, z: -0.033144772, w: -0.9622338}
+    m_Value: {x: -0.20866536, y: 0.029920181, z: -0.006383578, w: -0.9775085}
   m_Size:
-    m_Target: 2798.2417
+    m_Target: 331.91074
     speed: 2
-    m_Value: 2798.2417
-
+    m_Value: 331.91074
   m_Ortho:
     m_Target: 0
     speed: 2

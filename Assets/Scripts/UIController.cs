@@ -53,7 +53,7 @@ public class UIController : MonoBehaviour
 
     AdjustUserInfo adjustUserInfo;
 
-
+    public MoonDropdown moonDropdown;
 
     SOLoader selectedObject;
 
@@ -62,6 +62,10 @@ public class UIController : MonoBehaviour
     NASAImageAPI imageAPI;
 
     string selectedObj;
+
+    bool viewingMoon = false;
+
+    GameObject selectedMoon;
 
     //SOLoader selectedObject;
 
@@ -155,7 +159,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(viewingMoon == true)
+        {
+            Camera.main.transform.position = new Vector3(selectedMoon.transform.position.x, selectedMoon.transform.position.y, selectedMoon.transform.position.z - 100);
+        }
     }
 
     private void OnViewDropdownValueChanged(int index)
@@ -316,6 +323,9 @@ public class UIController : MonoBehaviour
         if (clickedObject.tag == "Sun")
         {
             selectedObj = clickedObject.name;
+
+            moonDropdown.ChangeOptions(selectedObj);
+
             //Debug.Log("Made it into the UIController 2");
             #region If statements for checking the name of the suns
             if (clickedObject.name.Trim() == "Yellow Sun" || clickedObject.name == "Yellow Sun(Clone)" || clickedObject.name == "Sun Model")
@@ -335,6 +345,9 @@ public class UIController : MonoBehaviour
         else if (clickedObject.tag == "Moon")
         {
             selectedObj = clickedObject.name;
+
+            moonDropdown.ChangeOptions(selectedObj);
+
             #region If statements for checking the name of the moons
             if (clickedObject.name.Trim() == "Moon" || clickedObject.name == "Moon model" || clickedObject.name == "Moon Model")
             {
@@ -430,6 +443,9 @@ public class UIController : MonoBehaviour
         {
             #region If statements for checking the name of the planets
             selectedObj = clickedObject.name;
+
+            moonDropdown.ChangeOptions(selectedObj);
+
             if (clickedObject.name.Trim() == "Mercury" || clickedObject.name == "Mercury(Clone)" || clickedObject.name == "Mercury Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(0);
@@ -470,6 +486,9 @@ public class UIController : MonoBehaviour
             //Debug.Log("In Dwarf planet if statement");
             #region If statements for checking the name of the planets
             selectedObj = clickedObject.name;
+
+            moonDropdown.ChangeOptions(selectedObj);
+
             if (clickedObject.name.Trim() == "Pluto" || clickedObject.name == "Pluto(Clone)" || clickedObject.name == "Pluto Model")
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(0);
@@ -498,6 +517,7 @@ public class UIController : MonoBehaviour
     public void MakeTextboxesInvisible()
     {
         displayFactTextbox.gameObject.SetActive(false);
+        displayPersonalTextbox.gameObject.SetActive(false);
         imageGallery.gameObject.SetActive(false);
         if (roverPhotos.IsActive())
         {
@@ -517,5 +537,17 @@ public class UIController : MonoBehaviour
     public void UnloadImages()
     {
         imageLoader.ClearImages(imageGallery);
+    }
+
+    public void ViewMoon(GameObject moon)
+    {
+        selectedMoon = moon;
+        viewingMoon = true;
+        ChangeText(moon);
+    }
+
+    public void ResetCamera()
+    {
+        viewingMoon = false;
     }
 }
