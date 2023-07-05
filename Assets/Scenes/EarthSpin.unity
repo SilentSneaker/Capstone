@@ -41072,6 +41072,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -17
       objectReference: {fileID: 0}
+    - target: {fileID: 5115304405283301401, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5115304405283301403, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: moonDropdown
       value: 
@@ -44370,6 +44374,8 @@ MonoBehaviour:
   panSpeed: 100
   rotateSpeed: 250
   zoomSpeed: 1000
+  swipeSpeed: 250
+  rotationSpeed: 1
 --- !u!114 &2030201689
 MonoBehaviour:
   m_ObjectHideFlags: 0
