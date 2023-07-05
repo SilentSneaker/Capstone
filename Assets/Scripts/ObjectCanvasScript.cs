@@ -12,12 +12,14 @@ public class ObjectCanvasScript : MonoBehaviour
     public Camera mainCamera;
     public float baseDistance = 10f;
     public float scaleFactor = 0.1f;
+    public Transform O_GParent;
 
     public Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
     {
+        O_GParent = transform.parent;
         mainCamera = Camera.main;
         unit = transform.parent;
         transform.SetParent(Canvas);
@@ -39,6 +41,6 @@ public class ObjectCanvasScript : MonoBehaviour
     
     private void OnMouseClick()
     {
-        Camera.main.transform.LookAt(gameObject.transform.position);
+        Camera.main.transform.LookAt(O_GParent.transform.position);
     }
 }

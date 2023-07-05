@@ -505,7 +505,7 @@ public class UIController : MonoBehaviour
     public void MakeTextboxesInvisible()
     {
         displayFactTextbox.gameObject.SetActive(false);
-        displayPersonalTextbox.gameObject.SetActive(false);
+        //displayPersonalTextbox.gameObject.SetActive(false);
         imageGallery.gameObject.SetActive(false);
         if (roverPhotos.IsActive())
         {

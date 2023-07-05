@@ -106,8 +106,7 @@ public class FirebaseController : MonoBehaviour
                 AccountUserName.text = user.DisplayName;
                 LoginEmail.text = user.Email;
 
-                loginScreen.SetActive(false);
-                AccountScreen.SetActive(true);
+                OpenAccountScreen();
             });
         }
     }
