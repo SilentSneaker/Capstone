@@ -3960,7 +3960,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 374335600
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: -35729.86
 --- !u!1 &161262322
 GameObject:
   m_ObjectHideFlags: 0
@@ -41078,7 +41078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5115304405283301401, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5115304405283301403, guid: d4c3eed068109754b9ef9daa59192584, type: 3}
       propertyPath: moonDropdown

@@ -6,10 +6,10 @@ public class CameraMovement : MonoBehaviour
 {
     // Controls the speed of camera movement
     public float panSpeed = 250f;
-    public float rotateSpeed = 500f;
+    public float rotateSpeed = 250f;
     public float zoomSpeed = 250f;
     public float swipeSpeed = 250f;
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 250f;
     private float initialDistance = 0f;
     private Vector2[] touchPositions = new Vector2[2];
     private Vector2 touchStartPosition;
