@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     public GameObject imageGallery;
 
     public static TMP_InputField displayFactTextbox;
-
+    public static TMP_InputField displayPersonalTextbox;
     public GameObject yellowSun;
     public GameObject redGiant;
     public GameObject whiteDwarf;
@@ -505,7 +505,7 @@ public class UIController : MonoBehaviour
     public void MakeTextboxesInvisible()
     {
         displayFactTextbox.gameObject.SetActive(false);
-        //displayPersonalTextbox.gameObject.SetActive(false);
+        displayPersonalTextbox.gameObject.SetActive(false);
         imageGallery.gameObject.SetActive(false);
         if (roverPhotos.IsActive())
         {
