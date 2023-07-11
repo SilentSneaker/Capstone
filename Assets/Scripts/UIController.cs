@@ -67,6 +67,10 @@ public class UIController : MonoBehaviour
 
     GameObject selectedMoon;
 
+    GameObject sun;
+
+    float distanceFromMoon = 10f;
+
     //SOLoader selectedObject;
 
     #endregion
@@ -90,6 +94,7 @@ public class UIController : MonoBehaviour
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
+        sun = GameObject.Find("Sun");
 
         adjustUserInfo = UICanvas.GetComponent<AdjustUserInfo>();
 
@@ -107,8 +112,8 @@ public class UIController : MonoBehaviour
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
 
-        activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
-        activeSun.SetActive(true);
+        //activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
+        //activeSun.SetActive(true);
 
         profile = UICanvas.transform.Find("Profile").GetComponent<Button>();
         profile.onClick.AddListener(OnProfileClick);
@@ -161,7 +166,14 @@ public class UIController : MonoBehaviour
     {
         if(viewingMoon == true)
         {
-            Camera.main.transform.position = new Vector3(selectedMoon.transform.position.x, selectedMoon.transform.position.y, selectedMoon.transform.position.z - 100);
+            Vector3 midpoint = (sun.transform.position + selectedMoon.transform.position) / 2f;
+
+            // Calculate the direction vector from the Sun to the Moon
+            Vector3 direction = (selectedMoon.transform.position - sun.transform.position).normalized;
+
+            // Set the camera position to be closer to the Moon
+            Camera.main.transform.position = selectedMoon.transform.position - direction * distanceFromMoon;
+            Camera.main.transform.LookAt(selectedMoon.transform);//new Vector3(selectedMoon.transform.position.x, selectedMoon.transform.position.y, selectedMoon.transform.position.z - 100);
         }
     }
 
@@ -292,15 +304,15 @@ public class UIController : MonoBehaviour
     public void TopDownView()
     {
         Debug.Log("Top Down View Clicked");
-        Camera.main.transform.position = new Vector3(0f, 10f, 0f);
+        Camera.main.transform.position = new Vector3(0f, 750000f, 0f);
         Camera.main.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     public void AngledView()
     {
         Debug.Log("Angled View Clicked");
-        Camera.main.transform.position = new Vector3(0f, 5f, -5f);
-        Camera.main.transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+        Camera.main.transform.position = new Vector3(100f, 0f, -1100f);
+        Camera.main.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void ChangeText(GameObject clickedObject)
