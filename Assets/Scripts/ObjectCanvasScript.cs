@@ -29,18 +29,27 @@ public class ObjectCanvasScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text ren = GetComponent<Text>();
         transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
+
         transform.position = unit.position - offset;
-        
+        transform.rotation = Quaternion.Euler(mainCamera.transform.rotation.eulerAngles);
         float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
 
         // Adjust the scale of the textbox based on the distance
-        float scale = 1f + (distance - baseDistance) * scaleFactor;
+        float scale = 1f + (distance * scaleFactor);
         transform.localScale = new Vector3(scale, scale, scale);
+        if(distance < baseDistance)
+        {
+            ren.enabled = false;
+        }
+        else
+        {
+             ren.enabled = true;
+        }
     }
     
-    private void OnMouseClick()
-    {
+     private void OnMouseDown() {
         Camera.main.transform.LookAt(O_GParent.transform.position);
     }
 }

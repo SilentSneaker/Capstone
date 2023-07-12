@@ -34,18 +34,17 @@ public class BeltAsteroid : MonoBehaviour
     // Update is called once per frame
      void Update()
      {
+        Renderer ren = GetComponent<Renderer>();
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        int updated = 0;
         if (distance<=activationDistance)
         {
-            gameObject.SetActive(true);
-            updated+=1;
+            ren.enabled = true;
+
         }
         else
         {
-            gameObject.SetActive(false);
-            UnityEngine.Debug.Log(Camera.main.transform.position);
-            updated += 1;
+            ren.enabled = false;
+
         }
         if(rotationClockwise)
         {

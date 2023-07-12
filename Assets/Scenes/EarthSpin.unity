@@ -324,8 +324,8 @@ MonoBehaviour:
   objectName: {fileID: 1762795}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 400
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1762795
@@ -758,7 +758,7 @@ MonoBehaviour:
     xAxis: 7000
     yAxis: 4700
   orbitPosition: 0
-  orbitPeriod: 86400
+  orbitPeriod: -86400
   orbitActive: 1
   rotationPeriod: -5068800
 --- !u!1 &24145275
@@ -7057,7 +7057,7 @@ MonoBehaviour:
     xAxis: 15209.6
     yAxis: 14710
   orbitPosition: 0
-  orbitPeriod: 31557600
+  orbitPeriod: -31557600
   orbitActive: 1
   rotationPeriod: -86400
 --- !u!1 &313668914
@@ -17662,8 +17662,8 @@ MonoBehaviour:
   objectName: {fileID: 848067878}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 10
-  scaleFactor: 0.001
+  baseDistance: 100
+  scaleFactor: 0.0001
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &848067878
@@ -19076,7 +19076,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -19380,8 +19380,8 @@ MonoBehaviour:
   objectName: {fileID: 990098096}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 150
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &990098096
@@ -20918,8 +20918,8 @@ MonoBehaviour:
   objectName: {fileID: 1041482925}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 1000
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1041482925
@@ -29770,8 +29770,8 @@ MonoBehaviour:
   objectName: {fileID: 1450183298}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 400
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1450183298
@@ -33269,8 +33269,8 @@ MonoBehaviour:
   objectName: {fileID: 1623948582}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 1000
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1623948582
@@ -40669,8 +40669,8 @@ MonoBehaviour:
   objectName: {fileID: 1953782019}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 1000
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1953782019
@@ -41471,8 +41471,8 @@ MonoBehaviour:
   objectName: {fileID: 1986438800}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.0007
+  baseDistance: 400
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1986438800
@@ -42269,10 +42269,10 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 10000000
-  field of view: 154.53719
+  field of view: 22.761591
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 100
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -42284,7 +42284,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &2030201687
@@ -42295,7 +42295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030201684}
   m_LocalRotation: {x: 0.17682151, y: 0.66718984, z: -0.1937963, w: 0.6971621}
-  m_LocalPosition: {x: -2209, y: 1334, z: -618}
+  m_LocalPosition: {x: -8315, y: 4912, z: -1048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42316,7 +42316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 100
   rotateSpeed: 100
-  zoomSpeed: 100
+  zoomSpeed: 1000
+  swipeSpeed: 250
+  rotationSpeed: 1
 --- !u!1 &2030756443
 GameObject:
   m_ObjectHideFlags: 0
@@ -42816,8 +42818,8 @@ MonoBehaviour:
   objectName: {fileID: 2065544414}
   Canvas: {fileID: 944803695}
   mainCamera: {fileID: 0}
-  baseDistance: 0.1
-  scaleFactor: 0.001
+  baseDistance: 1000
+  scaleFactor: 0.0002
   O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &2065544414
@@ -44455,7 +44457,7 @@ MonoBehaviour:
     xAxis: 10820
     yAxis: 10750
   orbitPosition: 0
-  orbitPeriod: 19414080
+  orbitPeriod: -19414080
   orbitActive: 1
   rotationPeriod: 20997360
 --- !u!1 &2108115169
