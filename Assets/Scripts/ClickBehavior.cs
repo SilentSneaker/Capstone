@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ClickBehavior : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class ClickBehavior : MonoBehaviour
     MoonDropdown moonDropdown;
 
     NASAImageAPI imageAPI;
+
+    Button asteroidView;
 
 
     // Stores the activation script in the object
@@ -34,6 +37,9 @@ public class ClickBehavior : MonoBehaviour
         imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
 
         moonDropdown = GameObject.Find("Moon Selector").GetComponent<MoonDropdown>();
+
+        asteroidView = GameObject.Find("Asteroid View Btn").GetComponent<Button>();
+        asteroidView.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -87,6 +93,10 @@ public class ClickBehavior : MonoBehaviour
                 Debug.Log("Clicked on no object");
                 uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
+                if (asteroidView.IsActive())
+                {
+                    asteroidView.gameObject.SetActive(false);
+                }
                 if (objectDropdown != null)
                 {
 

@@ -71,6 +71,8 @@ public class UIController : MonoBehaviour
 
     float distanceFromMoon = 10f;
 
+    public Button asteroidView;
+
     //SOLoader selectedObject;
 
     #endregion
@@ -469,6 +471,7 @@ public class UIController : MonoBehaviour
             else if (clickedObject.name.Trim() == "Earth" || clickedObject.name == "Earth(Clone)" || clickedObject.name == "Earth Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(2);
+                asteroidView.gameObject.SetActive(true);
             }
             else if (clickedObject.name.Trim() == "Mars" || clickedObject.name == "Mars(Clone)" || clickedObject.name == "Mars Model")
             {
