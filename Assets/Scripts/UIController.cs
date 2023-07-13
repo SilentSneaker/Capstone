@@ -69,7 +69,7 @@ public class UIController : MonoBehaviour
 
     GameObject sun;
 
-    float distanceFromMoon = 10f;
+    float distanceFromMoon = 20f;
 
     public Button asteroidView;
 
