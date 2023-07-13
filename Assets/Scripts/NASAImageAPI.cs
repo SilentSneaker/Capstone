@@ -31,7 +31,27 @@ public class NASAImageAPI : MonoBehaviour
 
     public void SetSearchQuery(string obj)
     {
-        searchQuery = obj;
+        Debug.Log("Start of SetSearchQuery");
+        string substringToRemove = "(Clone)";
+        string spaceToRemove = " ";
+        string secondSubstring = " Model";
+        string thirdSubstring = " model";
+        string stringToModify = obj;
+
+
+        stringToModify.Replace(substringToRemove, "");
+
+
+        stringToModify.Replace(spaceToRemove, "_");
+
+
+
+        stringToModify.Replace(secondSubstring, "");
+
+
+        stringToModify.Replace(thirdSubstring, "");
+        searchQuery = stringToModify;
+        Debug.Log("End of SetSearchQuery");
     }
 
     public IEnumerator FetchImageData()

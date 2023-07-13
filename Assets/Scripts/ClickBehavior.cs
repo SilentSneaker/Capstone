@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ClickBehavior : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class ClickBehavior : MonoBehaviour
     MoonDropdown moonDropdown;
 
     NASAImageAPI imageAPI;
+
+    Button asteroidView;
 
 
     // Stores the activation script in the object
@@ -34,6 +37,9 @@ public class ClickBehavior : MonoBehaviour
         imageAPI = GameObject.Find("ObjectInfoUI").GetComponent<NASAImageAPI>();
 
         moonDropdown = GameObject.Find("Moon Selector").GetComponent<MoonDropdown>();
+
+        asteroidView = GameObject.Find("Asteroid View Btn").GetComponent<Button>();
+        asteroidView.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,32 +59,10 @@ public class ClickBehavior : MonoBehaviour
 
                     Debug.Log("In Camera movement");
 
-                    string substringToRemove = "(Clone)";
-                    string spaceToRemove = " ";
-                    string stringToModify = clickedObject.name;
-                    if (stringToModify.Contains(substringToRemove))
-                    {
-                        // Remove the substring from the original string
-                       stringToModify.Replace(substringToRemove, "");                       
-
-                        imageAPI.SetSearchQuery(stringToModify);
-
-                        // Output the modified string
-                        //Debug.Log(stringToModify);
-                    }
-                    if (stringToModify.Contains(spaceToRemove))
-                    {
-                        stringToModify.Replace(spaceToRemove, "_");
-
-                    }
-                    else
-                    {
-                        imageAPI.SetSearchQuery(clickedObject.name);
-                    }
+                    imageAPI.SetSearchQuery(clickedObject.name);                    
 
                     //Starts Images API to get photos
                     StartCoroutine(imageAPI.FetchImageData());
-
 
                     uIController.ChangeText(clickedObject);
                     //Debug.Log(clickedObject);
@@ -88,7 +72,8 @@ public class ClickBehavior : MonoBehaviour
                         objectDropdown.ShowDropdown();
                         //moonDropdown.removeMoonDropdown();
 
-                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 3);
+                        Camera.main.transform.position = new Vector3(clickedObject.transform.position.x, clickedObject.transform.position.y, clickedObject.transform.position.z - 1000);
+                        Camera.main.transform.rotation = Quaternion.Euler(Vector3.zero);
                         
                         zoomedIn = true;
                     }
@@ -108,6 +93,10 @@ public class ClickBehavior : MonoBehaviour
                 Debug.Log("Clicked on no object");
                 uIController.MakeTextboxesInvisible();
                 zoomedIn = false;
+                if (asteroidView.IsActive())
+                {
+                    asteroidView.gameObject.SetActive(false);
+                }
                 if (objectDropdown != null)
                 {
 

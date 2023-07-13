@@ -71,7 +71,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8779004642865326157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 80, y: 156}
-  m_SizeDelta: {x: 450, y: 450}
+  m_SizeDelta: {x: 744, y: 483.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8779004642865326158
 CanvasRenderer:
@@ -217,10 +217,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0, g: 0, b: 0, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.5412936, g: 0, b: 1, a: 0.7529412}
-  m_Text: 'This is going to house information about the object like Age, Composition,
-    discovery date, etc... (Should be scrollable)
-
-'
+  m_Text: You would weigh 0 pounds on Venus
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -454,8 +451,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is going to house information about the object like Age, Composition,
-    discovery date, etc... (Should be scrollable)\n\u200B"
+  m_text: "You would weigh 0 pounds on Venus\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e39545f3e590df46839190395d95264, type: 2}
   m_sharedMaterial: {fileID: 2539681115076326207, guid: 1e39545f3e590df46839190395d95264, type: 2}

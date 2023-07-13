@@ -20,7 +20,7 @@ using TMPro;
 public class FirebaseController : MonoBehaviour
 {
 
-    public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen, SunScene, LoginCanvas;
+    public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen;
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
     public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName, Hours, Minutes, Seconds;
     public TextMeshProUGUI SelectedDate;
@@ -75,15 +75,14 @@ public class FirebaseController : MonoBehaviour
         GoogleSignIn.Configuration.RequestEmail = true;
 
         GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnGoogleAuthenticatedFinished);
-
     }
 
     void OnGoogleAuthenticatedFinished(Task<GoogleSignInUser> task)
     {
         if (task.IsFaulted)
-            showNotification("Error", "Google Authentication has failed.");
+            UnityEngine.Debug.LogError("Fault");
         else if (task.IsCanceled)
-            showNotification("Login Cancelled", "Google Authentication has been cancelled.");
+            UnityEngine.Debug.LogError("Login Cancelled");
         else
         {
             Firebase.Auth.Credential credential = Firebase.Auth.GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
@@ -106,15 +105,10 @@ public class FirebaseController : MonoBehaviour
                 AccountUserName.text = user.DisplayName;
                 LoginEmail.text = user.Email;
 
-                OpenAccountScreen();
+                loginScreen.SetActive(false);
+                AccountScreen.SetActive(true);
             });
         }
-    }
-    public void goToSolarSytem()
-    {
-        SunScene.SetActive(true);
-        LoginCanvas.SetActive(false);
-
     }
     public void OpenLoginScreen()
     {
@@ -174,7 +168,6 @@ public class FirebaseController : MonoBehaviour
             return;
         }
         forgotPasswordCheck(forgotPasswordEmail.text);
-        OpenLoginScreen();
     }
 
     public void showNotification(string title, string message)
@@ -200,8 +193,9 @@ public class FirebaseController : MonoBehaviour
     
     public void Logout()
     {
-        loginEmail.text = "";
-        loginPassword.text = "";
+        
+
+
         auth.SignOut();
         OpenLoginScreen();
     }

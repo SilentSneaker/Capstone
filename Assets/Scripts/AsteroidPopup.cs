@@ -4,26 +4,32 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
-public class AsteroidPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AsteroidPopup : MonoBehaviour, IPointerClickHandler, IPointerExitHandler
 {
-    private bool isMouseOverRawImage = false;
+    bool isMouseOverRawImage = false;
+    public GameObject clickedUI;
     GameObject textObject;
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
         // Check if the mouse is over a RawImage
-        var rawImage = eventData.pointerCurrentRaycast.gameObject.GetComponent<RawImage>();
-        isMouseOverRawImage = rawImage != null;
-        if (isMouseOverRawImage)
+        clickedUI = eventData.pointerCurrentRaycast.gameObject;
+        if (clickedUI.name != "2011-21 Asteroid Panel" && clickedUI.name != "Future Asteroid Panel" && clickedUI.name != "Past Asteroid Panel")
         {
-            
             // Handle mouse enter event on the RawImage
-            Debug.Log("Mouse entered a RawImage! RawImage name: " + rawImage.name);
-            
-            textObject = rawImage.transform.GetChild(0).gameObject;
+            Debug.Log("Mouse entered a RawImage! RawImage name: " + clickedUI.name);
+
+            textObject = clickedUI.transform.GetChild(0).gameObject;
 
             textObject.SetActive(true);
         }
+        else
+        {
+            textObject.SetActive(false);
+        }
+
+        clickedUI = null;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -31,7 +37,7 @@ public class AsteroidPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         //throw new System.NotImplementedException();
         Debug.Log("No Longer over RawImage");
 
-        textObject.SetActive(false);
+        //textObject.SetActive(false);
 
         isMouseOverRawImage = false;
     }
@@ -39,7 +45,7 @@ public class AsteroidPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -48,3 +54,4 @@ public class AsteroidPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     }
 }
+

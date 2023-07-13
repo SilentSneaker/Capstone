@@ -4919,6 +4919,7 @@ GameObject:
   - component: {fileID: 205568318585521926}
   - component: {fileID: 4878998461253096602}
   - component: {fileID: 7707768721997685174}
+  - component: {fileID: -4995619512265550955}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Planet
@@ -4996,6 +4997,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &-4995619512265550955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733945558841920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: 94f936165b2ec5246a9fffde312a90ae, type: 2}
+  gravity: 0
 --- !u!1 &1982611864615202
 GameObject:
   m_ObjectHideFlags: 0

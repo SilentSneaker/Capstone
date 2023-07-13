@@ -14,13 +14,14 @@ public class UIController : MonoBehaviour
     public TMP_Dropdown starTypeDropdown;
 
     public TMP_InputField factTextBox;
-    public TMP_InputField personalTextBox;
+    public TMP_InputField personalTextbox;
 
     public GameObject imagePrefab;
     public GameObject imageGallery;
 
     public static TMP_InputField displayFactTextbox;
     public static TMP_InputField displayPersonalTextbox;
+
     public GameObject yellowSun;
     public GameObject redGiant;
     public GameObject whiteDwarf;
@@ -66,6 +67,12 @@ public class UIController : MonoBehaviour
 
     GameObject selectedMoon;
 
+    GameObject sun;
+
+    float distanceFromMoon = 20f;
+
+    public Button asteroidView;
+
     //SOLoader selectedObject;
 
     #endregion
@@ -84,11 +91,12 @@ public class UIController : MonoBehaviour
         roverDropdown = imageGallery.transform.Find("Image Selector").GetComponent<TMP_Dropdown>();
         roverDropdown.onValueChanged.AddListener(ChangeRover);
 
-        cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
-        cameraSelector.onValueChanged.AddListener(ChangeCamera);
+        //cameraSelector = imageGallery.transform.Find("Camera Selector").GetComponent<TMP_Dropdown>();
+        //cameraSelector.onValueChanged.AddListener(ChangeCamera);
 
         picManager = gameObject.GetComponent<RoverPicManager>();
 
+        sun = GameObject.Find("Sun");
 
         adjustUserInfo = UICanvas.GetComponent<AdjustUserInfo>();
 
@@ -106,8 +114,8 @@ public class UIController : MonoBehaviour
         starTypeDropdown = UICanvas.transform.Find("StarTypeDropdown").GetComponent<TMP_Dropdown>();
         starTypeDropdown.onValueChanged.AddListener(OnStarDropdownValueChanged);
 
-        activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
-        activeSun.SetActive(true);
+        //activeSun = Instantiate(yellowSun, sunCoordinates, yellowSun.transform.rotation);
+        //activeSun.SetActive(true);
 
         profile = UICanvas.transform.Find("Profile").GetComponent<Button>();
         profile.onClick.AddListener(OnProfileClick);
@@ -160,7 +168,14 @@ public class UIController : MonoBehaviour
     {
         if(viewingMoon == true)
         {
-            Camera.main.transform.position = new Vector3(selectedMoon.transform.position.x, selectedMoon.transform.position.y, selectedMoon.transform.position.z - 100);
+            Vector3 midpoint = (sun.transform.position + selectedMoon.transform.position) / 2f;
+
+            // Calculate the direction vector from the Sun to the Moon
+            Vector3 direction = (selectedMoon.transform.position - sun.transform.position).normalized;
+
+            // Set the camera position to be closer to the Moon
+            Camera.main.transform.position = selectedMoon.transform.position - direction * distanceFromMoon;
+            Camera.main.transform.LookAt(selectedMoon.transform);//new Vector3(selectedMoon.transform.position.x, selectedMoon.transform.position.y, selectedMoon.transform.position.z - 100);
         }
     }
 
@@ -171,7 +186,7 @@ public class UIController : MonoBehaviour
         if (index == 0)
         {
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -182,7 +197,7 @@ public class UIController : MonoBehaviour
         else if (index == 1)
         {
             displayFactTextbox.gameObject.SetActive(true);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -201,15 +216,15 @@ public class UIController : MonoBehaviour
             UnloadImages();
 
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(true);
+            displayPersonalTextbox.gameObject.SetActive(true);
             imageGallery.SetActive(false);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
 
-           personalTextBox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
+            displayPersonalTextbox.text = "You would weigh " + adjustUserInfo.CalculateWeight(selectedObject.gravity) + " pounds on " + selectedObject.name;
 
             // Fit the textbox within the screen constraints
-            RectTransform newTextboxRectTransform = personalTextBox.GetComponent<RectTransform>();
+            RectTransform newTextboxRectTransform = displayPersonalTextbox.GetComponent<RectTransform>();
             newTextboxRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             newTextboxRectTransform.pivot = new Vector2(0.5f, 0.5f);
@@ -219,7 +234,7 @@ public class UIController : MonoBehaviour
         else if (index == 3)
         {
             displayFactTextbox.gameObject.SetActive(false);
-            personalTextBox.gameObject.SetActive(false);
+            displayPersonalTextbox.gameObject.SetActive(false);
             imageGallery.SetActive(true);
 
             UICanvas.GetComponent<CanvasScaler>().matchWidthOrHeight = 0;
@@ -236,7 +251,7 @@ public class UIController : MonoBehaviour
             }
 
             //Start Image API Loading
-            imageLoader.LoadLibraryImages(imageGallery);
+            imageLoader.LoadLibraryImages(imageGallery, selectedObject.name);
         }
         
     }
@@ -291,20 +306,27 @@ public class UIController : MonoBehaviour
     public void TopDownView()
     {
         Debug.Log("Top Down View Clicked");
-        Camera.main.transform.position = new Vector3(0f, 10f, 0f);
+        Camera.main.transform.position = new Vector3(0f, 750000f, 0f);
         Camera.main.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     public void AngledView()
     {
         Debug.Log("Angled View Clicked");
-        Camera.main.transform.position = new Vector3(0f, 5f, -5f);
-        Camera.main.transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+        Camera.main.transform.position = new Vector3(100f, 0f, -1100f);
+        Camera.main.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void ChangeText(GameObject clickedObject)
     {
         Debug.Log(clickedObject);
+        if(displayPersonalTextbox == null)
+        {
+            displayPersonalTextbox = Instantiate(personalTextbox, Vector3.zero, Quaternion.identity);
+            displayPersonalTextbox.transform.SetParent(GameObject.Find("ObjectInfoUI").transform, false);
+            displayPersonalTextbox.textComponent.alignment = TextAlignmentOptions.Center;
+            displayPersonalTextbox.gameObject.SetActive(false);
+        }
         if(displayFactTextbox == null)
         {
             displayFactTextbox = Instantiate(factTextBox, Vector3.zero, Quaternion.identity);
@@ -320,15 +342,15 @@ public class UIController : MonoBehaviour
 
             //Debug.Log("Made it into the UIController 2");
             #region If statements for checking the name of the suns
-            if (clickedObject.name.Trim() == "Yellow Sun" || clickedObject.name == "Yellow Sun(Clone)")
+            if (clickedObject.name.Trim() == "Yellow Sun" || clickedObject.name == "Yellow Sun(Clone)" || clickedObject.name == "Sun Model")
             {
                 displayFactTextbox.text = starInfo.GetInfo(0);
             }
-            else if (clickedObject.name.Trim() == "Red Giant" || clickedObject.name == "Red Giant(Clone)")
+            else if (clickedObject.name.Trim() == "Red Giant" || clickedObject.name == "Red Giant(Clone)" || clickedObject.name == "Red Giant Model")
             {
                 displayFactTextbox.text = starInfo.GetInfo(1);
             }
-            else if (clickedObject.name.Trim() == "White Dwarf" || clickedObject.name == "White Dwarf(Clone)")
+            else if (clickedObject.name.Trim() == "White Dwarf" || clickedObject.name == "White Dwarf(Clone)" || clickedObject.name == "White Dwarf Model")
             {
                 displayFactTextbox.text = starInfo.GetInfo(2);
             }
@@ -341,89 +363,93 @@ public class UIController : MonoBehaviour
             moonDropdown.ChangeOptions(selectedObj);
 
             #region If statements for checking the name of the moons
-            if (clickedObject.name.Trim() == "Moon" || clickedObject.name == "Moon(Clone)")
+            if (clickedObject.name.Trim() == "Moon" || clickedObject.name == "Moon model" || clickedObject.name == "Moon Model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(0);
             }
-            else if (clickedObject.name.Trim() == "Phobos" || clickedObject.name == "Phobos(Clone)")
+            else if (clickedObject.name.Trim() == "Phobos" || clickedObject.name == "Phobos(Clone)" || clickedObject.name == "Phobos model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(1);
             }
-            else if (clickedObject.name.Trim() == "Deimos" || clickedObject.name == "Deimos(Clone)")
+            else if (clickedObject.name.Trim() == "Deimos" || clickedObject.name == "Deimos(Clone)" || clickedObject.name == "Deimos model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(2);
             }
-            else if (clickedObject.name.Trim() == "Io" || clickedObject.name == "Io(Clone)")
+            else if (clickedObject.name.Trim() == "Io" || clickedObject.name == "Io(Clone)" || clickedObject.name == "Io model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(3);
             }
-            else if (clickedObject.name.Trim() == "Europa" || clickedObject.name == "Europa(Clone)")
+            else if (clickedObject.name.Trim() == "Europa" || clickedObject.name == "Europa(Clone)" || clickedObject.name == "Europa model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(4);
             }
-            else if (clickedObject.name.Trim() == "Ganymede" || clickedObject.name == "Ganymede(Clone)")
+            else if (clickedObject.name.Trim() == "Ganymede" || clickedObject.name == "Ganymede(Clone)" || clickedObject.name == "Ganymede model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(5);
             }
-            else if (clickedObject.name.Trim() == "Callisto" || clickedObject.name == "Callisto(Clone)")
+            else if (clickedObject.name.Trim() == "Callisto" || clickedObject.name == "Callisto(Clone)" || clickedObject.name == "Callisto model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(6);
             }
-            else if (clickedObject.name.Trim() == "Mimas" || clickedObject.name == "Mimas(Clone)")
+            else if (clickedObject.name.Trim() == "Mimas" || clickedObject.name == "Mimas(Clone)" || clickedObject.name == "Mimas model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(7);
             }
-            else if (clickedObject.name.Trim() == "Enceladus" || clickedObject.name == "Enceladus(Clone)")
+            else if (clickedObject.name.Trim() == "Enceladus" || clickedObject.name == "Enceladus(Clone)" || clickedObject.name == "Enceladus model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(8);
             }
-            else if (clickedObject.name.Trim() == "Tethys" || clickedObject.name == "Tethys(Clone)")
+            else if (clickedObject.name.Trim() == "Tethys" || clickedObject.name == "Tethys(Clone)" || clickedObject.name == "Tethys model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(9);
             }
-            else if (clickedObject.name.Trim() == "Dione" || clickedObject.name == "Dione(Clone)")
+            else if (clickedObject.name.Trim() == "Dione" || clickedObject.name == "Dione(Clone)" || clickedObject.name == "Dione model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(10);
             }
-            else if (clickedObject.name.Trim() == "Rhea" || clickedObject.name == "Rhea(Clone)")
+            else if (clickedObject.name.Trim() == "Rhea" || clickedObject.name == "Rhea(Clone)" || clickedObject.name == "Rhea model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(11);
             }
-            else if (clickedObject.name.Trim() == "Titan" || clickedObject.name == "Titan(Clone)")
+            else if (clickedObject.name.Trim() == "Titan" || clickedObject.name == "Titan(Clone)" || clickedObject.name == "Titan model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(12);
             }
-            else if (clickedObject.name.Trim() == "Iapetus" || clickedObject.name == "Iapetus(Clone)")
+            else if (clickedObject.name.Trim() == "Iapetus" || clickedObject.name == "Iapetus(Clone)" || clickedObject.name == "Iapetus model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(13);
             }
-            else if (clickedObject.name.Trim() == "Miranda" || clickedObject.name == "Miranda(Clone)")
+            else if (clickedObject.name.Trim() == "Miranda" || clickedObject.name == "Miranda(Clone)" || clickedObject.name == "Miranda model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(14);
             }
-            else if (clickedObject.name.Trim() == "Ariel" || clickedObject.name == "Ariel(Clone)")
+            else if (clickedObject.name.Trim() == "Ariel" || clickedObject.name == "Ariel(Clone)" || clickedObject.name == "Ariel model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(15);
             }
-            else if (clickedObject.name.Trim() == "Umbriel" || clickedObject.name == "Umbriel(Clone)")
+            else if (clickedObject.name.Trim() == "Umbriel" || clickedObject.name == "Umbriel(Clone)" || clickedObject.name == "Umbriel model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(16);
             }
-            else if (clickedObject.name.Trim() == "Titania" || clickedObject.name == "Titania(Clone)")
+            else if (clickedObject.name.Trim() == "Titania" || clickedObject.name == "Titania(Clone)" || clickedObject.name == "Titania model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(17);
             }
-            else if (clickedObject.name.Trim() == "Oberon" || clickedObject.name == "Oberon(Clone)")
+            else if (clickedObject.name.Trim() == "Oberon" || clickedObject.name == "Oberon(Clone)" || clickedObject.name == "Oberon model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(18);
             }
-            else if (clickedObject.name.Trim() == "Triton" || clickedObject.name == "Triton(Clone)")
+            else if (clickedObject.name.Trim() == "Triton" || clickedObject.name == "Triton(Clone)" || clickedObject.name == "Triton model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(19);
             }
-            else if (clickedObject.name.Trim() == "Charon" || clickedObject.name == "Charon(Clone)")
+            else if (clickedObject.name.Trim() == "Charon" || clickedObject.name == "Charon(Clone)" || clickedObject.name == "Charon model")
             {
                 displayFactTextbox.text = moonInfo.GetInfo(20);
+            }
+            else
+            {
+                displayFactTextbox.text = "Information on this celestial body is scarce, if you wish to learn more use a search engine.";
             }
             #endregion
         }
@@ -438,32 +464,33 @@ public class UIController : MonoBehaviour
             {
                 displayFactTextbox.text = planetInfo.GetInfo(0);
             }
-            else if (clickedObject.name.Trim() == "Venus" || clickedObject.name == "Venus(Clone)")
+            else if (clickedObject.name.Trim() == "Venus" || clickedObject.name == "Venus(Clone)" || clickedObject.name == "Venus Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(1);
             }
-            else if (clickedObject.name.Trim() == "Earth" || clickedObject.name == "Earth(Clone)")
+            else if (clickedObject.name.Trim() == "Earth" || clickedObject.name == "Earth(Clone)" || clickedObject.name == "Earth Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(2);
+                asteroidView.gameObject.SetActive(true);
             }
-            else if (clickedObject.name.Trim() == "Mars" || clickedObject.name == "Mars(Clone)")
+            else if (clickedObject.name.Trim() == "Mars" || clickedObject.name == "Mars(Clone)" || clickedObject.name == "Mars Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(3);
                 viewingMars = true;
             }
-            else if (clickedObject.name.Trim() == "Jupiter" || clickedObject.name == "Jupiter(Clone)")
+            else if (clickedObject.name.Trim() == "Jupiter" || clickedObject.name == "Jupiter(Clone)" || clickedObject.name == "Jupiter Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(4);
             }
-            else if (clickedObject.name.Trim() == "Saturn" || clickedObject.name == "Saturn(Clone)")
+            else if (clickedObject.name.Trim() == "Saturn" || clickedObject.name == "Saturn(Clone)" || clickedObject.name == "Saturn Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(5);
             }
-            else if (clickedObject.name.Trim() == "Uranus" || clickedObject.name == "Uranus(Clone)")
+            else if (clickedObject.name.Trim() == "Uranus" || clickedObject.name == "Uranus(Clone)" || clickedObject.name == "Uranus Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(6);
             }
-            else if (clickedObject.name.Trim() == "Neptune" || clickedObject.name == "Neptune(Clone)")
+            else if (clickedObject.name.Trim() == "Neptune" || clickedObject.name == "Neptune(Clone)" || clickedObject.name == "Neptune Model")
             {
                 displayFactTextbox.text = planetInfo.GetInfo(7);
             }
@@ -481,19 +508,19 @@ public class UIController : MonoBehaviour
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(0);
             }
-            else if (clickedObject.name.Trim() == "Ceres" || clickedObject.name == "Ceres(Clone)")
+            else if (clickedObject.name.Trim() == "Ceres" || clickedObject.name == "Ceres(Clone)" || clickedObject.name == "Ceres Model")
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(1);
             }
-            else if (clickedObject.name.Trim() == "Makemake" || clickedObject.name == "Makemake(Clone)")
+            else if (clickedObject.name.Trim() == "Makemake" || clickedObject.name == "Makemake(Clone)" || clickedObject.name == "Makemake Model")
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(2);
             }
-            else if (clickedObject.name.Trim() == "Haumea" || clickedObject.name == "Haumea(Clone)")
+            else if (clickedObject.name.Trim() == "Haumea" || clickedObject.name == "Haumea(Clone)" || clickedObject.name == "Haumea Model")
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(3);
             }
-            else if (clickedObject.name.Trim() == "Eris" || clickedObject.name == "Eris(Clone)")
+            else if (clickedObject.name.Trim() == "Eris" || clickedObject.name == "Eris(Clone)" || clickedObject.name == "Eris Model")
             {
                 displayFactTextbox.text = dwarfPlanetInfo.GetInfo(4);
             }

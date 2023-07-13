@@ -6,10 +6,10 @@ public class CameraMovement : MonoBehaviour
 {
     // Controls the speed of camera movement
     public float panSpeed = 250f;
-    public float rotateSpeed = 500f;
+    public float rotateSpeed = 250f;
     public float zoomSpeed = 250f;
     public float swipeSpeed = 250f;
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 250f;
     private float initialDistance = 0f;
     private Vector2[] touchPositions = new Vector2[2];
     private Vector2 touchStartPosition;
@@ -82,22 +82,6 @@ public class CameraMovement : MonoBehaviour
                 touchPositions[1] = touch2.position;
 
             }
-            else if(touch1.phase == TouchPhase.Moved || touch2.phase == TouchPhase.Moved)
-            {
-                // Calculate the delta positions of both touches
-                Vector2 touch1Delta = touch1.position - touchPositions[0];
-                Vector2 touch2Delta = touch2.position - touchPositions[1];
-
-                // Calculate the rotation angle based on the average delta position
-                float rotationAngle = (touch1Delta.x + touch2Delta.x) * 0.5f * rotationSpeed * Time.deltaTime;
-
-                // Rotate the camera around its up axis by the calculated angle
-                transform.Rotate(Vector3.up, rotationAngle, Space.World);
-
-                // Update the touch positions for the next frame
-                touchPositions[0] = touch1.position;
-                touchPositions[1] = touch2.position;
-            }
             else if (touch1.phase == TouchPhase.Moved || touch2.phase == TouchPhase.Moved)
             {
                 // Calculate the current distance between the two touches
@@ -111,6 +95,23 @@ public class CameraMovement : MonoBehaviour
 
                 // Update the initial distance for the next frame
                 initialDistance = currentDistance;
+            }
+            else if(touch1.phase == TouchPhase.Moved && touch2.phase == TouchPhase.Moved)
+            {
+                
+                // Calculate the delta positions of both touches
+                Vector2 touch1Delta = touch1.position - touchPositions[0];
+                Vector2 touch2Delta = touch2.position - touchPositions[1];
+
+                // Calculate the rotation angle based on the average delta position
+                float rotationAngle = (touch1Delta.x + touch2Delta.x) * 0.5f * rotationSpeed * Time.deltaTime;
+
+                // Rotate the camera around its up axis by the calculated angle
+                transform.Rotate(Vector3.up, rotationAngle, Space.World);
+
+                // Update the touch positions for the next frame
+                touchPositions[0] = touch1.position;
+                touchPositions[1] = touch2.position;
             }
         }
     }

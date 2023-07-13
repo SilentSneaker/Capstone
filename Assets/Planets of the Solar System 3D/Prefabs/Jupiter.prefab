@@ -4919,6 +4919,7 @@ GameObject:
   - component: {fileID: 205751706758944436}
   - component: {fileID: 6518462326645541621}
   - component: {fileID: 5604193679624180381}
+  - component: {fileID: 168080903893594626}
   m_Layer: 0
   m_Name: Jupiter
   m_TagString: Planet
@@ -4996,6 +4997,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewDropdown: {fileID: 0}
   starTypeDropdown: {fileID: 0}
+--- !u!114 &168080903893594626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526814149960808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecd9b339962c26499445b4575d6e124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceObject: {fileID: 11400000, guid: c9c617eec659e314f90c459ee3e52362, type: 2}
+  gravity: 0
 --- !u!1 &1739387421617238
 GameObject:
   m_ObjectHideFlags: 0

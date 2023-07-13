@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ForCreatingObjects.unity
     guid: 6006ee0cc3a3d734bbff4cbb52c0fc2a
+  - enabled: 1
+    path: Assets/Scenes/EarthSpin.unity
+    guid: 5897970987bb175479b273dd0e0047ed
+  - enabled: 0
+    path: Assets/Scenes/TestingPurposes.unity
+    guid: f00b5a6d52fa73e4c8737d95b5624a1f
+  - enabled: 0
+    path: Assets/Scenes/Login.unity
+    guid: d6648d5e234c7bf4b8cd4bb8a6bcafeb
   m_configObjects: {}
