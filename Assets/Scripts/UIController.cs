@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public TMP_InputField factTextBox;
     public TMP_InputField personalTextbox;
 
+    public GameObject LoginCanvas;
     public GameObject imagePrefab;
     public GameObject imageGallery;
 
@@ -296,11 +297,13 @@ public class UIController : MonoBehaviour
     public void OnProfileClick()
     {
         Debug.Log("Profile clicked");
-        GameObject newAccount = Instantiate(accountPrefab, objectInfoUI.transform);
-        CanvasScaler scaler = UICanvas.GetComponent<CanvasScaler>();
-        scaler.matchWidthOrHeight = 1f;
-        Camera.main.GetComponent<ClickBehavior>().enabled = false;
-        Camera.main.GetComponent<CameraMovement>().enabled = false;
+        LoginCanvas.SetActive(true);
+        accountPrefab.SetActive(true);
+        gameObject.SetActive(false);
+        // CanvasScaler scaler = UICanvas.GetComponent<CanvasScaler>();
+        // scaler.matchWidthOrHeight = 1f;
+        // Camera.main.GetComponent<ClickBehavior>().enabled = false;
+        // Camera.main.GetComponent<CameraMovement>().enabled = false;
     }
 
     public void TopDownView()

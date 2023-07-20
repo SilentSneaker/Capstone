@@ -123,6 +123,7 @@ public class FirebaseController : MonoBehaviour
         RegisterScreen.SetActive(false);
         AccountScreen.SetActive(false);
         ForgotPasswordScreen.SetActive(false);
+        objectInfoUI.SetActive(false);
     }
     public void OpenRegisterScreen()
     {
@@ -130,6 +131,7 @@ public class FirebaseController : MonoBehaviour
         RegisterScreen.SetActive(true);
         AccountScreen.SetActive(false);
         ForgotPasswordScreen.SetActive(false);
+        objectInfoUI.SetActive(false);
     }
     public void OpenAccountScreen()
     {
@@ -137,6 +139,7 @@ public class FirebaseController : MonoBehaviour
         RegisterScreen.SetActive(false);
         AccountScreen.SetActive(true);
         ForgotPasswordScreen.SetActive(false);
+        objectInfoUI.SetActive(false);
     }
     public void OpenForgotScreen()
     {
@@ -144,6 +147,7 @@ public class FirebaseController : MonoBehaviour
         RegisterScreen.SetActive(false);
         AccountScreen.SetActive(false);
         ForgotPasswordScreen.SetActive(true);
+        objectInfoUI.SetActive(false);
     }
     public void userLogin()
     {
