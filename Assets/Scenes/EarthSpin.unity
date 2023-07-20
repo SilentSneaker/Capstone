@@ -326,6 +326,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1762795
 MonoBehaviour:
@@ -650,7 +651,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 59354800
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!4 &17612540
 Transform:
   m_ObjectHideFlags: 0
@@ -772,7 +773,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 86400
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1 &28748163
 GameObject:
   m_ObjectHideFlags: 0
@@ -7745,7 +7746,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 31557600
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1 &312812705
 GameObject:
   m_ObjectHideFlags: 0
@@ -17503,6 +17504,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 10
   scaleFactor: 0.001
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &848067878
 MonoBehaviour:
@@ -20394,7 +20396,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 929596400
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1 &982310357
 GameObject:
   m_ObjectHideFlags: 0
@@ -20828,6 +20830,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &990098096
 MonoBehaviour:
@@ -22458,6 +22461,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1041482925
 MonoBehaviour:
@@ -32385,6 +32389,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1450183298
 MonoBehaviour:
@@ -36267,6 +36272,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1623948582
 MonoBehaviour:
@@ -38472,7 +38478,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 2.6520143e+9
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1 &1732678725
 GameObject:
   m_ObjectHideFlags: 0
@@ -42675,6 +42681,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1953782019
 MonoBehaviour:
@@ -43646,6 +43653,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.0007
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1986438800
 MonoBehaviour:
@@ -45151,7 +45159,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 31557600
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1 &2065544411
 GameObject:
   m_ObjectHideFlags: 0
@@ -45208,6 +45216,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   baseDistance: 0.1
   scaleFactor: 0.001
+  O_GParent: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
 --- !u!114 &2065544414
 MonoBehaviour:
@@ -46110,7 +46119,7 @@ MonoBehaviour:
   orbitPosition: 0
   orbitPeriod: 19414080
   orbitActive: 1
-  rotationPeriod: 1
+  rotationPeriod: 10000
 --- !u!1001 &2110929425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46751,6 +46760,8 @@ MonoBehaviour:
   AccountScreen: {fileID: 28748163}
   ForgotPasswordScreen: {fileID: 207964461}
   NotificationScreen: {fileID: 1266201198}
+  SunScene: {fileID: 0}
+  LoginCanvas: {fileID: 0}
   loginEmail: {fileID: 486678697}
   loginPassword: {fileID: 1628035645}
   registerEmail: {fileID: 1309730}
