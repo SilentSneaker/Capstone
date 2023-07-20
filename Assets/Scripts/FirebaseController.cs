@@ -20,7 +20,7 @@ using TMPro;
 public class FirebaseController : MonoBehaviour
 {
 
-    public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen, SunScene, LoginCanvas;
+    public GameObject loginScreen, RegisterScreen, AccountScreen, ForgotPasswordScreen, NotificationScreen, SunScene, LoginCanvas, objectInfoUI;
     public InputField loginEmail, loginPassword, registerEmail, registerPassword, registerConfirmPassword, accountWeight, accountHeight, forgotPasswordEmail, RegisterUserName;
     public UnityEngine.UI.Text notificationHeader, notificationMessage, LoginEmail, AccountUserName, Hours, Minutes, Seconds;
     public TextMeshProUGUI SelectedDate;
@@ -113,6 +113,7 @@ public class FirebaseController : MonoBehaviour
     public void goToSolarSytem()
     {
         SunScene.SetActive(true);
+        objectInfoUI.SetActive(true);
         LoginCanvas.SetActive(false);
 
     }
